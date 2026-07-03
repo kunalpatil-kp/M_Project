@@ -1,0 +1,120 @@
+.add {
+    max-width: 1080px;
+    margin: 40px auto;
+    padding: 32px;
+    color: #374151;
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 28px 80px rgba(15, 23, 42, 0.08);
+    font-size: 16px;
+}
+
+.add form {
+    display: grid;
+    gap: 28px;
+}
+
+.add-img-upload {
+    display: grid;
+    place-items: center;
+    gap: 18px;
+    padding: 26px;
+    border-radius: 24px;
+    background: #f8fafc;
+    border: 1px dashed rgba(148, 163, 184, 0.35);
+}
+
+.add-img-upload p {
+    margin: 0;
+    font-weight: 700;
+    color: #111827;
+}
+
+.add-img-upload img {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1 / 1;
+    border-radius: 22px;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+.add-img-upload img:hover {
+    transform: translateY(-2px);
+}
+
+.add-product-img,
+.add-product-description {
+    width: 100%;
+    max-width: 100%;
+}
+
+.add-product-img p,
+.add-product-description p {
+    margin: 0 0 10px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.add-product-img input,
+.add-product-description textarea,
+.add-category-price select,
+.add-category-price input {
+    width: 100%;
+    padding: 16px 18px;
+    border-radius: 18px;
+    border: 1px solid #d1d5db;
+    background: #f8fafc;
+    color: #0f172a;
+    outline: none;
+    font-size: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-product-description textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+.add-product-img input:focus,
+.add-product-description textarea:focus,
+.add-category-price select:focus,
+.add-category-price input:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+.add-category-price {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.add-btn {
+    width: fit-content;
+    border: none;
+    padding: 14px 28px;
+    background-color: #111827;
+    cursor: pointer;
+    color: white;
+    border-radius: 18px;
+    font-weight: 700;
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.18);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.add-btn:hover {
+    transform: translateY(-1px);
+    background-color: #1f2937;
+}
+
+@media (max-width: 900px) {
+    .add {
+        margin: 24px 16px;
+        padding: 24px;
+    }
+
+    .add-category-price {
+        grid-template-columns: 1fr;
+    }
+}

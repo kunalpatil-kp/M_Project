@@ -1,0 +1,26 @@
+.food-display{
+    margin-top: 40px;
+}
+.food-display h2{
+    font-size: clamp(2.35rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 18px;
+    letter-spacing: -0.03em;
+    position: relative;
+    color: transparent;
+}
+.food-display h2::after{
+    content: "Top Grocery Picks Near You";
+    position: absolute;
+    inset: 0;
+    color: #111827;
+}
+
+.food-display-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    margin-top: 32px;
+    gap: 32px;
+    row-gap: 52px;
+}

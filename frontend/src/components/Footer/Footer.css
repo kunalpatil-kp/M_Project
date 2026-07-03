@@ -1,0 +1,125 @@
+.footer{
+    color: #e2e8f0;
+    background-color: #0f172a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 60px 8vw 40px;
+    margin-top: 100px;
+}
+.footer-content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 60px;
+}
+.footer-content-left,
+.footer-content-right,
+.footer-content-center{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+.footer-content-left img{
+    width: 150px;
+}
+.footer-content-left p{
+    margin: 0;
+    color: #cbd5e1;
+    line-height: 1.9;
+    max-width: 520px;
+    position: relative;
+    color: transparent;
+}
+.footer-content-left p::after{
+    content: "Groceries delivers fresh produce, pantry essentials, and everyday groceries with fast delivery and local value.";
+    position: absolute;
+    inset: 0;
+    color: #cbd5e1;
+    white-space: pre-wrap;
+}
+.footer-content-left ul,
+.footer-content-right ul,
+.footer-content-center ul{
+    padding: 0;
+    margin: 0;
+}
+.footer-content-left li,
+.footer-content-right li,
+.footer-content-center li{
+    list-style: none;
+    margin-bottom: 12px;
+    color: #cbd5e1;
+    transition: color 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+.footer-content-left li:hover,
+.footer-content-right li:hover,
+.footer-content-center li:hover{
+    color: #f97316;
+    transform: translateX(3px);
+}
+.footer-content-right li:nth-child(2){
+    color: transparent;
+    position: relative;
+}
+.footer-content-right li:nth-child(2)::after{
+    content: "contact@groceries.com";
+    position: absolute;
+    inset: 0;
+    color: #cbd5e1;
+}
+.footer-content-right h2,
+.footer-content-center h2{
+    color: #f8fafc;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    margin: 0;
+}
+.footer-social-icons img{
+    width: 42px;
+    margin-right: 15px;
+    padding: 12px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+.footer-social-icons img:hover{
+    transform: translateY(-2px);
+    background: rgba(249,115,22,0.18);
+}
+.footer hr{
+    width: 100%;
+    height: 1px;
+    margin: 30px 0;
+    background-color: rgba(255,255,255,0.12);
+    border: none;
+}
+.footer-copyright{
+    margin: 0;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    text-align: center;
+    position: relative;
+    color: transparent;
+}
+.footer-copyright::after{
+    content: "Copyright 2026 @ Groceries - All Rights Reserved.";
+    position: absolute;
+    inset: 0;
+    color: #94a3b8;
+}
+
+@media(max-width:750px){
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+    .footer-copyright{
+        text-align: center;
+    }
+}
