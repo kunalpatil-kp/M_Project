@@ -1,39 +1,37 @@
 .header{
     min-height: 72vh;
     max-height: 920px;
-    margin: 30px auto;
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.56), rgba(15, 23, 42, 0.12)), url('/header_img.png') center / cover no-repeat;
+    margin: 30px auto 22px;
+    background: linear-gradient(100deg, rgba(15, 23, 42, 0.68), rgba(15, 23, 42, 0.2)), url('/header_img.png') center / cover no-repeat;
     border-radius: 32px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
 }
-
 .header-contents{
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.25rem;
+    gap: 1rem;
     max-width: 46%;
     bottom: 12%;
     left: 6vw;
-    padding: 34px;
-    background: rgba(15, 23, 42, 0.28);
+    padding: 32px;
+    background: rgba(15, 23, 42, 0.25);
     backdrop-filter: blur(10px);
-    border-radius: 28px;
-    animation: fadeIn 1.5s ease forwards;
+    border-radius: 24px;
+    animation: fadeIn 1.3s ease forwards;
 }
-
 .header-contents h2{
     margin: 0;
     font-weight: 800;
     color: transparent;
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-size: clamp(2.6rem, 4.6vw, 4.2rem);
     line-height: 1.02;
     letter-spacing: -0.04em;
     position: relative;
 }
-
 .header-contents h2::after{
     content: "Fresh Groceries Delivered to Your Door";
     position: absolute;
@@ -41,16 +39,14 @@
     color: white;
     white-space: pre-wrap;
 }
-
 .header-contents p{
     margin: 0;
     color: transparent;
-    font-size: clamp(1rem, 1.05vw, 1.15rem);
+    font-size: clamp(0.98rem, 1.02vw, 1.1rem);
     max-width: 520px;
-    line-height: 1.75;
+    line-height: 1.7;
     position: relative;
 }
-
 .header-contents p::after{
     content: "Shop fresh produce, pantry staples, and everyday essentials with fast delivery and curated quality.";
     position: absolute;
@@ -58,46 +54,38 @@
     color: rgba(255, 255, 255, 0.92);
     white-space: pre-wrap;
 }
-
 .header-contents button{
     border: none;
     color: #ffffff;
     font-weight: 700;
-    padding: 0.95rem 2.4rem;
-    background-color: #f97316;
+    padding: 0.9rem 2.2rem;
+    background: linear-gradient(135deg, #f97316, #fb923c);
     font-size: 1rem;
     border-radius: 999px;
     cursor: pointer;
-    box-shadow: 0 24px 50px rgba(249, 115, 22, 0.22);
+    box-shadow: 0 20px 42px rgba(249, 115, 22, 0.22);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
-
 .header-contents button:hover{
     transform: translateY(-2px);
-    box-shadow: 0 28px 60px rgba(249, 115, 22, 0.32);
-    background-color: #fb923c;
+    box-shadow: 0 24px 48px rgba(249, 115, 22, 0.28);
 }
-
 @media (max-width:1050px){
     .header-contents{
         max-width: 60%;
     }
 }
-
 @media (max-width:750px){
     .header-contents{
-        max-width: 85%;
+        max-width: 88%;
         bottom: 8%;
         left: 4vw;
-        padding: 26px;
-    }
-    .header-contents h2::after{
-        content: "Fresh Groceries Delivered to Your Door";
+        padding: 22px;
     }
     .header-contents p::after{
         content: "Shop fresh produce, pantry staples, and everyday essentials with fast delivery and local value.";
     }
     .header-contents button{
-        padding: 1rem 2.6rem;
+        padding: 0.95rem 2.2rem;
     }
 }

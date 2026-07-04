@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./List.css";
 import axios from "axios";
 import { toast } from "react-toastify";
-const List = ({url}) => {
-  
+const List = ({ url }) => {
   const [list, setList] = useState([]);
- 
+
   const fetchList = async () => {
     const response = await axios.get(`${url}/api/food/list`);
     if (response.data.success) {
@@ -45,7 +44,7 @@ const List = ({url}) => {
               <img src={`${url}/images/${item.image}`} alt="" />
               <p>{item.name}</p>
               <p>{item.category}</p>
-              <p>${item.price}</p>
+              <p>₹{item.price}</p>
               <p onClick={() => removeFood(item._id)} className="cursor">
                 X
               </p>

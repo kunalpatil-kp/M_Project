@@ -3,12 +3,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Outfit;
+  font-family: Outfit, sans-serif;
 }
 
 body{
   min-height: 100vh;
-  background-color: white;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  color: #0f172a;
 }
 
 a{
@@ -18,11 +19,12 @@ a{
 hr{
   border: none;
   height: 1px;
-  background-color:#a9a9a9 ;
+  background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
 }
 
 .app-content{
-display: flex;
+  display: flex;
+  min-height: 100vh;
 }
 .flex-col{
   display: flex;

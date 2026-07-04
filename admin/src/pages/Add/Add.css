@@ -1,120 +1,340 @@
+/* ============================================
+   PREMIUM ADMIN DASHBOARD - ADD ITEM PAGE
+   Inspired by Shopify, Vercel, Stripe, Linear
+   ============================================ */
+
 .add {
-    max-width: 1080px;
-    margin: 40px auto;
-    padding: 32px;
-    color: #374151;
+    /* Container Styling */
+    max-width: 780px;
+    margin: 48px auto;
+    padding: 48px;
+    
+    /* Background & Appearance */
     background: #ffffff;
-    border-radius: 28px;
-    box-shadow: 0 28px 80px rgba(15, 23, 42, 0.08);
-    font-size: 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    
+    /* Premium Shadow */
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    
+    /* Typography */
+    color: #1f2937;
+    font-size: 15px;
+    line-height: 1.6;
 }
 
 .add form {
     display: grid;
-    gap: 28px;
+    gap: 32px;
 }
 
+/* ============================================
+   UPLOAD IMAGE SECTION - PREMIUM DESIGN
+   ============================================ */
+
 .add-img-upload {
+    /* Grid Layout */
     display: grid;
     place-items: center;
-    gap: 18px;
-    padding: 26px;
-    border-radius: 24px;
-    background: #f8fafc;
-    border: 1px dashed rgba(148, 163, 184, 0.35);
+    gap: 20px;
+    
+    /* Padding & Spacing */
+    padding: 44px;
+    
+    /* Border & Background */
+    border: 2px dashed rgba(148, 163, 184, 0.32);
+    border-radius: 12px;
+    background: #f9fafb;
+    
+    /* Transition Effects */
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+.add-img-upload:hover {
+    border-color: rgba(22, 163, 74, 0.4);
+    background: rgba(16, 185, 129, 0.02);
 }
 
 .add-img-upload p {
     margin: 0;
-    font-weight: 700;
+    font-weight: 600;
     color: #111827;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+}
+
+.add-img-upload label {
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.add-img-upload label:hover img {
+    transform: scale(1.05);
 }
 
 .add-img-upload img {
     width: 100%;
-    max-width: 280px;
+    max-width: 260px;
     aspect-ratio: 1 / 1;
-    border-radius: 22px;
+    border-radius: 12px;
     object-fit: cover;
-    transition: transform 0.2s ease;
+    
+    /* Premium Shadow */
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+    
+    /* Smooth Transitions */
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.3s ease;
+    
+    border: 1px solid rgba(148, 163, 184, 0.1);
 }
 
 .add-img-upload img:hover {
-    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.16);
 }
+
+/* ============================================
+   FORM FIELDS CONTAINER
+   ============================================ */
 
 .add-product-img,
 .add-product-description {
     width: 100%;
-    max-width: 100%;
 }
 
+/* Section Labels */
 .add-product-img p,
 .add-product-description p {
-    margin: 0 0 10px;
+    margin: 0 0 12px;
     font-weight: 600;
     color: #111827;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    text-transform: none;
 }
+
+/* ============================================
+   INPUT FIELDS - MODERN & PREMIUM
+   ============================================ */
 
 .add-product-img input,
 .add-product-description textarea,
 .add-category-price select,
 .add-category-price input {
+    /* Sizing */
     width: 100%;
-    padding: 16px 18px;
-    border-radius: 18px;
-    border: 1px solid #d1d5db;
-    background: #f8fafc;
-    color: #0f172a;
+    padding: 12px 16px;
+    
+    /* Appearance */
+    border-radius: 8px;
+    border: 1px solid rgba(148, 163, 184, 0.24);
+    background: #ffffff;
+    
+    /* Typography */
+    color: #111827;
+    font-size: 14px;
+    font-family: inherit;
+    
+    /* States */
     outline: none;
-    font-size: 15px;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    
+    /* Smooth Transitions */
+    transition: all 0.2s ease;
 }
 
-.add-product-description textarea {
-    min-height: 180px;
-    resize: vertical;
+.add-product-img input::placeholder,
+.add-product-description textarea::placeholder,
+.add-category-price select::placeholder,
+.add-category-price input::placeholder {
+    color: #9ca3af;
 }
+
+/* ============================================
+   TEXTAREA - PREMIUM STYLING
+   ============================================ */
+
+.add-product-description textarea {
+    min-height: 140px;
+    resize: vertical;
+    line-height: 1.6;
+    padding: 14px 16px;
+}
+
+/* ============================================
+   FOCUS STATES - SMOOTH & PREMIUM
+   ============================================ */
 
 .add-product-img input:focus,
 .add-product-description textarea:focus,
 .add-category-price select:focus,
 .add-category-price input:focus {
-    border-color: #60a5fa;
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+    border-color: #16a34a;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
 }
+
+/* ============================================
+   DROPDOWN SELECT - MODERN DESIGN
+   ============================================ */
+
+.add-category-price select {
+    appearance: none;
+    padding-right: 36px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M1 4l5 4 5-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 38px;
+}
+
+.add-category-price select:hover {
+    border-color: rgba(22, 163, 74, 0.3);
+}
+
+/* ============================================
+   CATEGORY & PRICE GRID
+   ============================================ */
 
 .add-category-price {
     display: grid;
     gap: 24px;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.add-category,
+.add-price {
+    width: 100%;
+}
+
+.add-category p,
+.add-price p {
+    margin: 0 0 12px;
+    font-weight: 600;
+    color: #111827;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+}
+
+/* ============================================
+   BUTTON - PREMIUM & INTERACTIVE
+   ============================================ */
+
 .add-btn {
-    width: fit-content;
+    /* Sizing */
+    width: auto;
+    padding: 14px 32px;
+    
+    /* Appearance */
     border: none;
-    padding: 14px 28px;
-    background-color: #111827;
+    border-radius: 8px;
+    
+    /* Gradient Background */
+    background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+    
+    /* Typography */
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    
+    /* Interactive States */
     cursor: pointer;
-    color: white;
-    border-radius: 18px;
-    font-weight: 700;
-    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.18);
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    outline: none;
+    
+    /* Premium Shadow */
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.24);
+    
+    /* Smooth Transitions */
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    /* Positioning */
+    margin-top: 8px;
 }
 
 .add-btn:hover {
-    transform: translateY(-1px);
-    background-color: #1f2937;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.32);
+    background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
 }
+
+.add-btn:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 8px rgba(22, 163, 74, 0.2);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET
+   ============================================ */
+
+@media (max-width: 1050px) {
+    .add {
+        max-width: 100%;
+        margin: 40px 16px;
+        padding: 40px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE
+   ============================================ */
 
 @media (max-width: 900px) {
     .add {
-        margin: 24px 16px;
-        padding: 24px;
+        margin: 32px 12px;
+        padding: 32px 20px;
+    }
+
+    .add form {
+        gap: 28px;
+    }
+
+    .add-img-upload {
+        padding: 36px;
+        gap: 16px;
+    }
+
+    .add-img-upload img {
+        max-width: 220px;
     }
 
     .add-category-price {
+        gap: 20px;
         grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - SMALL MOBILE
+   ============================================ */
+
+@media (max-width: 750px) {
+    .add {
+        margin: 24px 8px;
+        padding: 24px 16px;
+    }
+
+    .add form {
+        gap: 24px;
+    }
+
+    .add-img-upload {
+        padding: 28px;
+    }
+
+    .add-img-upload img {
+        max-width: 200px;
+    }
+
+    .add-btn {
+        width: 100%;
+        padding: 12px 24px;
+    }
+
+    .add-product-img p,
+    .add-product-description p,
+    .add-category p,
+    .add-price p {
+        font-size: 13px;
     }
 }
