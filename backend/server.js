@@ -6,6 +6,7 @@ import userRouter from "./routes/userRoute.js";
 import "dotenv/config.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
+import budgetRouter from "./routes/budgetRoute.js";
 // app config
 const app = express();
 const port = 4000;
@@ -24,6 +25,7 @@ app.use("/images",express.static('uploads'));
 app.use("/api/user",userRouter);
 app.use("/api/cart",cartRouter);
 app.use("/api/order",orderRouter);
+app.use("/api/budget", budgetRouter);
 app.get("/", (req, res) => {
   res.send("API Working"); // thunder client extenstion for check which api
   // working

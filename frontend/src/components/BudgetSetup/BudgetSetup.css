@@ -1,0 +1,44 @@
+.budget-setup{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin:40px 0;
+}
+
+.budget-form{
+    width:420px;
+    background:#fff;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.budget-form h2{
+    text-align:center;
+}
+
+.budget-form input,
+.budget-form select{
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.budget-form button{
+    padding:14px;
+    background:tomato;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+}
+
+.budget-form button:hover{
+    background:#e24d2c;
+}
