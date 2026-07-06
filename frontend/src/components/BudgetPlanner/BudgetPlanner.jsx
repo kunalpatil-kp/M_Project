@@ -11,33 +11,59 @@ const BudgetPlanner = () => {
 
   const [analytics, setAnalytics] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [hasBudget, setHasBudget] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
 
-  const fetchBudgetAnalytics = async () => {
+  const fetchData = async () => {
+    if (!token) {
+      setLoading(false);
+      return;
+    }
+    
+    // We only show full-screen loader on initial mount.
+    // For background refreshes (like after a submit), we don't block the UI.
+    if (!hasBudget && !analytics) {
+      setLoading(true);
+    }
+    
     try {
-      const response = await axios.get(`${url}/api/budget/analytics`, {
-        headers: {
-          token,
-        },
+      // 1. Fetch budget to check if it exists
+      const budgetRes = await axios.get(`${url}/api/budget/get`, {
+        headers: { token },
       });
 
-      if (response.data.success) {
-        setAnalytics(response.data.analytics);
+      if (budgetRes.data.success && budgetRes.data.data) {
+        setHasBudget(true);
+        // 2. Fetch the latest analytics
+        const analyticsRes = await axios.get(`${url}/api/budget/analytics`, {
+          headers: { token },
+        });
+
+        if (analyticsRes.data.success) {
+          setAnalytics(analyticsRes.data.analytics);
+        } else {
+          setAnalytics(null);
+        }
       } else {
+        setHasBudget(false);
         setAnalytics(null);
       }
     } catch (error) {
-      console.log(error);
+      console.error("Error fetching budget data:", error);
+      setHasBudget(false);
       setAnalytics(null);
     }
-
     setLoading(false);
   };
 
   useEffect(() => {
     if (token) {
-      fetchBudgetAnalytics();
+      fetchData();
     } else {
+      setHasBudget(false);
+      setAnalytics(null);
       setLoading(false);
+      setIsEditing(false);
     }
   }, [token]);
 
@@ -51,19 +77,25 @@ const BudgetPlanner = () => {
     );
   }
 
-  if (!analytics) {
-    return <BudgetSetup onSuccess={fetchBudgetAnalytics} />;
+  // Show setup form if we don't have a budget OR if the user explicitly clicked "Edit"
+  if (!hasBudget || !analytics || isEditing) {
+    return (
+      <BudgetSetup 
+        initialData={isEditing && analytics ? analytics : null} 
+        onSuccess={async () => {
+          setIsEditing(false); // Instantly turn off edit mode
+          await fetchData();   // Fetch fresh dashboard data to show immediately
+        }} 
+      />
+    );
   }
 
+  // Dashboard View
   return (
     <div className="budget-planner">
-
       <h2>🛒 Smart Grocery Budget Planner</h2>
-
-      <BudgetDashboard analytics={analytics} />
-
+      <BudgetDashboard analytics={analytics} onEdit={() => setIsEditing(true)} />
       <ProgressBar percentage={analytics.budgetUsed} />
-
     </div>
   );
 };

@@ -81,6 +81,11 @@ const Navbar = ({ setShowLogin }) => {
                 <p>Orders</p>
               </li>
               <hr />
+              <li onClick={() => navigate("/pantry")}>
+                <img src={assets.parcel_icon} alt="" />
+                <p>My Pantry</p>
+              </li>
+              <hr />
               <li onClick={logout}>
                 <img src={assets.logout_icon} alt="" />
                 <p>Logout</p>

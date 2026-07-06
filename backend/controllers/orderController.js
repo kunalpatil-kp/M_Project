@@ -1,6 +1,9 @@
 import orderModel from "../models/ordermodel.js";
 import userModel from "../models/userModel.js";
+import budgetModel from "../models/budgetModel.js";
+import mongoose from "mongoose";
 import Stripe from "stripe";
+import { addOrderToPantry } from "./pantryController.js";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 // placing user order for frontend
@@ -15,7 +18,6 @@ const placeOrder = async (req, res) => {
       address: req.body.address,
     });
     await newOrder.save();
-    await userModel.findByIdAndUpdate(req.body.userId, { cartData: {} });
 
     const line_items = req.body.items.map((item) => ({
       price_data: {
@@ -56,7 +58,25 @@ const verifyOrder = async (req, res) => {
   const { orderId, success } = req.body;
   try {
     if (success == "true") {
-      await orderModel.findByIdAndUpdate(orderId, { payment: true });
+      const order = await orderModel.findByIdAndUpdate(orderId, { payment: true }, { new: true });
+      await userModel.findByIdAndUpdate(order.userId, { cartData: {} });
+      
+      // Auto-update budget analytics immediately upon successful order
+      if (order && order.userId) {
+        const budget = await budgetModel.findOne({ userId: new mongoose.Types.ObjectId(order.userId) });
+        if (budget) {
+          budget.currentSpent += order.amount;
+          budget.remainingBudget = budget.monthlyBudget - budget.currentSpent;
+          budget.budgetUsed = Number(((budget.currentSpent / budget.monthlyBudget) * 100).toFixed(2));
+          await budget.save();
+        }
+
+        // Auto-populate pantry with purchased items (non-blocking)
+        if (order.items && order.items.length > 0) {
+          addOrderToPantry(order.userId.toString(), order.items);
+        }
+      }
+
       res.json({ success: true, message: "Paid" });
     } else {
       await orderModel.findByIdAndDelete(orderId);

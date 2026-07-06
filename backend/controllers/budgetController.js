@@ -4,10 +4,16 @@ import mongoose from "mongoose";
 
 const createBudget = async (req, res) => {
   try {
+    console.log("[createBudget] req.body:", req.body);
+
     const { monthlyBudget, familySize, userId } = req.body;
+
+    console.log("[createBudget] userId from auth middleware:", userId);
+    console.log("[createBudget] monthlyBudget:", monthlyBudget, "familySize:", familySize);
 
     // Validation
     if (!monthlyBudget || !familySize) {
+      console.log("[createBudget] Validation failed: missing monthlyBudget or familySize");
       return res.json({
         success: false,
         message: "Monthly Budget and Family Size are required",
@@ -15,6 +21,7 @@ const createBudget = async (req, res) => {
     }
 
     if (!userId) {
+      console.log("[createBudget] Validation failed: userId missing");
       return res.json({
         success: false,
         message: "User not authenticated",
@@ -22,27 +29,31 @@ const createBudget = async (req, res) => {
     }
 
     // Check if user already has a planner
+    console.log("[createBudget] Checking for existing budget for userId:", userId);
     const existingBudget = await budgetModel.findOne({
       userId: new mongoose.Types.ObjectId(userId),
     });
 
     if (existingBudget) {
+      console.log("[createBudget] Budget already exists:", existingBudget._id);
       return res.json({
         success: false,
-        message: "Budget Planner already exists",
+        message: "Budget Planner already exists. Use the update option to modify it.",
       });
     }
 
+    console.log("[createBudget] Creating new budget document...");
     const budget = new budgetModel({
       userId: new mongoose.Types.ObjectId(userId),
-      monthlyBudget,
-      familySize,
+      monthlyBudget: Number(monthlyBudget),
+      familySize: Number(familySize),
       currentSpent: 0,
-      remainingBudget: monthlyBudget,
+      remainingBudget: Number(monthlyBudget),
       budgetUsed: 0,
     });
 
     await budget.save();
+    console.log("[createBudget] Budget saved successfully. _id:", budget._id);
 
     return res.json({
       success: true,
@@ -50,7 +61,10 @@ const createBudget = async (req, res) => {
       data: budget,
     });
   } catch (error) {
-    console.log("Budget Creation Error:", error);
+    console.log("[createBudget] ERROR:", error.name, error.message);
+    if (error.errors) {
+      console.log("[createBudget] Mongoose Validation Errors:", JSON.stringify(error.errors, null, 2));
+    }
 
     return res.json({
       success: false,
@@ -62,6 +76,7 @@ const createBudget = async (req, res) => {
 const getBudget = async (req, res) => {
   try {
     const userId = req.body.userId;
+    console.log("[getBudget] userId:", userId);
 
     if (!userId) {
       return res.json({
@@ -75,18 +90,20 @@ const getBudget = async (req, res) => {
     });
 
     if (!budget) {
+      console.log("[getBudget] No budget found for userId:", userId);
       return res.json({
         success: false,
         message: "Budget Planner not found",
       });
     }
 
+    console.log("[getBudget] Budget found:", budget._id);
     res.json({
       success: true,
       data: budget,
     });
   } catch (error) {
-    console.log("Get Budget Error:", error);
+    console.log("[getBudget] ERROR:", error.message);
 
     res.json({
       success: false,
@@ -106,6 +123,13 @@ const updateBudget = async (req, res) => {
       });
     }
 
+    if (!monthlyBudget || !familySize || monthlyBudget < 100) {
+      return res.json({
+        success: false,
+        message: "Monthly Budget must be at least ₹100 and Family Size is required",
+      });
+    }
+
     const budget = await budgetModel.findOne({
       userId: new mongoose.Types.ObjectId(userId),
     });
@@ -117,12 +141,12 @@ const updateBudget = async (req, res) => {
       });
     }
 
-    budget.monthlyBudget = monthlyBudget;
-    budget.familySize = familySize;
-    budget.remainingBudget = monthlyBudget - budget.currentSpent;
+    budget.monthlyBudget = Number(monthlyBudget);
+    budget.familySize = Number(familySize);
+    budget.remainingBudget = budget.monthlyBudget - budget.currentSpent;
 
     budget.budgetUsed = Number(
-      ((budget.currentSpent / monthlyBudget) * 100).toFixed(2),
+      ((budget.currentSpent / budget.monthlyBudget) * 100).toFixed(2),
     );
 
     await budget.save();
@@ -202,10 +226,13 @@ const getBudgetAnalytics = async (req, res) => {
     end.setDate(0);
     end.setHours(23, 59, 59, 999);
 
+    // IMPORTANT: orderModel stores userId as a plain String (not ObjectId)
+    // Matching as ObjectId would return 0 results. Match as String instead.
+    console.log("[getBudgetAnalytics] Querying orders for userId (String):", userId);
     const orders = await orderModel.aggregate([
       {
         $match: {
-          userId: new mongoose.Types.ObjectId(userId),
+          userId: userId,        // ← String match (orderModel.userId is type:String)
           payment: true,
           date: {
             $gte: start,
@@ -225,6 +252,7 @@ const getBudgetAnalytics = async (req, res) => {
         },
       },
     ]);
+    console.log("[getBudgetAnalytics] Aggregation result:", orders);
 
     let spent = 0;
     let totalOrders = 0;
