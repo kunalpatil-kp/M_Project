@@ -4,16 +4,10 @@ import mongoose from "mongoose";
 
 const createBudget = async (req, res) => {
   try {
-    console.log("[createBudget] req.body:", req.body);
-
     const { monthlyBudget, familySize, userId } = req.body;
-
-    console.log("[createBudget] userId from auth middleware:", userId);
-    console.log("[createBudget] monthlyBudget:", monthlyBudget, "familySize:", familySize);
 
     // Validation
     if (!monthlyBudget || !familySize) {
-      console.log("[createBudget] Validation failed: missing monthlyBudget or familySize");
       return res.json({
         success: false,
         message: "Monthly Budget and Family Size are required",
@@ -21,7 +15,6 @@ const createBudget = async (req, res) => {
     }
 
     if (!userId) {
-      console.log("[createBudget] Validation failed: userId missing");
       return res.json({
         success: false,
         message: "User not authenticated",
@@ -29,20 +22,17 @@ const createBudget = async (req, res) => {
     }
 
     // Check if user already has a planner
-    console.log("[createBudget] Checking for existing budget for userId:", userId);
     const existingBudget = await budgetModel.findOne({
       userId: new mongoose.Types.ObjectId(userId),
     });
 
     if (existingBudget) {
-      console.log("[createBudget] Budget already exists:", existingBudget._id);
       return res.json({
         success: false,
         message: "Budget Planner already exists. Use the update option to modify it.",
       });
     }
 
-    console.log("[createBudget] Creating new budget document...");
     const budget = new budgetModel({
       userId: new mongoose.Types.ObjectId(userId),
       monthlyBudget: Number(monthlyBudget),
@@ -53,7 +43,6 @@ const createBudget = async (req, res) => {
     });
 
     await budget.save();
-    console.log("[createBudget] Budget saved successfully. _id:", budget._id);
 
     return res.json({
       success: true,
@@ -61,11 +50,6 @@ const createBudget = async (req, res) => {
       data: budget,
     });
   } catch (error) {
-    console.log("[createBudget] ERROR:", error.name, error.message);
-    if (error.errors) {
-      console.log("[createBudget] Mongoose Validation Errors:", JSON.stringify(error.errors, null, 2));
-    }
-
     return res.json({
       success: false,
       message: error.message || "Failed to create budget",
@@ -76,7 +60,6 @@ const createBudget = async (req, res) => {
 const getBudget = async (req, res) => {
   try {
     const userId = req.body.userId;
-    console.log("[getBudget] userId:", userId);
 
     if (!userId) {
       return res.json({
@@ -90,21 +73,17 @@ const getBudget = async (req, res) => {
     });
 
     if (!budget) {
-      console.log("[getBudget] No budget found for userId:", userId);
       return res.json({
         success: false,
         message: "Budget Planner not found",
       });
     }
 
-    console.log("[getBudget] Budget found:", budget._id);
     res.json({
       success: true,
       data: budget,
     });
   } catch (error) {
-    console.log("[getBudget] ERROR:", error.message);
-
     res.json({
       success: false,
       message: error.message || "Failed to get budget",
@@ -157,8 +136,6 @@ const updateBudget = async (req, res) => {
       data: budget,
     });
   } catch (error) {
-    console.log("Update Budget Error:", error);
-
     res.json({
       success: false,
       message: error.message || "Failed to update budget",
@@ -186,8 +163,6 @@ const deleteBudget = async (req, res) => {
       message: "Budget Planner Deleted Successfully",
     });
   } catch (error) {
-    console.log("Delete Budget Error:", error);
-
     res.json({
       success: false,
       message: error.message || "Failed to delete budget",
@@ -228,7 +203,6 @@ const getBudgetAnalytics = async (req, res) => {
 
     // IMPORTANT: orderModel stores userId as a plain String (not ObjectId)
     // Matching as ObjectId would return 0 results. Match as String instead.
-    console.log("[getBudgetAnalytics] Querying orders for userId (String):", userId);
     const orders = await orderModel.aggregate([
       {
         $match: {
@@ -252,7 +226,6 @@ const getBudgetAnalytics = async (req, res) => {
         },
       },
     ]);
-    console.log("[getBudgetAnalytics] Aggregation result:", orders);
 
     let spent = 0;
     let totalOrders = 0;
@@ -275,26 +248,17 @@ const getBudgetAnalytics = async (req, res) => {
 
     res.json({
       success: true,
-
       analytics: {
         monthlyBudget: budget.monthlyBudget,
-
         familySize: budget.familySize,
-
         spent,
-
         remaining,
-
         totalOrders,
-
         budgetUsed: Number(budgetUsed.toFixed(2)),
-
         status,
       },
     });
   } catch (error) {
-    console.log("Budget Analytics Error:", error);
-
     res.json({
       success: false,
       message: error.message || "Failed to get analytics",

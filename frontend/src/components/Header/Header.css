@@ -48,7 +48,7 @@
     position: relative;
 }
 .header-contents p::after{
-    content: "Shop fresh produce, pantry staples, and everyday essentials with fast delivery and curated quality.";
+    content: "Shop fresh fruits, vegetables, dairy products, grains, snacks, beverages, and everyday essentials from one trusted grocery destination. Enjoy premium quality products, affordable prices, secure payments, and lightning-fast doorstep delivery.";
     position: absolute;
     inset: 0;
     color: rgba(255, 255, 255, 0.92);
@@ -83,7 +83,7 @@
         padding: 22px;
     }
     .header-contents p::after{
-        content: "Shop fresh produce, pantry staples, and everyday essentials with fast delivery and local value.";
+        content: "Shop fresh fruits, vegetables, dairy products, grains, snacks, beverages, and everyday essentials from one trusted grocery destination. Enjoy premium quality, affordable prices, and fast delivery.";
     }
     .header-contents button{
         padding: 0.95rem 2.2rem;

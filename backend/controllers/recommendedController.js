@@ -32,7 +32,7 @@ const getRecommendations = async (req, res) => {
     // Helper to add recommendation
     const addRecommendation = (food, reason) => {
       if (!recommendedIds.has(food._id.toString()) && recommendations.length < 12) {
-        recommendations.push({ ...food._doc, reason });
+        recommendations.push({ ...food.toObject(), reason });
         recommendedIds.add(food._id.toString());
       }
     };

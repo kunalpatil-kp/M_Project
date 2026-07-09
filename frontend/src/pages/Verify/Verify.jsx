@@ -7,16 +7,22 @@ const Verify = () => {
   const [searchParams] = useSearchParams();
   const success = searchParams.get("success");
   const orderId = searchParams.get("orderId");
-  const { url } = useContext(StoreContext);
+  const { url, setCartItems } = useContext(StoreContext);
   const navigate = useNavigate();
   const verifyPayment = async () => {
-    const response = await axios.post(url + "/api/order/verify", {
-      success,
-      orderId,
-    });
-    if (response.data.success) {
-      navigate("/myorders");
-    } else {
+    try {
+      const response = await axios.post(url + "/api/order/verify", {
+        success,
+        orderId,
+      });
+      if (response.data.success) {
+        setCartItems({});
+        navigate("/myorders");
+      } else {
+        navigate("/");
+      }
+    } catch (error) {
+      console.error("Payment verification error:", error);
       navigate("/");
     }
   };

@@ -59,8 +59,8 @@ const AIRecommendation = () => {
       <p className="ai-subtitle">Personalized picks just for you</p>
 
       <div className="ai-grid">
-        {displayRecommendations.map((item, index) => (
-          <div className="ai-card" key={index}>
+        {displayRecommendations.map((item) => (
+          <div className="ai-card" key={item._id}>
             <div className="ai-card-badge">AI Recommended</div>
             <div className="ai-img-container">
               <img

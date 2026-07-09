@@ -33,6 +33,15 @@ const Footer = () => {
           <ul>
             <li>+91-702-089-1044</li>
             <li>contact@groceries.com</li>
+            <li className="footer-email-item">
+              <a href="mailto:kunalkp2580@gmail.com" className="footer-email-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="M22 7l-10 7L2 7" />
+                </svg>
+                kunalkp2580@gmail.com
+              </a>
+            </li>
           </ul>
         </div>
       </div>

@@ -25,7 +25,7 @@ const placeOrder = async (req, res) => {
         product_data: {
           name: item.name,
         },
-        unit_amount: item.price * 100 * 80,
+        unit_amount: item.price * 100,
       },
       quantity: item.quantity,
     }));
@@ -36,7 +36,7 @@ const placeOrder = async (req, res) => {
         product_data: {
           name: "Delivery Charges",
         },
-        unit_amount: 2 * 100 * 80,
+        unit_amount: 2 * 100,
       },
       quantity: 1,
     });
@@ -47,10 +47,17 @@ const placeOrder = async (req, res) => {
       success_url: `${frontend_url}/verify?success=true&orderId=${newOrder._id}`,
       cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder._id}`,
     });
+    
     res.json({ success: true, session_url: session.url });
   } catch (error) {
-    console.log(error);
-    res.json({ success: false, message: "Error" });
+    console.error("[Stripe API Error Details]:", {
+      message: error.message,
+      type: error.type,
+      raw: error.raw,
+      statusCode: error.statusCode,
+      stack: error.stack
+    });
+    res.json({ success: false, message: error.message || "Error" });
   }
 };
 

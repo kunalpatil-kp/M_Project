@@ -1,340 +1,393 @@
-/* ============================================
+/* ============================================================
    PREMIUM ADMIN DASHBOARD - ADD ITEM PAGE
-   Inspired by Shopify, Vercel, Stripe, Linear
-   ============================================ */
+   Inspired by Shopify Admin, Vercel, Stripe, Linear
+   ============================================================ */
 
+/* ── Page Wrapper ── */
 .add {
-    /* Container Styling */
-    max-width: 780px;
-    margin: 48px auto;
-    padding: 48px;
-    
-    /* Background & Appearance */
-    background: #ffffff;
-    border-radius: 16px;
-    border: 1px solid rgba(148, 163, 184, 0.12);
-    
-    /* Premium Shadow */
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
-    
-    /* Typography */
-    color: #1f2937;
-    font-size: 15px;
-    line-height: 1.6;
+  max-width: 800px;
+  margin: 40px auto 60px;
+  padding: 0 24px;
 }
 
+/* ── Card Container ── */
 .add form {
-    display: grid;
-    gap: 32px;
+  display: grid;
+  gap: 28px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.13);
+  box-shadow:
+    0 4px 6px rgba(15, 23, 42, 0.03),
+    0 10px 30px rgba(15, 23, 42, 0.06);
+  padding: 44px 48px;
 }
 
-/* ============================================
-   UPLOAD IMAGE SECTION - PREMIUM DESIGN
-   ============================================ */
+/* ── Section Header (Add Item title if needed) ── */
+.add-page-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.add-page-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 2.5px;
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  border-radius: 2px;
+}
+
+/* ============================================================
+   UPLOAD IMAGE AREA - PREMIUM DASHED ZONE
+   ============================================================ */
 
 .add-img-upload {
-    /* Grid Layout */
-    display: grid;
-    place-items: center;
-    gap: 20px;
-    
-    /* Padding & Spacing */
-    padding: 44px;
-    
-    /* Border & Background */
-    border: 2px dashed rgba(148, 163, 184, 0.32);
-    border-radius: 12px;
-    background: #f9fafb;
-    
-    /* Transition Effects */
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    cursor: pointer;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 44px 32px;
+  border: 2.5px dashed rgba(148, 163, 184, 0.28);
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fafafa 0%, #f8fafc 100%);
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+  cursor: pointer;
+  position: relative;
 }
 
 .add-img-upload:hover {
-    border-color: rgba(22, 163, 74, 0.4);
-    background: rgba(16, 185, 129, 0.02);
+  border-color: rgba(22, 163, 74, 0.45);
+  background: linear-gradient(135deg, rgba(22, 163, 74, 0.02), rgba(34, 197, 94, 0.02));
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.06);
 }
 
 .add-img-upload p {
-    margin: 0;
-    font-weight: 600;
-    color: #111827;
-    font-size: 15px;
-    letter-spacing: -0.01em;
+  margin: 0;
+  font-weight: 700;
+  color: #111827;
+  font-size: 15px;
+  letter-spacing: -0.01em;
 }
 
 .add-img-upload label {
-    cursor: pointer;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  display: block;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.add-img-upload label:hover img {
-    transform: scale(1.05);
+.add-img-upload label:hover {
+  transform: scale(1.02);
 }
 
 .add-img-upload img {
-    width: 100%;
-    max-width: 260px;
-    aspect-ratio: 1 / 1;
-    border-radius: 12px;
-    object-fit: cover;
-    
-    /* Premium Shadow */
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
-    
-    /* Smooth Transitions */
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
-                box-shadow 0.3s ease;
-    
-    border: 1px solid rgba(148, 163, 184, 0.1);
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 1.5px solid rgba(148, 163, 184, 0.14);
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.09),
+    0 2px 6px rgba(15, 23, 42, 0.04);
+  transition:
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.25s ease;
 }
 
 .add-img-upload img:hover {
-    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.16);
+  transform: scale(1.03);
+  box-shadow:
+    0 14px 36px rgba(15, 23, 42, 0.13),
+    0 4px 10px rgba(15, 23, 42, 0.06);
 }
 
-/* ============================================
-   FORM FIELDS CONTAINER
-   ============================================ */
+/* Upload hint text */
+.add-img-upload::after {
+  content: "Click to upload or drag & drop";
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11.5px;
+  color: #94a3b8;
+  font-weight: 500;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+}
+
+/* ============================================================
+   FORM FIELD WRAPPERS
+   ============================================================ */
 
 .add-product-img,
 .add-product-description {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* Section Labels */
+/* ── Labels ── */
 .add-product-img p,
-.add-product-description p {
-    margin: 0 0 12px;
-    font-weight: 600;
-    color: #111827;
-    font-size: 14px;
-    letter-spacing: -0.01em;
-    text-transform: none;
+.add-product-description p,
+.add-category p,
+.add-price p {
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 13.5px;
+  letter-spacing: 0.01em;
+  text-transform: none;
 }
 
-/* ============================================
-   INPUT FIELDS - MODERN & PREMIUM
-   ============================================ */
+/* ============================================================
+   INPUT FIELDS - PREMIUM MODERN
+   ============================================================ */
 
 .add-product-img input,
 .add-product-description textarea,
 .add-category-price select,
 .add-category-price input {
-    /* Sizing */
-    width: 100%;
-    padding: 12px 16px;
-    
-    /* Appearance */
-    border-radius: 8px;
-    border: 1px solid rgba(148, 163, 184, 0.24);
-    background: #ffffff;
-    
-    /* Typography */
-    color: #111827;
-    font-size: 14px;
-    font-family: inherit;
-    
-    /* States */
-    outline: none;
-    
-    /* Smooth Transitions */
-    transition: all 0.2s ease;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(148, 163, 184, 0.22);
+  background: #fafbff;
+  color: #111827;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) inset;
 }
 
 .add-product-img input::placeholder,
 .add-product-description textarea::placeholder,
-.add-category-price select::placeholder,
 .add-category-price input::placeholder {
-    color: #9ca3af;
+  color: #b0bec5;
+  font-weight: 400;
 }
 
-/* ============================================
-   TEXTAREA - PREMIUM STYLING
-   ============================================ */
-
-.add-product-description textarea {
-    min-height: 140px;
-    resize: vertical;
-    line-height: 1.6;
-    padding: 14px 16px;
-}
-
-/* ============================================
-   FOCUS STATES - SMOOTH & PREMIUM
-   ============================================ */
-
+/* ── Focus State ── */
 .add-product-img input:focus,
 .add-product-description textarea:focus,
 .add-category-price select:focus,
 .add-category-price input:focus {
-    border-color: #16a34a;
-    background: #ffffff;
-    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+  border-color: #16a34a;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 3.5px rgba(22, 163, 74, 0.12),
+    0 1px 3px rgba(15, 23, 42, 0.04) inset;
 }
 
-/* ============================================
-   DROPDOWN SELECT - MODERN DESIGN
-   ============================================ */
+/* ── Hover State ── */
+.add-product-img input:hover,
+.add-product-description textarea:hover,
+.add-category-price select:hover,
+.add-category-price input:hover {
+  border-color: rgba(22, 163, 74, 0.35);
+}
+
+/* ============================================================
+   TEXTAREA
+   ============================================================ */
+
+.add-product-description textarea {
+  min-height: 130px;
+  resize: vertical;
+  line-height: 1.65;
+  padding: 14px 16px;
+}
+
+/* ============================================================
+   SELECT / DROPDOWN
+   ============================================================ */
 
 .add-category-price select {
-    appearance: none;
-    padding-right: 36px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M1 4l5 4 5-4'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    padding-right: 38px;
+  appearance: none;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  cursor: pointer;
+  color: #1f2937;
 }
 
-.add-category-price select:hover {
-    border-color: rgba(22, 163, 74, 0.3);
-}
-
-/* ============================================
+/* ============================================================
    CATEGORY & PRICE GRID
-   ============================================ */
+   ============================================================ */
 
 .add-category-price {
-    display: grid;
-    gap: 24px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .add-category,
 .add-price {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.add-category p,
-.add-price p {
-    margin: 0 0 12px;
-    font-weight: 600;
-    color: #111827;
-    font-size: 14px;
-    letter-spacing: -0.01em;
-}
-
-/* ============================================
-   BUTTON - PREMIUM & INTERACTIVE
-   ============================================ */
+/* ============================================================
+   SUBMIT BUTTON - PREMIUM
+   ============================================================ */
 
 .add-btn {
-    /* Sizing */
-    width: auto;
-    padding: 14px 32px;
-    
-    /* Appearance */
-    border: none;
-    border-radius: 8px;
-    
-    /* Gradient Background */
-    background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
-    
-    /* Typography */
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: -0.01em;
-    
-    /* Interactive States */
-    cursor: pointer;
-    outline: none;
-    
-    /* Premium Shadow */
-    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.24);
-    
-    /* Smooth Transitions */
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    
-    /* Positioning */
-    margin-top: 8px;
+  width: fit-content;
+  padding: 13px 36px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  outline: none;
+  box-shadow:
+    0 4px 14px rgba(22, 163, 74, 0.28),
+    0 1px 3px rgba(22, 163, 74, 0.12);
+  transition:
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.25s ease,
+    background 0.2s ease;
+  margin-top: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 .add-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.32);
-    background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 22px rgba(22, 163, 74, 0.36),
+    0 2px 6px rgba(22, 163, 74, 0.16);
+  background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+}
+
+.add-btn:hover::after {
+  opacity: 1;
 }
 
 .add-btn:active {
-    transform: translateY(0px);
-    box-shadow: 0 2px 8px rgba(22, 163, 74, 0.2);
+  transform: translateY(0px);
+  box-shadow:
+    0 2px 8px rgba(22, 163, 74, 0.2),
+    0 1px 2px rgba(22, 163, 74, 0.1);
 }
 
-/* ============================================
-   RESPONSIVE DESIGN - TABLET
-   ============================================ */
+/* ============================================================
+   RESPONSIVE - TABLET
+   ============================================================ */
 
 @media (max-width: 1050px) {
-    .add {
-        max-width: 100%;
-        margin: 40px 16px;
-        padding: 40px;
-    }
+  .add {
+    max-width: 100%;
+    margin: 32px 16px 48px;
+    padding: 0;
+  }
+
+  .add form {
+    padding: 36px 40px;
+  }
 }
 
-/* ============================================
-   RESPONSIVE DESIGN - MOBILE
-   ============================================ */
+/* ============================================================
+   RESPONSIVE - SMALL TABLET / LARGE MOBILE
+   ============================================================ */
 
 @media (max-width: 900px) {
-    .add {
-        margin: 32px 12px;
-        padding: 32px 20px;
-    }
+  .add {
+    margin: 24px 12px 40px;
+  }
 
-    .add form {
-        gap: 28px;
-    }
+  .add form {
+    gap: 24px;
+    padding: 32px 28px;
+    border-radius: 16px;
+  }
 
-    .add-img-upload {
-        padding: 36px;
-        gap: 16px;
-    }
+  .add-img-upload {
+    padding: 36px 24px;
+    gap: 14px;
+  }
 
-    .add-img-upload img {
-        max-width: 220px;
-    }
+  .add-img-upload img {
+    max-width: 200px;
+  }
 
-    .add-category-price {
-        gap: 20px;
-        grid-template-columns: 1fr;
-    }
+  .add-category-price {
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
 }
 
-/* ============================================
-   RESPONSIVE DESIGN - SMALL MOBILE
-   ============================================ */
+/* ============================================================
+   RESPONSIVE - MOBILE
+   ============================================================ */
 
 @media (max-width: 750px) {
-    .add {
-        margin: 24px 8px;
-        padding: 24px 16px;
-    }
+  .add {
+    margin: 16px 8px 32px;
+  }
 
-    .add form {
-        gap: 24px;
-    }
+  .add form {
+    gap: 20px;
+    padding: 24px 18px;
+    border-radius: 14px;
+  }
 
-    .add-img-upload {
-        padding: 28px;
-    }
+  .add-img-upload {
+    padding: 28px 16px;
+  }
 
-    .add-img-upload img {
-        max-width: 200px;
-    }
+  .add-img-upload img {
+    max-width: 180px;
+  }
 
-    .add-btn {
-        width: 100%;
-        padding: 12px 24px;
-    }
+  .add-btn {
+    width: 100%;
+    padding: 13px 28px;
+    text-align: center;
+  }
 
-    .add-product-img p,
-    .add-product-description p,
-    .add-category p,
-    .add-price p {
-        font-size: 13px;
-    }
+  .add-product-img p,
+  .add-product-description p,
+  .add-category p,
+  .add-price p {
+    font-size: 13px;
+  }
+
+  .add-product-img input,
+  .add-product-description textarea,
+  .add-category-price select,
+  .add-category-price input {
+    font-size: 13.5px;
+    padding: 11px 14px;
+  }
 }

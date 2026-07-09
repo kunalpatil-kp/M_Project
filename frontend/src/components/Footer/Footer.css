@@ -122,3 +122,29 @@
         text-align: center;
     }
 }
+
+/* ── Email contact entry ── */
+.footer-email-item {
+    margin-top: 4px;
+}
+
+.footer-email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-email-link:hover {
+    color: #f97316;
+    transform: translateX(3px);
+}
+
+.footer-email-link svg {
+    flex-shrink: 0;
+    color: #f97316;
+    opacity: 0.85;
+}
