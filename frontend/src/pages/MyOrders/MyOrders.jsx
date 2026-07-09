@@ -3,9 +3,12 @@ import "./MyOrders.css";
 import axios from "axios";
 import { StoreContext } from "../../context/StoreContext";
 import { assets } from "../../assets/assets";
+import generateInvoice from "../../utils/invoiceGenerator";
+
 const MyOrders = () => {
   const { url, token } = useContext(StoreContext);
   const [data, setData] = useState([]);
+
   const fetchOrders = async () => {
     try {
       const response = await axios.post(
@@ -47,7 +50,15 @@ const MyOrders = () => {
             <p>
               <span>&#x25cf;</span> <b>{order.status}</b>
             </p>
-            <button onClick={fetchOrders}>Track Order</button>
+            <div className="order-buttons">
+              <button onClick={fetchOrders}>Track Order</button>
+              <button
+                className="invoice-btn"
+                onClick={() => generateInvoice(order)}
+              >
+                Download Invoice
+              </button>
+            </div>
           </div>
         ))}
       </div>

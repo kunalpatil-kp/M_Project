@@ -1,50 +1,121 @@
-.my-orders{
-    margin: 50px 0;
+.my-orders {
+  margin: 50px 0;
 }
-.my-orders .container{
-    display: flex;
+
+.my-orders .container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.my-orders-order {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 2fr;
+  align-items: center;
+  gap: 24px;
+  font-size: 14px;
+  padding: 16px 20px;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.06);
+}
+
+.my-orders-order img {
+  width: 50px;
+}
+
+.my-orders-order p span {
+  color: #16a34a;
+}
+
+.my-orders-order p b {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ── Shared button base for Track Order ── */
+.my-orders-order button {
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+  border-radius: 999px;
+  color: #111827;
+  background: #f1f5f9;
+  font-size: 13px;
+  transition: background 0.2s ease;
+}
+
+.my-orders-order button:hover {
+  background: #e2e8f0;
+}
+
+/* ── Button group wrapper ── */
+.order-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.order-buttons button {
+  width: 100%;
+}
+
+/* ── Download Invoice button ── */
+.invoice-btn {
+  background: linear-gradient(135deg, #16a34a, #22c55e) !important;
+  color: #fff !important;
+  border: none;
+  padding: 10px 0 !important;
+  border-radius: 999px !important;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+}
+
+.invoice-btn:hover {
+  background: linear-gradient(135deg, #15803d, #16a34a) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.3) !important;
+}
+
+/* ── Responsive: Tablet ── */
+@media (max-width: 900px) {
+  .my-orders-order {
+    grid-template-columns: 1fr 2fr 1fr;
+    row-gap: 8px;
+    font-size: 12px;
+  }
+
+  .my-orders-order button {
+    font-size: 10px;
+  }
+
+  .order-buttons {
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  .invoice-btn {
+    font-size: 10px !important;
+  }
+}
+
+/* ── Responsive: Mobile ── */
+@media (max-width: 600px) {
+  .my-orders-order {
+    grid-template-columns: 1fr 2fr;
+    row-gap: 6px;
+    padding: 12px 14px;
+    font-size: 11px;
+  }
+
+  .order-buttons {
     flex-direction: column;
-    gap: 18px;
-    margin-top: 24px;
-}
-.my-orders-order{
-    display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr 1fr;
-    align-items: center;
-    gap: 24px;
-    font-size: 14px;
-    padding: 16px 20px;
-    color: #475569;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    background: #ffffff;
-    box-shadow: 0 16px 42px rgba(15,23,42,0.06);
-}
-.my-orders-order img{
-    width: 50px;
-}
-.my-orders-order p span{
-    color: #16a34a;
-}
-.my-orders-order p b{
-    font-weight: 600;
-    color: #111827;
-}
-.my-orders-order button{
-    border: none;
-    padding: 10px 0;
-    cursor: pointer;
-    border-radius: 999px;
-    color: #111827;
-    background: #f1f5f9;
-}
-@media(max-width:900px){
-    .my-orders-order{
-        grid-template-columns: 1fr 2fr 1fr;
-        row-gap: 8px;
-        font-size: 12px;
-    }
-    .my-orders-order button{
-        font-size: 10px;
-    }
+    gap: 6px;
+  }
 }
