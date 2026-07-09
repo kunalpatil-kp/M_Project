@@ -4,6 +4,7 @@ import budgetModel from "../models/budgetModel.js";
 import mongoose from "mongoose";
 import Stripe from "stripe";
 import { addOrderToPantry } from "./pantryController.js";
+import { incrementCouponUsage } from "./couponController.js"; // coupon feature
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 // placing user order for frontend
@@ -16,6 +17,8 @@ const placeOrder = async (req, res) => {
       items: req.body.items,
       amount: req.body.amount,
       address: req.body.address,
+      // Store couponCode so verifyOrder can increment usage count on payment success
+      couponCode: req.body.couponCode || "",
     });
     await newOrder.save();
 
@@ -81,6 +84,11 @@ const verifyOrder = async (req, res) => {
         // Auto-populate pantry with purchased items (non-blocking)
         if (order.items && order.items.length > 0) {
           addOrderToPantry(order.userId.toString(), order.items);
+        }
+
+        // Increment coupon usage count only after confirmed payment
+        if (order.couponCode) {
+          await incrementCouponUsage(order.couponCode);
         }
       }
 

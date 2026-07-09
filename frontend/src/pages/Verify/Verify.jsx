@@ -7,7 +7,7 @@ const Verify = () => {
   const [searchParams] = useSearchParams();
   const success = searchParams.get("success");
   const orderId = searchParams.get("orderId");
-  const { url, setCartItems } = useContext(StoreContext);
+  const { url, setCartItems, resetCoupon } = useContext(StoreContext);
   const navigate = useNavigate();
   const verifyPayment = async () => {
     try {
@@ -17,6 +17,7 @@ const Verify = () => {
       });
       if (response.data.success) {
         setCartItems({});
+        resetCoupon(); // coupon feature: clear discount state after successful payment
         navigate("/myorders");
       } else {
         navigate("/");

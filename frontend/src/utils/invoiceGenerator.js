@@ -52,7 +52,28 @@ const generateInvoice = (order) => {
     },
   });
 
-  const finalY = doc.lastAutoTable.finalY + 12;
+  let finalY = doc.lastAutoTable.finalY + 12;
+
+  // Calculate totals
+  const subtotal = order.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  const deliveryFee = subtotal > 0 ? 2 : 0;
+  const discount = Math.max(0, subtotal + deliveryFee - order.amount);
+
+  doc.setFontSize(11);
+  doc.setTextColor(60, 60, 60);
+  
+  doc.text(`Subtotal : Rs.${subtotal}`, 15, finalY);
+  finalY += 8;
+  doc.text(`Delivery Fee : Rs.${deliveryFee}`, 15, finalY);
+  finalY += 8;
+  
+  if (discount > 0) {
+    doc.setTextColor(34, 139, 34);
+    doc.text(`Discount${order.couponCode ? ` (${order.couponCode})` : ""} : - Rs.${discount}`, 15, finalY);
+    finalY += 10;
+  } else {
+    finalY += 4;
+  }
 
   // ===== Grand Total =====
   doc.setFontSize(13);

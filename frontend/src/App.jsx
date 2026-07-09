@@ -9,10 +9,14 @@ import LoginPopup from "./components/LoginPopup/LoginPopup";
 import Verify from "./pages/Verify/Verify";
 import MyOrders from "./pages/MyOrders/MyOrders";
 import SmartPantry from "./pages/SmartPantry/SmartPantry";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
   return (
     <>
+      <ToastContainer position="top-right" autoClose={3000} />
       {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
       <div className="app">
         <Navbar setShowLogin={setShowLogin} />

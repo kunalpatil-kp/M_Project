@@ -10,6 +10,11 @@ export const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const [token, setToken] = useState("");
 
+  // ── COUPON STATE ──────────────────────────────
+  const [couponCode, setCouponCode] = useState("");       // what the user typed
+  const [appliedCoupon, setAppliedCoupon] = useState(""); // confirmed coupon code
+  const [discount, setDiscount] = useState(0);            // discount amount in ₹
+
   // ---------------- ADD TO CART ----------------
 
   const addToCart = async (itemId) => {
@@ -74,6 +79,14 @@ export const StoreContextProvider = (props) => {
     }
 
     return totalAmount;
+  };
+
+  // ── RESET COUPON  (call whenever cart changes) ─
+  // Clears all coupon state so a stale discount is never carried forward.
+  const resetCoupon = () => {
+    setCouponCode("");
+    setAppliedCoupon("");
+    setDiscount(0);
   };
 
   // ---------------- FOOD LIST ----------------
@@ -144,6 +157,14 @@ export const StoreContextProvider = (props) => {
     url,
     token,
     setToken,
+    // ── Coupon ────────────────────────────────
+    couponCode,
+    setCouponCode,
+    appliedCoupon,
+    setAppliedCoupon,
+    discount,
+    setDiscount,
+    resetCoupon,
   };
 
   return (

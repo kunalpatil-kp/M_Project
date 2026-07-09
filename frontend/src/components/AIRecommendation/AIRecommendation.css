@@ -16,7 +16,7 @@
 
 .ai-subtitle {
   font-size: 1.1vw;
-  color: #666;
+  color: var(--desc-color);
   margin-bottom: 20px;
 }
 
@@ -48,9 +48,9 @@
   width: 100%;
   margin: auto;
   border-radius: 20px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--card-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #fff;
+  background-color: var(--card-bg);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -113,7 +113,7 @@
   gap: 10px;
   padding: 6px;
   border-radius: 50px;
-  background-color: white;
+  background-color: var(--card-bg);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -140,7 +140,7 @@
 .ai-card-header h3 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #333;
+  color: var(--title-color);
   margin: 0;
 }
 
@@ -152,16 +152,16 @@
 
 .ai-category {
   font-size: 0.9rem;
-  color: #888;
+  color: var(--desc-color);
   margin-bottom: 15px;
 }
 
 .ai-reason {
-  background-color: #fcf4f2;
+  background-color: var(--reason-bg);
   padding: 10px 12px;
   border-radius: 8px;
   font-size: 0.85rem;
-  color: #d1563f;
+  color: var(--reason-text);
   font-weight: 500;
   display: flex;
   align-items: center;

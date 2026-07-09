@@ -6,10 +6,7 @@ const ExploreMenu = ({ category, setCategory }) => {
     <div className="explore-menu" id="explore-menu">
       <h1>Explore our menu</h1>
       <p className="explore-menu-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-        quaerat, error facere officia harum molestiae ea dolores, nisi sint
-        voluptatibus cumque quas incidunt saepe praesentium alias doloribus
-        quia, aspernatur nobis.
+        Discover a wide variety of fresh fruits, vegetables, dairy products, bakery items, beverages, snacks, and daily essentials. Carefully selected for quality and freshness, our products make grocery shopping simple, convenient, and delivered right to your doorstep.
       </p>
       <div className="explore-menu-list">
         {menu_list.map((item, index) => {

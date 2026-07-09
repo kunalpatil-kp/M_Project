@@ -3,6 +3,8 @@ import "./Navbar.css";
 import { assets } from "../../assets/assets";
 import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
+
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("menu");
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
@@ -69,6 +71,7 @@ const Navbar = ({ setShowLogin }) => {
             <div className="dot"></div>
           )}
         </div>
+        <ThemeToggle />
         {!token ? (
           <button onClick={() => setShowLogin(true)}>sign in</button>
         ) : (

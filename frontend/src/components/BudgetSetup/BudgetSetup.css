@@ -7,10 +7,10 @@
 
 .budget-form{
     width:420px;
-    background:#fff;
+    background:var(--budget-card-bg);
     border-radius:18px;
     padding:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    box-shadow:var(--card-shadow);
     display:flex;
     flex-direction:column;
     gap:18px;
@@ -18,14 +18,17 @@
 
 .budget-form h2{
     text-align:center;
+    color: var(--title-color);
 }
 
 .budget-form input,
 .budget-form select{
     padding:14px;
-    border:1px solid #ddd;
+    border:1px solid var(--budget-input-border);
     border-radius:10px;
     font-size:16px;
+    background: var(--budget-input-bg);
+    color: var(--text-color);
 }
 
 .budget-form button{

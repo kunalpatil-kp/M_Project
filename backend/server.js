@@ -9,6 +9,7 @@ import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
 import recommendedRouter from "./routes/recommendedRoute.js";
 import pantryRouter from "./routes/pantryRoute.js";
+import couponRouter from "./routes/couponRoute.js"; // coupon feature
 // app config
 const app = express();
 const port = 4000;
@@ -30,6 +31,7 @@ app.use("/api/order",orderRouter);
 app.use("/api/budget", budgetRouter);
 app.use("/api/recommendation", recommendedRouter);
 app.use("/api/pantry", pantryRouter);
+app.use("/api/coupon", couponRouter); // coupon feature
 app.get("/", (req, res) => {
   res.send("API Working"); // thunder client extenstion for check which api
   // working

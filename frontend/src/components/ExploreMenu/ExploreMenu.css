@@ -5,13 +5,13 @@
     padding: 8px 0 4px;
 }
 .explore-menu h1{
-    color: #111827;
+    color: var(--title-color);
     font-weight: 700;
     letter-spacing: -0.02em;
 }
 .explore-menu-text{
     max-width: 70%;
-    color: #64748b;
+    color: var(--desc-color);
     line-height: 1.7;
 }
 .explore-menu-list{
@@ -40,7 +40,7 @@
 }
 .explore-menu-list-item p{
     margin-top: 10px;
-    color: #64748b;
+    color: var(--desc-color);
     font-size: max(1.25vw,15px);
     cursor: pointer;
     font-weight: 600;
@@ -48,7 +48,7 @@
 .explore-menu hr{
     margin: 4px 0 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
     border: none;
 }
 .explore-menu-list-item .active{

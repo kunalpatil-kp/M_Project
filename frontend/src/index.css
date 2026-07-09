@@ -8,9 +8,10 @@
 }
 body{
   min-height: 100vh;
-  background: linear-gradient(180deg, #fffef8 0%, #f7f7f1 100%);
-  color: #0f172a;
+  background: var(--bg-gradient);
+  color: var(--text-color);
   line-height: 1.5;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 a{
