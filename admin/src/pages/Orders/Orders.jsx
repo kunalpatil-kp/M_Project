@@ -3,12 +3,12 @@ import "./Orders.css";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { assets } from "../../assets/assets";
-const Orders = ({ url }) => {
+const Orders = ({ url, token }) => {
   const [orders, setOrders] = useState([]);
 
   const fetchAllOrders = async () => {
     try {
-      const response = await axios.get(url + "/api/order/list");
+      const response = await axios.get(url + "/api/order/list", { headers: { token } });
       if (response.data.success) {
         setOrders(response.data.data);
       } else {
@@ -24,7 +24,7 @@ const Orders = ({ url }) => {
       const response = await axios.post(url + "/api/order/status", {
         orderId,
         status: event.target.value,
-      });
+      }, { headers: { token } });
       if (response.data.success) {
         await fetchAllOrders();
       } else {

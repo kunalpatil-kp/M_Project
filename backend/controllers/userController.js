@@ -24,7 +24,7 @@ const loginUser = async (req, res) => {
 };
 
 const createToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET);
+  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "7d" });
 };
 
 // register user
@@ -65,4 +65,25 @@ const registerUser = async (req, res) => {
   }
 };
 
-export { loginUser, registerUser };
+// login admin
+const loginAdmin = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res.status(400).json({ success: false, message: "Email and password required" });
+    }
+    if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
+      // Sign with { role: "admin" } so adminAuthMiddleware can distinguish
+      // this token from a customer JWT (which has { id: userId }).
+      const token = jwt.sign({ role: "admin" }, process.env.JWT_SECRET, { expiresIn: "1d" });
+      res.json({ success: true, token });
+    } else {
+      res.status(401).json({ success: false, message: "Invalid admin credentials" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+};
+
+export { loginUser, registerUser, loginAdmin };

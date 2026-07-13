@@ -1,7 +1,7 @@
 import express from "express";
 import { addFood,listFood,removeFood} from "../controllers/foodController.js";
 import multer from "multer";
-
+import adminAuthMiddleware from "../middleware/adminAuth.js";
 
 const foodRouter = express.Router();
 // Image storage engine
@@ -15,9 +15,8 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage:storage})
 
-foodRouter.post("/add",upload.single("image"),addFood)
+foodRouter.post("/add",adminAuthMiddleware,upload.single("image"),addFood)
 foodRouter.get("/list",listFood)
-foodRouter.post("/remove",removeFood);
-
+foodRouter.post("/remove",adminAuthMiddleware,removeFood);
 
 export default foodRouter;

@@ -6,11 +6,13 @@ import Stripe from "stripe";
 import { addOrderToPantry } from "./pantryController.js";
 import { incrementCouponUsage } from "./couponController.js"; // coupon feature
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
 // placing user order for frontend
 
 const placeOrder = async (req, res) => {
-  const frontend_url = "https://food-delivery-fquq.onrender.com";
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+  const frontend_url =
+    process.env.FRONTEND_URL || "https://food-delivery-fquq.onrender.com";
   try {
     const newOrder = new orderModel({
       userId: req.body.userId,
