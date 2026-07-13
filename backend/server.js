@@ -135,12 +135,30 @@ app.listen(port, () => {
   console.log(`🚀 Server Running on Port ${port}`);
 
   const key = process.env.STRIPE_SECRET_KEY;
-
   const maskedKey = key
     ? key.startsWith("sk_")
       ? `${key.slice(0, 7)}...${key.slice(-4)}`
       : `${key.slice(0, 5)}...`
-    : "UNDEFINED";
-
+    : "UNDEFINED ❌";
   console.log(`✅ Stripe Key Loaded: ${maskedKey}`);
+
+  // --- Startup Environment Diagnostic ---
+  const envVars = [
+    "JWT_SECRET",
+    "STRIPE_SECRET_KEY",
+    "MONGODB_URI",
+    "ADMIN_EMAIL",
+    "ADMIN_PASSWORD",
+    "FRONTEND_URL",
+    "ADMIN_URL",
+  ];
+  console.log("\n🔍 Environment Variable Check:");
+  envVars.forEach((v) => {
+    if (process.env[v]) {
+      console.log(`  ✅ ${v}: SET`);
+    } else {
+      console.log(`  ❌ ${v}: MISSING — add to Render dashboard!`);
+    }
+  });
+  console.log("");
 });

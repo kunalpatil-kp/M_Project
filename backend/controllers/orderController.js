@@ -12,7 +12,7 @@ import { incrementCouponUsage } from "./couponController.js"; // coupon feature
 const placeOrder = async (req, res) => {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
   const frontend_url =
-    process.env.FRONTEND_URL || "https://food-delivery-fquq.onrender.com";
+    process.env.FRONTEND_URL || "https://food-delivery-frontend-9pel.onrender.com";
   try {
     const newOrder = new orderModel({
       userId: req.body.userId,
