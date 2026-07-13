@@ -48,10 +48,14 @@ const limiter = rateLimit({
 });
 app.use("/api", limiter);
 
-// Data Sanitization against NoSQL query injection
-app.use(mongoSanitize());
-
 app.use(express.json({ limit: "10kb" }));
+
+// Data Sanitization against NoSQL query injection
+// Note: Placed AFTER express.json() so req.body exists.
+app.use(mongoSanitize({
+  replaceWith: '_',
+}));
+
 
 // Allowed Origins — hardcoded production URLs are fallbacks in case env vars are not set
 const allowedOrigins = [

@@ -1,0 +1,2123 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/production.spec.js"
+    ],
+    "configFile": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\playwright.config.js",
+    "rootDir": "C:/Users/kunal patil/OneDrive/Desktop/foood-delivery/M_Project/e2e-tests/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/kunal patil/OneDrive/Desktop/foood-delivery/M_Project/e2e-tests/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/kunal patil/OneDrive/Desktop/foood-delivery/M_Project/e2e-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "production.spec.js",
+      "file": "production.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "01_backend_is_alive",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1144,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:27:20",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 20,
+                      "line": 27
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 25 |\u001b[39m test(\u001b[32m\"01_backend_is_alive\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 26 |\u001b[39m   \u001b[36mconst\u001b[39m r \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m fetch(\u001b[32m`${BACKEND}/`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m   expect(r\u001b[33m.\u001b[39mstatus)\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m   \u001b[36mconst\u001b[39m text \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m r\u001b[33m.\u001b[39mtext()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m   expect(text)\u001b[33m.\u001b[39mtoContain(\u001b[32m\"API\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 20,
+                        "line": 27
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n  25 | test(\"01_backend_is_alive\", async ({ page }) => {\n  26 |   const r = await fetch(`${BACKEND}/`);\n> 27 |   expect(r.status).toBe(200);\n     |                    ^\n  28 |   const text = await r.text();\n  29 |   expect(text).toContain(\"API\");\n  30 | });\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:27:20"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:54:52.465Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-01-backend-is-alive-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-01-backend-is-alive-chromium\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 20,
+                    "line": 27
+                  }
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1494,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:27:20",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 20,
+                      "line": 27
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 25 |\u001b[39m test(\u001b[32m\"01_backend_is_alive\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 26 |\u001b[39m   \u001b[36mconst\u001b[39m r \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m fetch(\u001b[32m`${BACKEND}/`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m   expect(r\u001b[33m.\u001b[39mstatus)\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m   \u001b[36mconst\u001b[39m text \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m r\u001b[33m.\u001b[39mtext()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m   expect(text)\u001b[33m.\u001b[39mtoContain(\u001b[32m\"API\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 20,
+                        "line": 27
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n  25 | test(\"01_backend_is_alive\", async ({ page }) => {\n  26 |   const r = await fetch(`${BACKEND}/`);\n> 27 |   expect(r.status).toBe(200);\n     |                    ^\n  28 |   const text = await r.text();\n  29 |   expect(text).toContain(\"API\");\n  30 | });\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:27:20"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-13T06:54:55.121Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-01-backend-is-alive-chromium-retry1\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-01-backend-is-alive-chromium-retry1\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 20,
+                    "line": 27
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-24e1662c6a7a46549fb0",
+          "file": "production.spec.js",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "02_home_page_loads",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3373,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Page title: Groceries - Fresh Grocery Delivery\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:54:58.202Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-7b5e84e626264992721e",
+          "file": "production.spec.js",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "03_food_items_visible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6177,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Food items visible: \u001b[33m2\u001b[39m\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:55:01.850Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-977abf8f3a31a671e520",
+          "file": "production.spec.js",
+          "line": 43,
+          "column": 1
+        },
+        {
+          "title": "04_register_new_user",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 65713,
+                  "error": {
+                    "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=submit], button').filter({ hasText: /create|sign.?up|register|continue/i }).first()\u001b[22m\n",
+                    "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=submit], button').filter({ hasText: /create|sign.?up|register|continue/i }).first()\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:72:19",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 19,
+                      "line": 72
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m   \u001b[36mawait\u001b[39m passInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_PASSWORD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m   \u001b[36mconst\u001b[39m submitBtn \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"button[type=submit], button\"\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/create|sign.?up|register|continue/i\u001b[39m })\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m   \u001b[36mawait\u001b[39m submitBtn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m2000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m   \u001b[90m// After register, modal should close or token should appear in localStorage\u001b[39m\n \u001b[90m 75 |\u001b[39m   \u001b[36mconst\u001b[39m token \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate(() \u001b[33m=>\u001b[39m localStorage\u001b[33m.\u001b[39mgetItem(\u001b[32m\"token\"\u001b[39m))\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 19,
+                        "line": 72
+                      },
+                      "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=submit], button').filter({ hasText: /create|sign.?up|register|continue/i }).first()\u001b[22m\n\n\n  70 |   await passInput.fill(TEST_PASSWORD);\n  71 |   const submitBtn = page.locator(\"button[type=submit], button\").filter({ hasText: /create|sign.?up|register|continue/i }).first();\n> 72 |   await submitBtn.click();\n     |                   ^\n  73 |   await page.waitForTimeout(2000);\n  74 |   // After register, modal should close or token should appear in localStorage\n  75 |   const token = await page.evaluate(() => localStorage.getItem(\"token\"));\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:72:19"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:55:08.060Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-04-register-new-user-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-04-register-new-user-chromium\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 19,
+                    "line": 72
+                  }
+                },
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 65309,
+                  "error": {
+                    "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=submit], button').filter({ hasText: /create|sign.?up|register|continue/i }).first()\u001b[22m\n",
+                    "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=submit], button').filter({ hasText: /create|sign.?up|register|continue/i }).first()\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:72:19",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 19,
+                      "line": 72
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m   \u001b[36mawait\u001b[39m passInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_PASSWORD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m   \u001b[36mconst\u001b[39m submitBtn \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"button[type=submit], button\"\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/create|sign.?up|register|continue/i\u001b[39m })\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m   \u001b[36mawait\u001b[39m submitBtn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m2000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m   \u001b[90m// After register, modal should close or token should appear in localStorage\u001b[39m\n \u001b[90m 75 |\u001b[39m   \u001b[36mconst\u001b[39m token \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate(() \u001b[33m=>\u001b[39m localStorage\u001b[33m.\u001b[39mgetItem(\u001b[32m\"token\"\u001b[39m))\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 19,
+                        "line": 72
+                      },
+                      "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=submit], button').filter({ hasText: /create|sign.?up|register|continue/i }).first()\u001b[22m\n\n\n  70 |   await passInput.fill(TEST_PASSWORD);\n  71 |   const submitBtn = page.locator(\"button[type=submit], button\").filter({ hasText: /create|sign.?up|register|continue/i }).first();\n> 72 |   await submitBtn.click();\n     |                   ^\n  73 |   await page.waitForTimeout(2000);\n  74 |   // After register, modal should close or token should appear in localStorage\n  75 |   const token = await page.evaluate(() => localStorage.getItem(\"token\"));\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:72:19"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-13T06:56:15.136Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-04-register-new-user-chromium-retry1\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-04-register-new-user-chromium-retry1\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 19,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-f64d74bb5b58c30d9c27",
+          "file": "production.spec.js",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "05_login_user",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8130,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:93:17",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 17,
+                      "line": 93
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 91 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m2000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 92 |\u001b[39m   \u001b[36mconst\u001b[39m token \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate(() \u001b[33m=>\u001b[39m localStorage\u001b[33m.\u001b[39mgetItem(\u001b[32m\"token\"\u001b[39m))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 93 |\u001b[39m   expect(token)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 94 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m\"Login: token obtained\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 95 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 96 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 17,
+                        "line": 93
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n\n  91 |   await page.waitForTimeout(2000);\n  92 |   const token = await page.evaluate(() => localStorage.getItem(\"token\"));\n> 93 |   expect(token).toBeTruthy();\n     |                 ^\n  94 |   console.log(\"Login: token obtained\");\n  95 | });\n  96 |\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:93:17"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:57:22.111Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-05-login-user-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-05-login-user-chromium\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 17,
+                    "line": 93
+                  }
+                },
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7962,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:93:17",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 17,
+                      "line": 93
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 91 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m2000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 92 |\u001b[39m   \u001b[36mconst\u001b[39m token \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate(() \u001b[33m=>\u001b[39m localStorage\u001b[33m.\u001b[39mgetItem(\u001b[32m\"token\"\u001b[39m))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 93 |\u001b[39m   expect(token)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 94 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m\"Login: token obtained\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 95 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 96 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 17,
+                        "line": 93
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n\n  91 |   await page.waitForTimeout(2000);\n  92 |   const token = await page.evaluate(() => localStorage.getItem(\"token\"));\n> 93 |   expect(token).toBeTruthy();\n     |                 ^\n  94 |   console.log(\"Login: token obtained\");\n  95 | });\n  96 |\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:93:17"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-13T06:57:32.254Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-05-login-user-chromium-retry1\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-05-login-user-chromium-retry1\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 17,
+                    "line": 93
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-a5a863e84df6462d37a8",
+          "file": "production.spec.js",
+          "line": 80,
+          "column": 1
+        },
+        {
+          "title": "06_add_to_cart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4765,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Login failed, skipping cart test\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:57:42.407Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-1fe40134cb4111584240",
+          "file": "production.spec.js",
+          "line": 97,
+          "column": 1
+        },
+        {
+          "title": "07_navigate_to_cart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4945,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:57:47.561Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-1b9dd5b009a202bc67d4",
+          "file": "production.spec.js",
+          "line": 122,
+          "column": 1
+        },
+        {
+          "title": "08_apply_invalid_coupon",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3512,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:57:52.554Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-2b2e8136d246d4ba6822",
+          "file": "production.spec.js",
+          "line": 136,
+          "column": 1
+        },
+        {
+          "title": "09_my_orders_page",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 610,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Login failed, skipping\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:57:56.106Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-0b3e8efa0a34629ae3b0",
+          "file": "production.spec.js",
+          "line": 158,
+          "column": 1
+        },
+        {
+          "title": "10_logout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3826,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:57:56.763Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-837d3778693dd4f77099",
+          "file": "production.spec.js",
+          "line": 171,
+          "column": 1
+        },
+        {
+          "title": "11_admin_home_redirects_to_login",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5690,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Admin home URL: https://food-delivery-admin-gssu.onrender.com/\n"
+                    },
+                    {
+                      "text": "Admin redirects to login: \u001b[33mtrue\u001b[39m\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:58:00.629Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-99110f02922dccfcfd96",
+          "file": "production.spec.js",
+          "line": 192,
+          "column": 1
+        },
+        {
+          "title": "12_admin_login",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 35937,
+                  "error": {
+                    "message": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=email], input[placeholder*=email i]').first()\u001b[22m\n",
+                    "stack": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=email], input[placeholder*=email i]').first()\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:215:20",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 20,
+                      "line": 215
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 213 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"input[type=email], input[placeholder*=email i]\"\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 214 |\u001b[39m   \u001b[36mconst\u001b[39m passInput  \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"input[type=password]\"\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 215 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[33mADMIN_EMAIL\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 216 |\u001b[39m   \u001b[36mawait\u001b[39m passInput\u001b[33m.\u001b[39mfill(\u001b[33mADMIN_PASSWORD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 217 |\u001b[39m   \u001b[36mconst\u001b[39m submitBtn \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"button[type=submit], button\"\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/login|sign.?in|continue/i\u001b[39m })\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 218 |\u001b[39m   \u001b[36mawait\u001b[39m submitBtn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 20,
+                        "line": 215
+                      },
+                      "message": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=email], input[placeholder*=email i]').first()\u001b[22m\n\n\n  213 |   const emailInput = page.locator(\"input[type=email], input[placeholder*=email i]\").first();\n  214 |   const passInput  = page.locator(\"input[type=password]\").first();\n> 215 |   await emailInput.fill(ADMIN_EMAIL);\n      |                    ^\n  216 |   await passInput.fill(ADMIN_PASSWORD);\n  217 |   const submitBtn = page.locator(\"button[type=submit], button\").filter({ hasText: /login|sign.?in|continue/i }).first();\n  218 |   await submitBtn.click();\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:215:20"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:58:06.368Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-12-admin-login-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-12-admin-login-chromium\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 20,
+                    "line": 215
+                  }
+                },
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 36472,
+                  "error": {
+                    "message": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=email], input[placeholder*=email i]').first()\u001b[22m\n",
+                    "stack": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=email], input[placeholder*=email i]').first()\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:215:20",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 20,
+                      "line": 215
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 213 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"input[type=email], input[placeholder*=email i]\"\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 214 |\u001b[39m   \u001b[36mconst\u001b[39m passInput  \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"input[type=password]\"\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 215 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[33mADMIN_EMAIL\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 216 |\u001b[39m   \u001b[36mawait\u001b[39m passInput\u001b[33m.\u001b[39mfill(\u001b[33mADMIN_PASSWORD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 217 |\u001b[39m   \u001b[36mconst\u001b[39m submitBtn \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"button[type=submit], button\"\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/login|sign.?in|continue/i\u001b[39m })\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 218 |\u001b[39m   \u001b[36mawait\u001b[39m submitBtn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 20,
+                        "line": 215
+                      },
+                      "message": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=email], input[placeholder*=email i]').first()\u001b[22m\n\n\n  213 |   const emailInput = page.locator(\"input[type=email], input[placeholder*=email i]\").first();\n  214 |   const passInput  = page.locator(\"input[type=password]\").first();\n> 215 |   await emailInput.fill(ADMIN_EMAIL);\n      |                    ^\n  216 |   await passInput.fill(ADMIN_PASSWORD);\n  217 |   const submitBtn = page.locator(\"button[type=submit], button\").filter({ hasText: /login|sign.?in|continue/i }).first();\n  218 |   await submitBtn.click();\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:215:20"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-13T06:58:43.922Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-12-admin-login-chromium-retry1\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-12-admin-login-chromium-retry1\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 20,
+                    "line": 215
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-e63ff9d5fb9f30acd603",
+          "file": "production.spec.js",
+          "line": 206,
+          "column": 1
+        },
+        {
+          "title": "13_admin_add_food",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7601,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Add Food page: Unknown state\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:59:22.234Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-eaa8e6433df7b46c58a5",
+          "file": "production.spec.js",
+          "line": 228,
+          "column": 1
+        },
+        {
+          "title": "14_admin_delete_food",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3382,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Admin List page accessible without crash\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:59:30.161Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-f981dc7a543851c8b084",
+          "file": "production.spec.js",
+          "line": 250,
+          "column": 1
+        },
+        {
+          "title": "15_admin_orders",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3367,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Admin Orders page: OK\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:59:33.596Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-16f98bfe5aa8ab70784e",
+          "file": "production.spec.js",
+          "line": 259,
+          "column": 1
+        },
+        {
+          "title": "16_api_auth_register",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2490,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:270:21",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 21,
+                      "line": 270
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 268 |\u001b[39m test(\u001b[32m\"16_api_auth_register\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 269 |\u001b[39m   \u001b[36mconst\u001b[39m d \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/user/register\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"POST\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m\"PW Test\"\u001b[39m\u001b[33m,\u001b[39m email\u001b[33m:\u001b[39m \u001b[32m`pw2_${TS}@t.com`\u001b[39m\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m \u001b[32m\"password123\"\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 270 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 271 |\u001b[39m   expect(d\u001b[33m.\u001b[39mtoken)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m 272 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 273 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 21,
+                        "line": 270
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  268 | test(\"16_api_auth_register\", async () => {\n  269 |   const d = await apiCall(\"/api/user/register\", \"POST\", { name: \"PW Test\", email: `pw2_${TS}@t.com`, password: \"password123\" });\n> 270 |   expect(d.success).toBe(true);\n      |                     ^\n  271 |   expect(d.token).toBeTruthy();\n  272 | });\n  273 |\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:270:21"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:59:37.010Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-16-api-auth-register-chromium\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 21,
+                    "line": 270
+                  }
+                },
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 724,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:270:21",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 21,
+                      "line": 270
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 268 |\u001b[39m test(\u001b[32m\"16_api_auth_register\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 269 |\u001b[39m   \u001b[36mconst\u001b[39m d \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/user/register\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"POST\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m\"PW Test\"\u001b[39m\u001b[33m,\u001b[39m email\u001b[33m:\u001b[39m \u001b[32m`pw2_${TS}@t.com`\u001b[39m\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m \u001b[32m\"password123\"\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 270 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 271 |\u001b[39m   expect(d\u001b[33m.\u001b[39mtoken)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m 272 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 273 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 21,
+                        "line": 270
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  268 | test(\"16_api_auth_register\", async () => {\n  269 |   const d = await apiCall(\"/api/user/register\", \"POST\", { name: \"PW Test\", email: `pw2_${TS}@t.com`, password: \"password123\" });\n> 270 |   expect(d.success).toBe(true);\n      |                     ^\n  271 |   expect(d.token).toBeTruthy();\n  272 | });\n  273 |\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:270:21"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-13T06:59:40.723Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-16-api-auth-register-chromium-retry1\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 21,
+                    "line": 270
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-69fc931cb0ec6e6f1d12",
+          "file": "production.spec.js",
+          "line": 268,
+          "column": 1
+        },
+        {
+          "title": "17_api_auth_login_valid",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1214,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:276:21",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 21,
+                      "line": 276
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 274 |\u001b[39m test(\u001b[32m\"17_api_auth_login_valid\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 275 |\u001b[39m   \u001b[36mconst\u001b[39m d \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/user/login\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"POST\"\u001b[39m\u001b[33m,\u001b[39m { email\u001b[33m:\u001b[39m \u001b[33mTEST_EMAIL\u001b[39m\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m \u001b[33mTEST_PASSWORD\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 276 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 277 |\u001b[39m   expect(d\u001b[33m.\u001b[39mtoken)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m 278 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 279 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 21,
+                        "line": 276
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  274 | test(\"17_api_auth_login_valid\", async () => {\n  275 |   const d = await apiCall(\"/api/user/login\", \"POST\", { email: TEST_EMAIL, password: TEST_PASSWORD });\n> 276 |   expect(d.success).toBe(true);\n      |                     ^\n  277 |   expect(d.token).toBeTruthy();\n  278 | });\n  279 |\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:276:21"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:59:43.100Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-17-api-auth-login-valid-chromium\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 21,
+                    "line": 276
+                  }
+                },
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1555,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:276:21",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 21,
+                      "line": 276
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 274 |\u001b[39m test(\u001b[32m\"17_api_auth_login_valid\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 275 |\u001b[39m   \u001b[36mconst\u001b[39m d \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/user/login\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"POST\"\u001b[39m\u001b[33m,\u001b[39m { email\u001b[33m:\u001b[39m \u001b[33mTEST_EMAIL\u001b[39m\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m \u001b[33mTEST_PASSWORD\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 276 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 277 |\u001b[39m   expect(d\u001b[33m.\u001b[39mtoken)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m 278 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 279 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 21,
+                        "line": 276
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  274 | test(\"17_api_auth_login_valid\", async () => {\n  275 |   const d = await apiCall(\"/api/user/login\", \"POST\", { email: TEST_EMAIL, password: TEST_PASSWORD });\n> 276 |   expect(d.success).toBe(true);\n      |                     ^\n  277 |   expect(d.token).toBeTruthy();\n  278 | });\n  279 |\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:276:21"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-13T06:59:45.846Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-17-api-auth-login-valid-chromium-retry1\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 21,
+                    "line": 276
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-47bce7afe9570ffd3171",
+          "file": "production.spec.js",
+          "line": 274,
+          "column": 1
+        },
+        {
+          "title": "18_api_auth_login_invalid",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1074,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:59:49.347Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-603dcbc3767593af9d0b",
+          "file": "production.spec.js",
+          "line": 280,
+          "column": 1
+        },
+        {
+          "title": "19_api_food_list",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 461,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:287:21",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 21,
+                      "line": 287
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 285 |\u001b[39m test(\u001b[32m\"19_api_food_list\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 286 |\u001b[39m   \u001b[36mconst\u001b[39m d \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/food/list\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 287 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 288 |\u001b[39m   expect(d\u001b[33m.\u001b[39mdata\u001b[33m.\u001b[39mlength)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 289 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m`Food items: ${d.data.length}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 290 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 21,
+                        "line": 287
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  285 | test(\"19_api_food_list\", async () => {\n  286 |   const d = await apiCall(\"/api/food/list\");\n> 287 |   expect(d.success).toBe(true);\n      |                     ^\n  288 |   expect(d.data.length).toBeGreaterThan(0);\n  289 |   console.log(`Food items: ${d.data.length}`);\n  290 | });\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:287:21"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:59:50.498Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-19-api-food-list-chromium\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 21,
+                    "line": 287
+                  }
+                },
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 771,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:287:21",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 21,
+                      "line": 287
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 285 |\u001b[39m test(\u001b[32m\"19_api_food_list\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 286 |\u001b[39m   \u001b[36mconst\u001b[39m d \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/food/list\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 287 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 288 |\u001b[39m   expect(d\u001b[33m.\u001b[39mdata\u001b[33m.\u001b[39mlength)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 289 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m`Food items: ${d.data.length}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 290 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 21,
+                        "line": 287
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  285 | test(\"19_api_food_list\", async () => {\n  286 |   const d = await apiCall(\"/api/food/list\");\n> 287 |   expect(d.success).toBe(true);\n      |                     ^\n  288 |   expect(d.data.length).toBeGreaterThan(0);\n  289 |   console.log(`Food items: ${d.data.length}`);\n  290 | });\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:287:21"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-13T06:59:52.203Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-19-api-food-list-chromium-retry1\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 21,
+                    "line": 287
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-3631acf6954048bdf766",
+          "file": "production.spec.js",
+          "line": 285,
+          "column": 1
+        },
+        {
+          "title": "20_api_cart_add_valid",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 966,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:59:54.486Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-e6813f390de06fa1cad9",
+          "file": "production.spec.js",
+          "line": 292,
+          "column": 1
+        },
+        {
+          "title": "21_api_cart_add_invalid_id",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 820,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:59:55.526Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-fe557df4dccff4175f9f",
+          "file": "production.spec.js",
+          "line": 300,
+          "column": 1
+        },
+        {
+          "title": "22_api_cart_get",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 582,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:59:56.374Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-4bc26ce2edb39a9583c3",
+          "file": "production.spec.js",
+          "line": 308,
+          "column": 1
+        },
+        {
+          "title": "23_api_cart_requires_auth",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 613,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Cart auth check: Cannot set property query of #<IncomingMessage> which has only a getter\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:59:56.986Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-a67082439f87adc62bd8",
+          "file": "production.spec.js",
+          "line": 316,
+          "column": 1
+        },
+        {
+          "title": "24_api_coupon_invalid",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 351,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:59:57.644Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-8a0b406584c8daf6145c",
+          "file": "production.spec.js",
+          "line": 322,
+          "column": 1
+        },
+        {
+          "title": "25_api_coupon_empty_code",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 337,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Empty coupon rejected: Cannot set property query of #<IncomingMessage> which has only a getter\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:59:58.073Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-f8f623791e77a2c5c2b6",
+          "file": "production.spec.js",
+          "line": 327,
+          "column": 1
+        },
+        {
+          "title": "26_api_order_verify_bad_id",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 508,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Bad orderId rejected: Cannot set property query of #<IncomingMessage> which has only a getter\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:59:58.456Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-c83926cc58d7b749e7c2",
+          "file": "production.spec.js",
+          "line": 333,
+          "column": 1
+        },
+        {
+          "title": "27_api_order_list_requires_admin",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1136,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Order list RBAC: correctly blocked customer\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T06:59:58.996Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-8b5007f02107c0ef51b6",
+          "file": "production.spec.js",
+          "line": 339,
+          "column": 1
+        },
+        {
+          "title": "28_api_food_add_requires_admin",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 633,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Food add RBAC: Cannot set property query of #<IncomingMessage> which has only a getter\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T07:00:00.209Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-2a50bbc985981903373f",
+          "file": "production.spec.js",
+          "line": 350,
+          "column": 1
+        },
+        {
+          "title": "29_api_nosql_injection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 364,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "NoSQL injection blocked: \u001b[33mtrue\u001b[39m\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T07:00:00.879Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-3fea735ab9d4340b6577",
+          "file": "production.spec.js",
+          "line": 357,
+          "column": 1
+        },
+        {
+          "title": "30_api_fake_jwt",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 541,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Fake JWT rejected: Cannot set property query of #<IncomingMessage> which has only a getter\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T07:00:01.293Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-eec06bfb3afab36c8413",
+          "file": "production.spec.js",
+          "line": 363,
+          "column": 1
+        },
+        {
+          "title": "31_api_admin_login",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 307,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Admin login: FAIL - Cannot set property query of #<IncomingMessage> which has only a getter - You must set ADMIN_EMAIL and ADMIN_PASSWORD in Render Dashboard\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T07:00:01.880Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-fc46e1eaaa8fbf455217",
+          "file": "production.spec.js",
+          "line": 371,
+          "column": 1
+        },
+        {
+          "title": "32_api_userorders_authenticated",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 321,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T07:00:02.241Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-2c1ef0b507873fd4ebcc",
+          "file": "production.spec.js",
+          "line": 382,
+          "column": 1
+        },
+        {
+          "title": "33_performance_food_list_speed",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 373,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:395:21",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 21,
+                      "line": 395
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 393 |\u001b[39m   \u001b[36mconst\u001b[39m d  \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/food/list\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 394 |\u001b[39m   \u001b[36mconst\u001b[39m ms \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow() \u001b[33m-\u001b[39m t0\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 395 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 396 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m`Food list response time: ${ms}ms`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 397 |\u001b[39m   \u001b[90m// Warn but not fail - Render free tier can be slow on cold start\u001b[39m\n \u001b[90m 398 |\u001b[39m   \u001b[36mif\u001b[39m (ms \u001b[33m>\u001b[39m \u001b[35m5000\u001b[39m) console\u001b[33m.\u001b[39mlog(\u001b[32m\"WARNING: Slow response > 5s (Render cold start?)\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 21,
+                        "line": 395
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  393 |   const d  = await apiCall(\"/api/food/list\");\n  394 |   const ms = Date.now() - t0;\n> 395 |   expect(d.success).toBe(true);\n      |                     ^\n  396 |   console.log(`Food list response time: ${ms}ms`);\n  397 |   // Warn but not fail - Render free tier can be slow on cold start\n  398 |   if (ms > 5000) console.log(\"WARNING: Slow response > 5s (Render cold start?)\");\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:395:21"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T07:00:02.627Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-33-performance-food-list-speed-chromium\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 21,
+                    "line": 395
+                  }
+                },
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 712,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:395:21",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 21,
+                      "line": 395
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 393 |\u001b[39m   \u001b[36mconst\u001b[39m d  \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/food/list\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 394 |\u001b[39m   \u001b[36mconst\u001b[39m ms \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow() \u001b[33m-\u001b[39m t0\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 395 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 396 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m`Food list response time: ${ms}ms`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 397 |\u001b[39m   \u001b[90m// Warn but not fail - Render free tier can be slow on cold start\u001b[39m\n \u001b[90m 398 |\u001b[39m   \u001b[36mif\u001b[39m (ms \u001b[33m>\u001b[39m \u001b[35m5000\u001b[39m) console\u001b[33m.\u001b[39mlog(\u001b[32m\"WARNING: Slow response > 5s (Render cold start?)\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 21,
+                        "line": 395
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  393 |   const d  = await apiCall(\"/api/food/list\");\n  394 |   const ms = Date.now() - t0;\n> 395 |   expect(d.success).toBe(true);\n      |                     ^\n  396 |   console.log(`Food list response time: ${ms}ms`);\n  397 |   // Warn but not fail - Render free tier can be slow on cold start\n  398 |   if (ms > 5000) console.log(\"WARNING: Slow response > 5s (Render cold start?)\");\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:395:21"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-13T07:00:04.411Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-33-performance-food-list-speed-chromium-retry1\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 21,
+                    "line": 395
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-19ca8cd511d2bc3c00c8",
+          "file": "production.spec.js",
+          "line": 391,
+          "column": 1
+        },
+        {
+          "title": "34_performance_no_console_errors_on_home",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8413,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Console errors: \u001b[33m2\u001b[39m | Critical: \u001b[33m1\u001b[39m\n"
+                    },
+                    {
+                      "text": "Critical errors: [\n  \u001b[32m\"Access to XMLHttpRequest at 'https://food-delivery-fquq.onrender.com/api/food/list' from origin 'https://food-delivery-frontend-9pel.onrender.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.\"\u001b[39m\n]\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T07:00:06.674Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-a3904545c6fcbdb6d2a2",
+          "file": "production.spec.js",
+          "line": 401,
+          "column": 1
+        },
+        {
+          "title": "35_performance_concurrent_api_requests",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 677,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:427:22",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 22,
+                      "line": 427
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 425 |\u001b[39m     apiCall(\u001b[32m\"/api/food/list\"\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 426 |\u001b[39m   ])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 427 |\u001b[39m   expect(r1\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 428 |\u001b[39m   expect(r2\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 429 |\u001b[39m   expect(r3\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 430 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m\"Concurrent requests: all 3 succeeded\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 22,
+                        "line": 427
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  425 |     apiCall(\"/api/food/list\"),\n  426 |   ]);\n> 427 |   expect(r1.success).toBe(true);\n      |                      ^\n  428 |   expect(r2.success).toBe(true);\n  429 |   expect(r3.success).toBe(true);\n  430 |   console.log(\"Concurrent requests: all 3 succeeded\");\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:427:22"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T07:00:15.413Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-35-performance-concurrent-api-requests-chromium\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 22,
+                    "line": 427
+                  }
+                },
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1144,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:427:22",
+                    "location": {
+                      "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                      "column": 22,
+                      "line": 427
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 425 |\u001b[39m     apiCall(\u001b[32m\"/api/food/list\"\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 426 |\u001b[39m   ])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 427 |\u001b[39m   expect(r1\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 428 |\u001b[39m   expect(r2\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 429 |\u001b[39m   expect(r3\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 430 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m\"Concurrent requests: all 3 succeeded\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                        "column": 22,
+                        "line": 427
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  425 |     apiCall(\"/api/food/list\"),\n  426 |   ]);\n> 427 |   expect(r1.success).toBe(true);\n      |                      ^\n  428 |   expect(r2.success).toBe(true);\n  429 |   expect(r3.success).toBe(true);\n  430 |   console.log(\"Concurrent requests: all 3 succeeded\");\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:427:22"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-13T07:00:17.326Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\production-35-performance-concurrent-api-requests-chromium-retry1\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js",
+                    "column": 22,
+                    "line": 427
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-2f25565437ee4bd2b40a",
+          "file": "production.spec.js",
+          "line": 421,
+          "column": 1
+        },
+        {
+          "title": "36_verify_page_loads",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6578,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Verify page (cancel): OK, no crash\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T07:00:19.741Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-b932634a8c10ffbe62d6",
+          "file": "production.spec.js",
+          "line": 434,
+          "column": 1
+        },
+        {
+          "title": "37_direct_admin_url_protection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3863,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Direct admin URL protected: \u001b[33mfalse\u001b[39m\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-13T07:00:26.577Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e03a4b7a6378dd18a075-7dd8d6cbd715cc796072",
+          "file": "production.spec.js",
+          "line": 443,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-07-13T06:54:51.021Z",
+    "duration": 339704.488,
+    "expected": 28,
+    "skipped": 0,
+    "unexpected": 9,
+    "flaky": 0
+  }
+}

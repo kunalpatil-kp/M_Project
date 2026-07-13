@@ -8,7 +8,15 @@
     "test:headed": "playwright test --headed"
   },
   "devDependencies": {
-    "@playwright/test": "^1.43.0",
+    "@playwright/test": "^1.61.1",
     "@types/node": "^20.12.7"
-  }
+  },
+  "main": "playwright.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
 }
