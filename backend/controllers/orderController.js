@@ -68,9 +68,19 @@ const placeOrder = async (req, res) => {
 
 const verifyOrder = async (req, res) => {
   const { orderId, success } = req.body;
+
+  if (!orderId || !mongoose.Types.ObjectId.isValid(orderId)) {
+    return res.status(400).json({ success: false, message: "Invalid order ID" });
+  }
+
   try {
     if (success == "true") {
       const order = await orderModel.findByIdAndUpdate(orderId, { payment: true }, { new: true });
+
+      if (!order) {
+        return res.status(404).json({ success: false, message: "Order not found" });
+      }
+
       await userModel.findByIdAndUpdate(order.userId, { cartData: {} });
       
       // Auto-update budget analytics immediately upon successful order
@@ -100,10 +110,11 @@ const verifyOrder = async (req, res) => {
       res.json({ success: false, message: "Not Paid" });
     }
   } catch (error) {
-    console.log(error);
-    res.json({ success: false, message: "Error" });
+    console.error(error);
+    res.status(500).json({ success: false, message: "Error" });
   }
 };
+
 //user orders for frontend
 const userOrders = async (req, res) => {
   try {
