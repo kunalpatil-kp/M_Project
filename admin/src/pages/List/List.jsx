@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./List.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 const List = ({ url, token }) => {
   const [list, setList] = useState([]);
 
-  const fetchList = async () => {
+  const fetchList = useCallback(async () => {
     try {
       const response = await axios.get(`${url}/api/food/list`);
       if (response.data.success) {
@@ -14,9 +14,10 @@ const List = ({ url, token }) => {
         toast.error("Error");
       }
     } catch (error) {
+      console.error("Fetch food list error:", error);
       toast.error("Unable to fetch food list");
     }
-  };
+  }, [url]);
 
   const removeFood = async (foodId) => {
     try {
@@ -28,13 +29,14 @@ const List = ({ url, token }) => {
         toast.error("Error");
       }
     } catch (error) {
+      console.error("Remove food error:", error);
       toast.error("Unable to remove food item");
     }
   };
 
   useEffect(() => {
     fetchList();
-  }, []);
+  }, [fetchList]);
   return (
     <div className="list add flex-col">
       <p>All Foods List</p>

@@ -41,6 +41,7 @@ const Add = ({ url, token }) => {
         toast.error(response.data.message || "Failed to add food item");
       }
     } catch (error) {
+      console.error("Add food error:", error);
       toast.error("Unable to add food item. Please try again.");
     }
   };

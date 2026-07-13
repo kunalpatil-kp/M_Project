@@ -7,7 +7,7 @@ import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("menu");
-  const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+  const { token, setToken } = useContext(StoreContext);
 
   const navigate = useNavigate();
   const logout = () => {

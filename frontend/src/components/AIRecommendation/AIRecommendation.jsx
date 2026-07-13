@@ -5,7 +5,7 @@ import { StoreContext } from "../../context/StoreContext";
 import { assets } from "../../assets/assets";
 
 const AIRecommendation = () => {
-  const { url, token, addToCart, cartItems, removeFromCart } = useContext(StoreContext);
+  const { url, token, addToCart, cartItems } = useContext(StoreContext);
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(true);
 

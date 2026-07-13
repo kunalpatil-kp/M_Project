@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import axios from "axios";
 import "./Verify.css";
 import { useNavigate, useSearchParams } from "react-router-dom";
@@ -9,7 +9,7 @@ const Verify = () => {
   const orderId = searchParams.get("orderId");
   const { url, setCartItems, resetCoupon } = useContext(StoreContext);
   const navigate = useNavigate();
-  const verifyPayment = async () => {
+  const verifyPayment = useCallback(async () => {
     try {
       const response = await axios.post(url + "/api/order/verify", {
         success,
@@ -26,11 +26,11 @@ const Verify = () => {
       console.error("Payment verification error:", error);
       navigate("/");
     }
-  };
+  }, [url, success, orderId, setCartItems, resetCoupon, navigate]);
 
   useEffect(() => {
     verifyPayment();
-  }, [success, orderId, url]);
+  }, [verifyPayment]);
   return (
     <div className="verify">
       <div className="spinner"></div>

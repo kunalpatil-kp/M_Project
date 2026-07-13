@@ -1,7 +1,12 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
+import helmet from "helmet";
+import rateLimit from "express-rate-limit";
+import mongoSanitize from "express-mongo-sanitize";
+
 import { connectDB } from "./config/db.js";
+
 import budgetRouter from "./routes/budgetRoute.js";
 import foodRouter from "./routes/foodRoute.js";
 import userRouter from "./routes/userRoute.js";
@@ -11,30 +16,88 @@ import recommendedRouter from "./routes/recommendedRoute.js";
 import pantryRouter from "./routes/pantryRoute.js";
 import couponRouter from "./routes/couponRoute.js";
 
-// app config
+// =======================
+// APP CONFIG
+// =======================
+
 const app = express();
 const port = process.env.PORT || 4000;
 
-// middleware
-app.use(express.json());
+// =======================
+// DATABASE
+// =======================
+
+connectDB();
+
+// =======================
+// MIDDLEWARE
+// =======================
+
+// Security Headers
+app.use(helmet({
+  crossOriginResourcePolicy: false, // allow images to load cross-origin
+}));
+
+// Rate Limiting (100 requests per 15 minutes per IP)
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, message: "Too many requests, please try again later." },
+});
+app.use("/api", limiter);
+
+// Data Sanitization against NoSQL query injection
+app.use(mongoSanitize());
+
+app.use(express.json({ limit: "10kb" }));
+
+// Allowed Origins — hardcoded production URLs are fallbacks in case env vars are not set
+const allowedOrigins = [
+  // Production URLs (hardcoded fallbacks)
+  "https://food-delivery-frontend-9pel.onrender.com",
+  "https://food-delivery-admin-gssu.onrender.com",
+  // From environment variables (overrides / additions)
+  process.env.FRONTEND_URL,
+  process.env.ADMIN_URL,
+  // Local development
+  "http://localhost:5173",
+  "http://localhost:5174",
+].filter(Boolean); // removes undefined/null if env vars are not set
+
+// CORS Configuration
 app.use(
   cors({
-    origin: [
-      "https://food-delivery-fquq.onrender.com",
-      "https://food-delivery-admin-fquq.onrender.com",
-      "http://localhost:5173",
-      "http://localhost:5174",
-    ],
+    origin: function (origin, callback) {
+      // Allow requests without origin (Postman, server-to-server, etc.)
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      console.log("Blocked by CORS:", origin);
+
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   })
 );
 
-// db connection
-connectDB();
+// =======================
+// STATIC FOLDER
+// =======================
 
-// api endpoints
-app.use("/api/food", foodRouter);
 app.use("/images", express.static("uploads"));
+
+// =======================
+// ROUTES
+// =======================
+
+app.use("/api/food", foodRouter);
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
@@ -43,17 +106,41 @@ app.use("/api/recommendation", recommendedRouter);
 app.use("/api/pantry", pantryRouter);
 app.use("/api/coupon", couponRouter);
 
+// =======================
+// ROOT
+// =======================
+
 app.get("/", (req, res) => {
-  res.send("API Working");
+  res.send("API Working 🚀");
 });
 
+// =======================
+// GLOBAL ERROR HANDLER
+// =======================
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+
+  res.status(500).json({
+    success: false,
+    message: err.message || "Internal Server Error",
+  });
+});
+
+// =======================
+// SERVER
+// =======================
+
 app.listen(port, () => {
-  console.log(`Server Listening on port ${port}`);
+  console.log(`🚀 Server Running on Port ${port}`);
+
   const key = process.env.STRIPE_SECRET_KEY;
+
   const maskedKey = key
     ? key.startsWith("sk_")
       ? `${key.slice(0, 7)}...${key.slice(-4)}`
       : `${key.slice(0, 5)}...`
     : "UNDEFINED";
-  console.log(`[Stripe Config] STRIPE_SECRET_KEY loaded: ${maskedKey}`);
+
+  console.log(`✅ Stripe Key Loaded: ${maskedKey}`);
 });

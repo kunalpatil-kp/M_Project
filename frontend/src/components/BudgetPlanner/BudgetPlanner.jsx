@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import "./BudgetPlanner.css";
 import axios from "axios";
 import { StoreContext } from "../../context/StoreContext";
@@ -14,7 +14,7 @@ const BudgetPlanner = () => {
   const [hasBudget, setHasBudget] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     if (!token) {
       setLoading(false);
       return;
@@ -54,7 +54,8 @@ const BudgetPlanner = () => {
       setAnalytics(null);
     }
     setLoading(false);
-  };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [url, token]);
 
   useEffect(() => {
     if (token) {
@@ -65,7 +66,7 @@ const BudgetPlanner = () => {
       setLoading(false);
       setIsEditing(false);
     }
-  }, [token]);
+  }, [token, fetchData]);
 
   if (!token) return null;
 

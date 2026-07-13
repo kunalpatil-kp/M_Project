@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import "./MyOrders.css";
 import axios from "axios";
 import { StoreContext } from "../../context/StoreContext";
@@ -9,7 +9,7 @@ const MyOrders = () => {
   const { url, token } = useContext(StoreContext);
   const [data, setData] = useState([]);
 
-  const fetchOrders = async () => {
+  const fetchOrders = useCallback(async () => {
     try {
       const response = await axios.post(
         url + "/api/order/userorders",
@@ -22,13 +22,13 @@ const MyOrders = () => {
     } catch (error) {
       console.error("Error fetching orders:", error);
     }
-  };
+  }, [url, token]);
 
   useEffect(() => {
     if (token) {
       fetchOrders();
     }
-  }, [token]);
+  }, [token, fetchOrders]);
 
   return (
     <div className="my-orders">

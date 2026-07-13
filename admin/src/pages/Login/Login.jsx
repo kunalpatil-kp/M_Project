@@ -25,6 +25,7 @@ const Login = ({ url, setToken }) => {
         toast.error(response.data.message);
       }
     } catch (error) {
+      console.error("Admin login error:", error);
       toast.error("Login failed. Please try again.");
     }
   };

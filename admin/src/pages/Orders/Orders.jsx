@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./Orders.css";
 import { toast } from "react-toastify";
 import axios from "axios";
@@ -6,7 +6,7 @@ import { assets } from "../../assets/assets";
 const Orders = ({ url, token }) => {
   const [orders, setOrders] = useState([]);
 
-  const fetchAllOrders = async () => {
+  const fetchAllOrders = useCallback(async () => {
     try {
       const response = await axios.get(url + "/api/order/list", { headers: { token } });
       if (response.data.success) {
@@ -15,9 +15,10 @@ const Orders = ({ url, token }) => {
         toast.error("Error fetching orders");
       }
     } catch (error) {
+      console.error("Fetch orders error:", error);
       toast.error("Unable to fetch orders");
     }
-  };
+  }, [url, token]);
 
   const statusHandler = async (event, orderId) => {
     try {
@@ -31,13 +32,14 @@ const Orders = ({ url, token }) => {
         toast.error("Unable to update status");
       }
     } catch (error) {
+      console.error("Status update error:", error);
       toast.error("Status update failed");
     }
   };
 
   useEffect(() => {
     fetchAllOrders();
-  }, []);
+  }, [fetchAllOrders]);
 
   return (
     <div className="order add">
