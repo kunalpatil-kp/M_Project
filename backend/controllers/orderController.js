@@ -19,10 +19,10 @@ const placeOrder = async (req, res) => {
       items: req.body.items,
       amount: req.body.amount,
       address: req.body.address,
-      // Store couponCode so verifyOrder can increment usage count on payment success
       couponCode: req.body.couponCode || "",
     });
     await newOrder.save();
+    console.log("[placeOrder] saved — orderId:", newOrder._id, "| userId:", newOrder.userId);
 
     // Use req.body.amount (the discounted total already including delivery)
     // as the single Stripe line item so Stripe charges exactly what the
@@ -62,14 +62,23 @@ const placeOrder = async (req, res) => {
 
 const verifyOrder = async (req, res) => {
   const { orderId, success } = req.body;
+  console.log("[verifyOrder] START — orderId:", orderId, "| success param:", success);
 
   if (!orderId || !mongoose.Types.ObjectId.isValid(orderId)) {
+    console.log("[verifyOrder] REJECTED — invalid orderId");
     return res.status(400).json({ success: false, message: "Invalid order ID" });
   }
 
   try {
     if (success == "true") {
       const order = await orderModel.findByIdAndUpdate(orderId, { payment: true }, { new: true });
+      console.log("[verifyOrder] DB update result:", JSON.stringify({
+        found: !!order,
+        orderId: order?._id,
+        payment: order?.payment,
+        userId: order?.userId,
+        itemCount: order?.items?.length,
+      }));
 
       if (!order) {
         return res.status(404).json({ success: false, message: "Order not found" });
@@ -119,7 +128,13 @@ const verifyOrder = async (req, res) => {
 //user orders for frontend
 const userOrders = async (req, res) => {
   try {
-    const orders = await orderModel.find({ userId: req.body.userId });
+    const userId = req.body.userId;
+    console.log("[userOrders] userId from JWT:", userId);
+    const orders = await orderModel.find({ userId });
+    console.log("[userOrders] query: { userId:", userId, "} → found", orders.length, "orders");
+    if (orders.length > 0) {
+      orders.forEach(o => console.log("  order:", o._id, "| payment:", o.payment, "| userId:", o.userId));
+    }
     res.json({ success: true, data: orders });
   } catch (error) {
     console.log(error);

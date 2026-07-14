@@ -10,48 +10,40 @@ const Verify = () => {
   const orderId = searchParams.get("orderId");
   const { url, setCartItems, resetCoupon, setToken, token } = useContext(StoreContext);
   const navigate = useNavigate();
-
-  // Flag set after verify succeeds — we navigate only once token is committed to state.
-  // This prevents the race condition where navigate("/myorders") fires before React
-  // has committed setToken(savedToken), causing MyOrders to mount with token="" and
-  // skip the fetchOrders call entirely.
   const [verifiedSuccess, setVerifiedSuccess] = useState(false);
 
   const verifyPayment = useCallback(async () => {
     try {
-      const response = await axios.post(url + "/api/order/verify", {
-        success,
-        orderId,
-      });
+      console.log("[Verify] calling verify — success:", success, "orderId:", orderId);
+      const response = await axios.post(url + "/api/order/verify", { success, orderId });
+      console.log("[Verify] verify response:", JSON.stringify(response.data));
       if (response.data.success) {
         setCartItems({});
         resetCoupon();
         const savedToken = localStorage.getItem("token");
+        console.log("[Verify] localStorage token:", savedToken ? "EXISTS" : "MISSING");
+        console.log("[Verify] context token before setToken:", token ? "EXISTS" : "EMPTY");
         if (savedToken) {
           setToken(savedToken);
-          // Don't navigate yet — wait for token state to commit (see useEffect below)
           setVerifiedSuccess(true);
         } else {
-          // No token — navigate immediately; MyOrders will show the login prompt
           navigate("/myorders");
         }
       } else {
         navigate("/");
       }
     } catch (error) {
-      console.error("Payment verification error:", error);
+      console.error("[Verify] error:", error);
       navigate("/");
     }
-  }, [url, success, orderId, setCartItems, resetCoupon, setToken, navigate]);
+  }, [url, success, orderId, setCartItems, resetCoupon, setToken, navigate, token]);
 
   useEffect(() => {
     verifyPayment();
   }, [verifyPayment]);
 
-  // Navigate to /myorders only AFTER React has committed the token to context state.
-  // MyOrders reads token from context on mount — if we navigate before it's committed,
-  // MyOrders sees token="" on first render and never calls fetchOrders.
   useEffect(() => {
+    console.log("[Verify] nav-gate — verifiedSuccess:", verifiedSuccess, "| token:", token ? "EXISTS" : "EMPTY");
     if (verifiedSuccess && token) {
       navigate("/myorders");
     }

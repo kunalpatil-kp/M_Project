@@ -11,7 +11,11 @@ const MyOrders = () => {
   const [loading, setLoading] = useState(false);
 
   const fetchOrders = useCallback(async () => {
-    if (!token) return;
+    if (!token) {
+      console.log("[MyOrders] fetchOrders skipped — no token");
+      return;
+    }
+    console.log("[MyOrders] fetchOrders — token:", token.slice(0, 20) + "...");
     setLoading(true);
     try {
       const response = await axios.post(
@@ -19,17 +23,23 @@ const MyOrders = () => {
         {},
         { headers: { token } },
       );
+      console.log("[MyOrders] response status:", response.status);
+      console.log("[MyOrders] response data:", JSON.stringify(response.data));
       if (response.data.success && response.data.data) {
+        console.log("[MyOrders] setting", response.data.data.length, "orders");
         setData(response.data.data);
+      } else {
+        console.log("[MyOrders] success=false or no data:", response.data);
       }
     } catch (error) {
-      console.error("Error fetching orders:", error);
+      console.error("[MyOrders] fetch error:", error.response?.status, error.message);
     } finally {
       setLoading(false);
     }
   }, [url, token]);
 
   useEffect(() => {
+    console.log("[MyOrders] useEffect — token:", token ? token.slice(0, 20) + "..." : "EMPTY");
     if (token) {
       fetchOrders();
     }
