@@ -3,8 +3,7 @@
     "argv": [
       "C:\\Program Files\\nodejs\\node.exe",
       "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\node_modules\\@playwright\\test\\cli.js",
-      "test",
-      "tests/production.spec.js"
+      "test"
     ],
     "configFile": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\playwright.config.js",
     "rootDir": "C:/Users/kunal patil/OneDrive/Desktop/foood-delivery/M_Project/e2e-tests/tests",
@@ -66,6 +65,525 @@
   },
   "suites": [
     {
+      "title": "admin.spec.js",
+      "file": "admin.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Admin Panel Operations",
+          "file": "admin.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should login, view orders, and add a product",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2857,
+                      "error": {
+                        "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:4173/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:4173/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\admin.spec.js:9:16",
+                        "location": {
+                          "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\admin.spec.js",
+                          "column": 16,
+                          "line": 9
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m   test(\u001b[32m'should login, view orders, and add a product'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  8 |\u001b[39m     \u001b[90m// Navigate to Admin\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m     \n \u001b[90m 11 |\u001b[39m     \u001b[90m// Admin login is typically not implemented with real auth in these tutorials,\u001b[39m\n \u001b[90m 12 |\u001b[39m     \u001b[90m// but if there's a dashboard, we verify it loads.\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\admin.spec.js",
+                            "column": 16,
+                            "line": 9
+                          },
+                          "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:4173/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  7 |\u001b[39m   test(\u001b[32m'should login, view orders, and add a product'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  8 |\u001b[39m     \u001b[90m// Navigate to Admin\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m     \n \u001b[90m 11 |\u001b[39m     \u001b[90m// Admin login is typically not implemented with real auth in these tutorials,\u001b[39m\n \u001b[90m 12 |\u001b[39m     \u001b[90m// but if there's a dashboard, we verify it loads.\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\admin.spec.js:9:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-13T07:57:29.457Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\admin-Admin-Panel-Operatio-879ae-ew-orders-and-add-a-product-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\admin-Admin-Panel-Operatio-879ae-ew-orders-and-add-a-product-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\admin.spec.js",
+                        "column": 16,
+                        "line": 9
+                      }
+                    },
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2795,
+                      "error": {
+                        "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:4173/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:4173/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\admin.spec.js:9:16",
+                        "location": {
+                          "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\admin.spec.js",
+                          "column": 16,
+                          "line": 9
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m   test(\u001b[32m'should login, view orders, and add a product'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  8 |\u001b[39m     \u001b[90m// Navigate to Admin\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m     \n \u001b[90m 11 |\u001b[39m     \u001b[90m// Admin login is typically not implemented with real auth in these tutorials,\u001b[39m\n \u001b[90m 12 |\u001b[39m     \u001b[90m// but if there's a dashboard, we verify it loads.\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\admin.spec.js",
+                            "column": 16,
+                            "line": 9
+                          },
+                          "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:4173/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  7 |\u001b[39m   test(\u001b[32m'should login, view orders, and add a product'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  8 |\u001b[39m     \u001b[90m// Navigate to Admin\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m     \n \u001b[90m 11 |\u001b[39m     \u001b[90m// Admin login is typically not implemented with real auth in these tutorials,\u001b[39m\n \u001b[90m 12 |\u001b[39m     \u001b[90m// but if there's a dashboard, we verify it loads.\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\admin.spec.js:9:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-07-13T07:57:33.853Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\admin-Admin-Panel-Operatio-879ae-ew-orders-and-add-a-product-chromium-retry1\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\admin-Admin-Panel-Operatio-879ae-ew-orders-and-add-a-product-chromium-retry1\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\admin.spec.js",
+                        "column": 16,
+                        "line": 9
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "73482573f1568b679d78-c4de5d8e00c98f6eda33",
+              "file": "admin.spec.js",
+              "line": 7,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "auth.spec.js",
+      "file": "auth.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Authentication Flow",
+          "file": "auth.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should register a new user and login successfully",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 334,
+                      "error": {
+                        "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\auth.spec.js:12:16",
+                        "location": {
+                          "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\auth.spec.js",
+                          "column": 16,
+                          "line": 12
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 10 |\u001b[39m   test(\u001b[32m'should register a new user and login successfully'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 11 |\u001b[39m     \u001b[90m// 1. Register a new user\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m     \n \u001b[90m 14 |\u001b[39m     \u001b[90m// Open Login Popup\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\auth.spec.js",
+                            "column": 16,
+                            "line": 12
+                          },
+                          "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 10 |\u001b[39m   test(\u001b[32m'should register a new user and login successfully'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 11 |\u001b[39m     \u001b[90m// 1. Register a new user\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m     \n \u001b[90m 14 |\u001b[39m     \u001b[90m// Open Login Popup\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\auth.spec.js:12:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-13T07:57:38.191Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\auth-Authentication-Flow-s-9ef0d-user-and-login-successfully-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\auth-Authentication-Flow-s-9ef0d-user-and-login-successfully-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\auth.spec.js",
+                        "column": 16,
+                        "line": 12
+                      }
+                    },
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 344,
+                      "error": {
+                        "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\auth.spec.js:12:16",
+                        "location": {
+                          "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\auth.spec.js",
+                          "column": 16,
+                          "line": 12
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 10 |\u001b[39m   test(\u001b[32m'should register a new user and login successfully'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 11 |\u001b[39m     \u001b[90m// 1. Register a new user\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m     \n \u001b[90m 14 |\u001b[39m     \u001b[90m// Open Login Popup\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\auth.spec.js",
+                            "column": 16,
+                            "line": 12
+                          },
+                          "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 10 |\u001b[39m   test(\u001b[32m'should register a new user and login successfully'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 11 |\u001b[39m     \u001b[90m// 1. Register a new user\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m     \n \u001b[90m 14 |\u001b[39m     \u001b[90m// Open Login Popup\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\auth.spec.js:12:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-07-13T07:57:39.951Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\auth-Authentication-Flow-s-9ef0d-user-and-login-successfully-chromium-retry1\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\auth-Authentication-Flow-s-9ef0d-user-and-login-successfully-chromium-retry1\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\auth.spec.js",
+                        "column": 16,
+                        "line": 12
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-80539cb27610e882f2d6",
+              "file": "auth.spec.js",
+              "line": 10,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "pantry-ai.spec.js",
+      "file": "pantry-ai.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Pantry, Budget, and AI Features",
+          "file": "pantry-ai.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should verify Budget Planner creation and AI Recommendations",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 330,
+                      "error": {
+                        "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js:8:16",
+                        "location": {
+                          "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js",
+                          "column": 16,
+                          "line": 8
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  6 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m     \u001b[90m// Register and login\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=Click here'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[name=\"name\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'SmartUser'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js",
+                            "column": 16,
+                            "line": 8
+                          },
+                          "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  6 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m     \u001b[90m// Register and login\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=Click here'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[name=\"name\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'SmartUser'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js:8:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-13T07:57:41.682Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\pantry-ai-Pantry-Budget-an-2f792-tion-and-AI-Recommendations-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\pantry-ai-Pantry-Budget-an-2f792-tion-and-AI-Recommendations-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js",
+                        "column": 16,
+                        "line": 8
+                      }
+                    },
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 328,
+                      "error": {
+                        "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js:8:16",
+                        "location": {
+                          "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js",
+                          "column": 16,
+                          "line": 8
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  6 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m     \u001b[90m// Register and login\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=Click here'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[name=\"name\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'SmartUser'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js",
+                            "column": 16,
+                            "line": 8
+                          },
+                          "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  6 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m     \u001b[90m// Register and login\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=Click here'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[name=\"name\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'SmartUser'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js:8:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-07-13T07:57:43.388Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\pantry-ai-Pantry-Budget-an-2f792-tion-and-AI-Recommendations-chromium-retry1\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\pantry-ai-Pantry-Budget-an-2f792-tion-and-AI-Recommendations-chromium-retry1\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js",
+                        "column": 16,
+                        "line": 8
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "bedf3730d43201e9f80c-1ac0b37758f72bd79a42",
+              "file": "pantry-ai.spec.js",
+              "line": 19,
+              "column": 3
+            },
+            {
+              "title": "should navigate to Smart Pantry and verify empty state",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 364,
+                      "error": {
+                        "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js:8:16",
+                        "location": {
+                          "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js",
+                          "column": 16,
+                          "line": 8
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  6 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m     \u001b[90m// Register and login\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=Click here'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[name=\"name\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'SmartUser'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js",
+                            "column": 16,
+                            "line": 8
+                          },
+                          "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  6 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m     \u001b[90m// Register and login\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=Click here'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[name=\"name\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'SmartUser'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js:8:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-13T07:57:45.231Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\pantry-ai-Pantry-Budget-an-38a5c-ntry-and-verify-empty-state-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\pantry-ai-Pantry-Budget-an-38a5c-ntry-and-verify-empty-state-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js",
+                        "column": 16,
+                        "line": 8
+                      }
+                    },
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 294,
+                      "error": {
+                        "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js:8:16",
+                        "location": {
+                          "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js",
+                          "column": 16,
+                          "line": 8
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  6 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m     \u001b[90m// Register and login\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=Click here'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[name=\"name\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'SmartUser'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js",
+                            "column": 16,
+                            "line": 8
+                          },
+                          "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  6 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m     \u001b[90m// Register and login\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=Click here'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[name=\"name\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'SmartUser'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js:8:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-07-13T07:57:47.158Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\pantry-ai-Pantry-Budget-an-38a5c-ntry-and-verify-empty-state-chromium-retry1\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\pantry-ai-Pantry-Budget-an-38a5c-ntry-and-verify-empty-state-chromium-retry1\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\pantry-ai.spec.js",
+                        "column": 16,
+                        "line": 8
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "bedf3730d43201e9f80c-af3998377d3e554003f3",
+              "file": "pantry-ai.spec.js",
+              "line": 55,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "production.spec.js",
       "file": "production.spec.js",
       "column": 0,
@@ -84,10 +602,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 8,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 1144,
+                  "duration": 22100,
                   "error": {
                     "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
                     "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:27:20",
@@ -105,13 +623,13 @@
                         "column": 20,
                         "line": 27
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n  25 | test(\"01_backend_is_alive\", async ({ page }) => {\n  26 |   const r = await fetch(`${BACKEND}/`);\n> 27 |   expect(r.status).toBe(200);\n     |                    ^\n  28 |   const text = await r.text();\n  29 |   expect(text).toContain(\"API\");\n  30 | });\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:27:20"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n\u001b[0m \u001b[90m 25 |\u001b[39m test(\u001b[32m\"01_backend_is_alive\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 26 |\u001b[39m   \u001b[36mconst\u001b[39m r \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m fetch(\u001b[32m`${BACKEND}/`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m   expect(r\u001b[33m.\u001b[39mstatus)\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m   \u001b[36mconst\u001b[39m text \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m r\u001b[33m.\u001b[39mtext()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m   expect(text)\u001b[33m.\u001b[39mtoContain(\u001b[32m\"API\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:27:20\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:54:52.465Z",
+                  "startTime": "2026-07-13T07:57:48.711Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -132,10 +650,10 @@
                   }
                 },
                 {
-                  "workerIndex": 1,
+                  "workerIndex": 9,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 1494,
+                  "duration": 1614,
                   "error": {
                     "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
                     "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:27:20",
@@ -153,13 +671,13 @@
                         "column": 20,
                         "line": 27
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n  25 | test(\"01_backend_is_alive\", async ({ page }) => {\n  26 |   const r = await fetch(`${BACKEND}/`);\n> 27 |   expect(r.status).toBe(200);\n     |                    ^\n  28 |   const text = await r.text();\n  29 |   expect(text).toContain(\"API\");\n  30 | });\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:27:20"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n\u001b[0m \u001b[90m 25 |\u001b[39m test(\u001b[32m\"01_backend_is_alive\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 26 |\u001b[39m   \u001b[36mconst\u001b[39m r \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m fetch(\u001b[32m`${BACKEND}/`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m   expect(r\u001b[33m.\u001b[39mstatus)\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m   \u001b[36mconst\u001b[39m text \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m r\u001b[33m.\u001b[39mtext()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m   expect(text)\u001b[33m.\u001b[39mtoContain(\u001b[32m\"API\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:27:20\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 1,
-                  "startTime": "2026-07-13T06:54:55.121Z",
+                  "startTime": "2026-07-13T07:58:12.269Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -201,10 +719,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 2,
+                  "workerIndex": 10,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3373,
+                  "duration": 6681,
                   "errors": [],
                   "stdout": [
                     {
@@ -213,7 +731,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:54:58.202Z",
+                  "startTime": "2026-07-13T07:58:15.385Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -239,10 +757,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 2,
+                  "workerIndex": 10,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 6177,
+                  "duration": 6443,
                   "errors": [],
                   "stdout": [
                     {
@@ -251,7 +769,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:55:01.850Z",
+                  "startTime": "2026-07-13T07:58:22.306Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -277,10 +795,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 2,
+                  "workerIndex": 10,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 65713,
+                  "duration": 66312,
                   "error": {
                     "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=submit], button').filter({ hasText: /create|sign.?up|register|continue/i }).first()\u001b[22m\n",
                     "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=submit], button').filter({ hasText: /create|sign.?up|register|continue/i }).first()\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:72:19",
@@ -298,13 +816,13 @@
                         "column": 19,
                         "line": 72
                       },
-                      "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=submit], button').filter({ hasText: /create|sign.?up|register|continue/i }).first()\u001b[22m\n\n\n  70 |   await passInput.fill(TEST_PASSWORD);\n  71 |   const submitBtn = page.locator(\"button[type=submit], button\").filter({ hasText: /create|sign.?up|register|continue/i }).first();\n> 72 |   await submitBtn.click();\n     |                   ^\n  73 |   await page.waitForTimeout(2000);\n  74 |   // After register, modal should close or token should appear in localStorage\n  75 |   const token = await page.evaluate(() => localStorage.getItem(\"token\"));\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:72:19"
+                      "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=submit], button').filter({ hasText: /create|sign.?up|register|continue/i }).first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 70 |\u001b[39m   \u001b[36mawait\u001b[39m passInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_PASSWORD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m   \u001b[36mconst\u001b[39m submitBtn \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"button[type=submit], button\"\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/create|sign.?up|register|continue/i\u001b[39m })\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m   \u001b[36mawait\u001b[39m submitBtn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m2000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m   \u001b[90m// After register, modal should close or token should appear in localStorage\u001b[39m\n \u001b[90m 75 |\u001b[39m   \u001b[36mconst\u001b[39m token \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate(() \u001b[33m=>\u001b[39m localStorage\u001b[33m.\u001b[39mgetItem(\u001b[32m\"token\"\u001b[39m))\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:72:19\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:55:08.060Z",
+                  "startTime": "2026-07-13T07:58:28.788Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -325,10 +843,10 @@
                   }
                 },
                 {
-                  "workerIndex": 3,
+                  "workerIndex": 11,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 65309,
+                  "duration": 64832,
                   "error": {
                     "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=submit], button').filter({ hasText: /create|sign.?up|register|continue/i }).first()\u001b[22m\n",
                     "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=submit], button').filter({ hasText: /create|sign.?up|register|continue/i }).first()\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:72:19",
@@ -346,13 +864,13 @@
                         "column": 19,
                         "line": 72
                       },
-                      "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=submit], button').filter({ hasText: /create|sign.?up|register|continue/i }).first()\u001b[22m\n\n\n  70 |   await passInput.fill(TEST_PASSWORD);\n  71 |   const submitBtn = page.locator(\"button[type=submit], button\").filter({ hasText: /create|sign.?up|register|continue/i }).first();\n> 72 |   await submitBtn.click();\n     |                   ^\n  73 |   await page.waitForTimeout(2000);\n  74 |   // After register, modal should close or token should appear in localStorage\n  75 |   const token = await page.evaluate(() => localStorage.getItem(\"token\"));\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:72:19"
+                      "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=submit], button').filter({ hasText: /create|sign.?up|register|continue/i }).first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 70 |\u001b[39m   \u001b[36mawait\u001b[39m passInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_PASSWORD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m   \u001b[36mconst\u001b[39m submitBtn \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"button[type=submit], button\"\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/create|sign.?up|register|continue/i\u001b[39m })\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m   \u001b[36mawait\u001b[39m submitBtn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m2000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m   \u001b[90m// After register, modal should close or token should appear in localStorage\u001b[39m\n \u001b[90m 75 |\u001b[39m   \u001b[36mconst\u001b[39m token \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate(() \u001b[33m=>\u001b[39m localStorage\u001b[33m.\u001b[39mgetItem(\u001b[32m\"token\"\u001b[39m))\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:72:19\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 1,
-                  "startTime": "2026-07-13T06:56:15.136Z",
+                  "startTime": "2026-07-13T07:59:36.459Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -394,10 +912,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 4,
+                  "workerIndex": 12,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 8130,
+                  "duration": 6736,
                   "error": {
                     "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m",
                     "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:93:17",
@@ -415,13 +933,13 @@
                         "column": 17,
                         "line": 93
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n\n  91 |   await page.waitForTimeout(2000);\n  92 |   const token = await page.evaluate(() => localStorage.getItem(\"token\"));\n> 93 |   expect(token).toBeTruthy();\n     |                 ^\n  94 |   console.log(\"Login: token obtained\");\n  95 | });\n  96 |\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:93:17"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n\n\u001b[0m \u001b[90m 91 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m2000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 92 |\u001b[39m   \u001b[36mconst\u001b[39m token \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate(() \u001b[33m=>\u001b[39m localStorage\u001b[33m.\u001b[39mgetItem(\u001b[32m\"token\"\u001b[39m))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 93 |\u001b[39m   expect(token)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 94 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m\"Login: token obtained\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 95 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 96 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:93:17\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:57:22.111Z",
+                  "startTime": "2026-07-13T08:00:42.807Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -442,10 +960,10 @@
                   }
                 },
                 {
-                  "workerIndex": 5,
+                  "workerIndex": 13,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 7962,
+                  "duration": 5880,
                   "error": {
                     "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m",
                     "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:93:17",
@@ -463,13 +981,13 @@
                         "column": 17,
                         "line": 93
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n\n  91 |   await page.waitForTimeout(2000);\n  92 |   const token = await page.evaluate(() => localStorage.getItem(\"token\"));\n> 93 |   expect(token).toBeTruthy();\n     |                 ^\n  94 |   console.log(\"Login: token obtained\");\n  95 | });\n  96 |\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:93:17"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n\n\u001b[0m \u001b[90m 91 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m2000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 92 |\u001b[39m   \u001b[36mconst\u001b[39m token \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate(() \u001b[33m=>\u001b[39m localStorage\u001b[33m.\u001b[39mgetItem(\u001b[32m\"token\"\u001b[39m))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 93 |\u001b[39m   expect(token)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 94 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m\"Login: token obtained\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 95 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 96 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:93:17\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 1,
-                  "startTime": "2026-07-13T06:57:32.254Z",
+                  "startTime": "2026-07-13T08:00:50.901Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -511,10 +1029,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 14,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4765,
+                  "duration": 3427,
                   "errors": [],
                   "stdout": [
                     {
@@ -523,7 +1041,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:57:42.407Z",
+                  "startTime": "2026-07-13T08:00:58.106Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -549,15 +1067,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 14,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4945,
+                  "duration": 3418,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:57:47.561Z",
+                  "startTime": "2026-07-13T08:01:01.750Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -583,15 +1101,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 14,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3512,
+                  "duration": 3476,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:57:52.554Z",
+                  "startTime": "2026-07-13T08:01:05.202Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -617,10 +1135,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 14,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 610,
+                  "duration": 645,
                   "errors": [],
                   "stdout": [
                     {
@@ -629,7 +1147,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:57:56.106Z",
+                  "startTime": "2026-07-13T08:01:08.709Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -655,15 +1173,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 14,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3826,
+                  "duration": 2988,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:57:56.763Z",
+                  "startTime": "2026-07-13T08:01:09.389Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -689,10 +1207,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 14,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5690,
+                  "duration": 4549,
                   "errors": [],
                   "stdout": [
                     {
@@ -704,7 +1222,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:58:00.629Z",
+                  "startTime": "2026-07-13T08:01:12.412Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -730,10 +1248,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 14,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 35937,
+                  "duration": 35319,
                   "error": {
                     "message": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=email], input[placeholder*=email i]').first()\u001b[22m\n",
                     "stack": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=email], input[placeholder*=email i]').first()\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:215:20",
@@ -751,13 +1269,13 @@
                         "column": 20,
                         "line": 215
                       },
-                      "message": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=email], input[placeholder*=email i]').first()\u001b[22m\n\n\n  213 |   const emailInput = page.locator(\"input[type=email], input[placeholder*=email i]\").first();\n  214 |   const passInput  = page.locator(\"input[type=password]\").first();\n> 215 |   await emailInput.fill(ADMIN_EMAIL);\n      |                    ^\n  216 |   await passInput.fill(ADMIN_PASSWORD);\n  217 |   const submitBtn = page.locator(\"button[type=submit], button\").filter({ hasText: /login|sign.?in|continue/i }).first();\n  218 |   await submitBtn.click();\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:215:20"
+                      "message": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=email], input[placeholder*=email i]').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 213 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"input[type=email], input[placeholder*=email i]\"\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 214 |\u001b[39m   \u001b[36mconst\u001b[39m passInput  \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"input[type=password]\"\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 215 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[33mADMIN_EMAIL\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 216 |\u001b[39m   \u001b[36mawait\u001b[39m passInput\u001b[33m.\u001b[39mfill(\u001b[33mADMIN_PASSWORD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 217 |\u001b[39m   \u001b[36mconst\u001b[39m submitBtn \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"button[type=submit], button\"\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/login|sign.?in|continue/i\u001b[39m })\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 218 |\u001b[39m   \u001b[36mawait\u001b[39m submitBtn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:215:20\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:58:06.368Z",
+                  "startTime": "2026-07-13T08:01:16.994Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -778,10 +1296,10 @@
                   }
                 },
                 {
-                  "workerIndex": 7,
+                  "workerIndex": 15,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 36472,
+                  "duration": 35594,
                   "error": {
                     "message": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=email], input[placeholder*=email i]').first()\u001b[22m\n",
                     "stack": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=email], input[placeholder*=email i]').first()\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:215:20",
@@ -799,13 +1317,13 @@
                         "column": 20,
                         "line": 215
                       },
-                      "message": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=email], input[placeholder*=email i]').first()\u001b[22m\n\n\n  213 |   const emailInput = page.locator(\"input[type=email], input[placeholder*=email i]\").first();\n  214 |   const passInput  = page.locator(\"input[type=password]\").first();\n> 215 |   await emailInput.fill(ADMIN_EMAIL);\n      |                    ^\n  216 |   await passInput.fill(ADMIN_PASSWORD);\n  217 |   const submitBtn = page.locator(\"button[type=submit], button\").filter({ hasText: /login|sign.?in|continue/i }).first();\n  218 |   await submitBtn.click();\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:215:20"
+                      "message": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=email], input[placeholder*=email i]').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 213 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"input[type=email], input[placeholder*=email i]\"\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 214 |\u001b[39m   \u001b[36mconst\u001b[39m passInput  \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"input[type=password]\"\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 215 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[33mADMIN_EMAIL\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 216 |\u001b[39m   \u001b[36mawait\u001b[39m passInput\u001b[33m.\u001b[39mfill(\u001b[33mADMIN_PASSWORD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 217 |\u001b[39m   \u001b[36mconst\u001b[39m submitBtn \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"button[type=submit], button\"\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/login|sign.?in|continue/i\u001b[39m })\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 218 |\u001b[39m   \u001b[36mawait\u001b[39m submitBtn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:215:20\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 1,
-                  "startTime": "2026-07-13T06:58:43.922Z",
+                  "startTime": "2026-07-13T08:01:53.662Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -847,10 +1365,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 8,
+                  "workerIndex": 16,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 7601,
+                  "duration": 5998,
                   "errors": [],
                   "stdout": [
                     {
@@ -859,7 +1377,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:59:22.234Z",
+                  "startTime": "2026-07-13T08:02:30.779Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -885,10 +1403,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 8,
+                  "workerIndex": 16,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3382,
+                  "duration": 3409,
                   "errors": [],
                   "stdout": [
                     {
@@ -897,7 +1415,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:59:30.161Z",
+                  "startTime": "2026-07-13T08:02:37.058Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -923,7 +1441,7 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 8,
+                  "workerIndex": 16,
                   "parallelIndex": 0,
                   "status": "passed",
                   "duration": 3367,
@@ -935,7 +1453,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:59:33.596Z",
+                  "startTime": "2026-07-13T08:02:40.503Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -961,10 +1479,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 8,
+                  "workerIndex": 16,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 2490,
+                  "duration": 662,
                   "error": {
                     "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
                     "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:270:21",
@@ -982,13 +1500,13 @@
                         "column": 21,
                         "line": 270
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  268 | test(\"16_api_auth_register\", async () => {\n  269 |   const d = await apiCall(\"/api/user/register\", \"POST\", { name: \"PW Test\", email: `pw2_${TS}@t.com`, password: \"password123\" });\n> 270 |   expect(d.success).toBe(true);\n      |                     ^\n  271 |   expect(d.token).toBeTruthy();\n  272 | });\n  273 |\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:270:21"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 268 |\u001b[39m test(\u001b[32m\"16_api_auth_register\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 269 |\u001b[39m   \u001b[36mconst\u001b[39m d \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/user/register\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"POST\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m\"PW Test\"\u001b[39m\u001b[33m,\u001b[39m email\u001b[33m:\u001b[39m \u001b[32m`pw2_${TS}@t.com`\u001b[39m\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m \u001b[32m\"password123\"\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 270 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 271 |\u001b[39m   expect(d\u001b[33m.\u001b[39mtoken)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m 272 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 273 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:270:21\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:59:37.010Z",
+                  "startTime": "2026-07-13T08:02:43.910Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -1004,10 +1522,10 @@
                   }
                 },
                 {
-                  "workerIndex": 9,
+                  "workerIndex": 17,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 724,
+                  "duration": 595,
                   "error": {
                     "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
                     "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:270:21",
@@ -1025,13 +1543,13 @@
                         "column": 21,
                         "line": 270
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  268 | test(\"16_api_auth_register\", async () => {\n  269 |   const d = await apiCall(\"/api/user/register\", \"POST\", { name: \"PW Test\", email: `pw2_${TS}@t.com`, password: \"password123\" });\n> 270 |   expect(d.success).toBe(true);\n      |                     ^\n  271 |   expect(d.token).toBeTruthy();\n  272 | });\n  273 |\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:270:21"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 268 |\u001b[39m test(\u001b[32m\"16_api_auth_register\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 269 |\u001b[39m   \u001b[36mconst\u001b[39m d \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/user/register\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"POST\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m\"PW Test\"\u001b[39m\u001b[33m,\u001b[39m email\u001b[33m:\u001b[39m \u001b[32m`pw2_${TS}@t.com`\u001b[39m\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m \u001b[32m\"password123\"\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 270 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 271 |\u001b[39m   expect(d\u001b[33m.\u001b[39mtoken)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m 272 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 273 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:270:21\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 1,
-                  "startTime": "2026-07-13T06:59:40.723Z",
+                  "startTime": "2026-07-13T08:02:45.948Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -1068,10 +1586,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 10,
+                  "workerIndex": 18,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 1214,
+                  "duration": 525,
                   "error": {
                     "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
                     "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:276:21",
@@ -1089,13 +1607,13 @@
                         "column": 21,
                         "line": 276
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  274 | test(\"17_api_auth_login_valid\", async () => {\n  275 |   const d = await apiCall(\"/api/user/login\", \"POST\", { email: TEST_EMAIL, password: TEST_PASSWORD });\n> 276 |   expect(d.success).toBe(true);\n      |                     ^\n  277 |   expect(d.token).toBeTruthy();\n  278 | });\n  279 |\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:276:21"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 274 |\u001b[39m test(\u001b[32m\"17_api_auth_login_valid\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 275 |\u001b[39m   \u001b[36mconst\u001b[39m d \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/user/login\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"POST\"\u001b[39m\u001b[33m,\u001b[39m { email\u001b[33m:\u001b[39m \u001b[33mTEST_EMAIL\u001b[39m\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m \u001b[33mTEST_PASSWORD\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 276 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 277 |\u001b[39m   expect(d\u001b[33m.\u001b[39mtoken)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m 278 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 279 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:276:21\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:59:43.100Z",
+                  "startTime": "2026-07-13T08:02:48.084Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -1111,10 +1629,10 @@
                   }
                 },
                 {
-                  "workerIndex": 11,
+                  "workerIndex": 19,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 1555,
+                  "duration": 1281,
                   "error": {
                     "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
                     "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:276:21",
@@ -1132,13 +1650,13 @@
                         "column": 21,
                         "line": 276
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  274 | test(\"17_api_auth_login_valid\", async () => {\n  275 |   const d = await apiCall(\"/api/user/login\", \"POST\", { email: TEST_EMAIL, password: TEST_PASSWORD });\n> 276 |   expect(d.success).toBe(true);\n      |                     ^\n  277 |   expect(d.token).toBeTruthy();\n  278 | });\n  279 |\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:276:21"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 274 |\u001b[39m test(\u001b[32m\"17_api_auth_login_valid\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 275 |\u001b[39m   \u001b[36mconst\u001b[39m d \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/user/login\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"POST\"\u001b[39m\u001b[33m,\u001b[39m { email\u001b[33m:\u001b[39m \u001b[33mTEST_EMAIL\u001b[39m\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m \u001b[33mTEST_PASSWORD\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 276 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 277 |\u001b[39m   expect(d\u001b[33m.\u001b[39mtoken)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m 278 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 279 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:276:21\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 1,
-                  "startTime": "2026-07-13T06:59:45.846Z",
+                  "startTime": "2026-07-13T08:02:50.063Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -1175,15 +1693,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 12,
+                  "workerIndex": 20,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1074,
+                  "duration": 1061,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:59:49.347Z",
+                  "startTime": "2026-07-13T08:02:52.719Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1209,10 +1727,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 12,
+                  "workerIndex": 20,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 461,
+                  "duration": 334,
                   "error": {
                     "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
                     "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:287:21",
@@ -1230,13 +1748,13 @@
                         "column": 21,
                         "line": 287
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  285 | test(\"19_api_food_list\", async () => {\n  286 |   const d = await apiCall(\"/api/food/list\");\n> 287 |   expect(d.success).toBe(true);\n      |                     ^\n  288 |   expect(d.data.length).toBeGreaterThan(0);\n  289 |   console.log(`Food items: ${d.data.length}`);\n  290 | });\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:287:21"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 285 |\u001b[39m test(\u001b[32m\"19_api_food_list\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 286 |\u001b[39m   \u001b[36mconst\u001b[39m d \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/food/list\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 287 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 288 |\u001b[39m   expect(d\u001b[33m.\u001b[39mdata\u001b[33m.\u001b[39mlength)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 289 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m`Food items: ${d.data.length}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 290 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:287:21\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:59:50.498Z",
+                  "startTime": "2026-07-13T08:02:53.856Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -1252,10 +1770,10 @@
                   }
                 },
                 {
-                  "workerIndex": 13,
+                  "workerIndex": 21,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 771,
+                  "duration": 560,
                   "error": {
                     "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
                     "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:287:21",
@@ -1273,13 +1791,13 @@
                         "column": 21,
                         "line": 287
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  285 | test(\"19_api_food_list\", async () => {\n  286 |   const d = await apiCall(\"/api/food/list\");\n> 287 |   expect(d.success).toBe(true);\n      |                     ^\n  288 |   expect(d.data.length).toBeGreaterThan(0);\n  289 |   console.log(`Food items: ${d.data.length}`);\n  290 | });\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:287:21"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 285 |\u001b[39m test(\u001b[32m\"19_api_food_list\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 286 |\u001b[39m   \u001b[36mconst\u001b[39m d \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/food/list\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 287 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 288 |\u001b[39m   expect(d\u001b[33m.\u001b[39mdata\u001b[33m.\u001b[39mlength)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 289 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m`Food items: ${d.data.length}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 290 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:287:21\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 1,
-                  "startTime": "2026-07-13T06:59:52.203Z",
+                  "startTime": "2026-07-13T08:02:55.404Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -1316,15 +1834,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 14,
+                  "workerIndex": 22,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 966,
+                  "duration": 817,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:59:54.486Z",
+                  "startTime": "2026-07-13T08:02:57.412Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1350,15 +1868,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 14,
+                  "workerIndex": 22,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 820,
+                  "duration": 334,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:59:55.526Z",
+                  "startTime": "2026-07-13T08:02:58.292Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1384,15 +1902,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 14,
+                  "workerIndex": 22,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 582,
+                  "duration": 502,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:59:56.374Z",
+                  "startTime": "2026-07-13T08:02:58.647Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1418,10 +1936,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 14,
+                  "workerIndex": 22,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 613,
+                  "duration": 340,
                   "errors": [],
                   "stdout": [
                     {
@@ -1430,7 +1948,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:59:56.986Z",
+                  "startTime": "2026-07-13T08:02:59.173Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1456,15 +1974,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 14,
+                  "workerIndex": 22,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 351,
+                  "duration": 342,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:59:57.644Z",
+                  "startTime": "2026-07-13T08:02:59.536Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1490,10 +2008,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 14,
+                  "workerIndex": 22,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 337,
+                  "duration": 341,
                   "errors": [],
                   "stdout": [
                     {
@@ -1502,7 +2020,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:59:58.073Z",
+                  "startTime": "2026-07-13T08:02:59.924Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1528,10 +2046,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 14,
+                  "workerIndex": 22,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 508,
+                  "duration": 334,
                   "errors": [],
                   "stdout": [
                     {
@@ -1540,7 +2058,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:59:58.456Z",
+                  "startTime": "2026-07-13T08:03:00.285Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1566,10 +2084,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 14,
+                  "workerIndex": 22,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1136,
+                  "duration": 1037,
                   "errors": [],
                   "stdout": [
                     {
@@ -1578,7 +2096,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T06:59:58.996Z",
+                  "startTime": "2026-07-13T08:03:00.643Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1604,10 +2122,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 14,
+                  "workerIndex": 22,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 633,
+                  "duration": 703,
                   "errors": [],
                   "stdout": [
                     {
@@ -1616,7 +2134,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T07:00:00.209Z",
+                  "startTime": "2026-07-13T08:03:01.722Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1642,10 +2160,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 14,
+                  "workerIndex": 22,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 364,
+                  "duration": 328,
                   "errors": [],
                   "stdout": [
                     {
@@ -1654,7 +2172,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T07:00:00.879Z",
+                  "startTime": "2026-07-13T08:03:02.446Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1680,10 +2198,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 14,
+                  "workerIndex": 22,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 541,
+                  "duration": 463,
                   "errors": [],
                   "stdout": [
                     {
@@ -1692,7 +2210,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T07:00:01.293Z",
+                  "startTime": "2026-07-13T08:03:02.792Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1718,10 +2236,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 14,
+                  "workerIndex": 22,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 307,
+                  "duration": 382,
                   "errors": [],
                   "stdout": [
                     {
@@ -1730,7 +2248,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T07:00:01.880Z",
+                  "startTime": "2026-07-13T08:03:03.274Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1756,15 +2274,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 14,
+                  "workerIndex": 22,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 321,
+                  "duration": 352,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T07:00:02.241Z",
+                  "startTime": "2026-07-13T08:03:03.676Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1790,10 +2308,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 14,
+                  "workerIndex": 22,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 373,
+                  "duration": 374,
                   "error": {
                     "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
                     "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:395:21",
@@ -1811,13 +2329,13 @@
                         "column": 21,
                         "line": 395
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  393 |   const d  = await apiCall(\"/api/food/list\");\n  394 |   const ms = Date.now() - t0;\n> 395 |   expect(d.success).toBe(true);\n      |                     ^\n  396 |   console.log(`Food list response time: ${ms}ms`);\n  397 |   // Warn but not fail - Render free tier can be slow on cold start\n  398 |   if (ms > 5000) console.log(\"WARNING: Slow response > 5s (Render cold start?)\");\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:395:21"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 393 |\u001b[39m   \u001b[36mconst\u001b[39m d  \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/food/list\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 394 |\u001b[39m   \u001b[36mconst\u001b[39m ms \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow() \u001b[33m-\u001b[39m t0\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 395 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 396 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m`Food list response time: ${ms}ms`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 397 |\u001b[39m   \u001b[90m// Warn but not fail - Render free tier can be slow on cold start\u001b[39m\n \u001b[90m 398 |\u001b[39m   \u001b[36mif\u001b[39m (ms \u001b[33m>\u001b[39m \u001b[35m5000\u001b[39m) console\u001b[33m.\u001b[39mlog(\u001b[32m\"WARNING: Slow response > 5s (Render cold start?)\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:395:21\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T07:00:02.627Z",
+                  "startTime": "2026-07-13T08:03:04.054Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -1833,10 +2351,10 @@
                   }
                 },
                 {
-                  "workerIndex": 15,
+                  "workerIndex": 23,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 712,
+                  "duration": 586,
                   "error": {
                     "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
                     "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:395:21",
@@ -1854,13 +2372,13 @@
                         "column": 21,
                         "line": 395
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  393 |   const d  = await apiCall(\"/api/food/list\");\n  394 |   const ms = Date.now() - t0;\n> 395 |   expect(d.success).toBe(true);\n      |                     ^\n  396 |   console.log(`Food list response time: ${ms}ms`);\n  397 |   // Warn but not fail - Render free tier can be slow on cold start\n  398 |   if (ms > 5000) console.log(\"WARNING: Slow response > 5s (Render cold start?)\");\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:395:21"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 393 |\u001b[39m   \u001b[36mconst\u001b[39m d  \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m apiCall(\u001b[32m\"/api/food/list\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 394 |\u001b[39m   \u001b[36mconst\u001b[39m ms \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow() \u001b[33m-\u001b[39m t0\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 395 |\u001b[39m   expect(d\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 396 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m`Food list response time: ${ms}ms`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 397 |\u001b[39m   \u001b[90m// Warn but not fail - Render free tier can be slow on cold start\u001b[39m\n \u001b[90m 398 |\u001b[39m   \u001b[36mif\u001b[39m (ms \u001b[33m>\u001b[39m \u001b[35m5000\u001b[39m) console\u001b[33m.\u001b[39mlog(\u001b[32m\"WARNING: Slow response > 5s (Render cold start?)\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:395:21\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 1,
-                  "startTime": "2026-07-13T07:00:04.411Z",
+                  "startTime": "2026-07-13T08:03:05.612Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -1897,10 +2415,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 16,
+                  "workerIndex": 24,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 8413,
+                  "duration": 5859,
                   "errors": [],
                   "stdout": [
                     {
@@ -1912,7 +2430,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T07:00:06.674Z",
+                  "startTime": "2026-07-13T08:03:07.687Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1938,10 +2456,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 16,
+                  "workerIndex": 24,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 677,
+                  "duration": 1065,
                   "error": {
                     "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
                     "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:427:22",
@@ -1959,13 +2477,13 @@
                         "column": 22,
                         "line": 427
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  425 |     apiCall(\"/api/food/list\"),\n  426 |   ]);\n> 427 |   expect(r1.success).toBe(true);\n      |                      ^\n  428 |   expect(r2.success).toBe(true);\n  429 |   expect(r3.success).toBe(true);\n  430 |   console.log(\"Concurrent requests: all 3 succeeded\");\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:427:22"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 425 |\u001b[39m     apiCall(\u001b[32m\"/api/food/list\"\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 426 |\u001b[39m   ])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 427 |\u001b[39m   expect(r1\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 428 |\u001b[39m   expect(r2\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 429 |\u001b[39m   expect(r3\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 430 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m\"Concurrent requests: all 3 succeeded\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:427:22\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T07:00:15.413Z",
+                  "startTime": "2026-07-13T08:03:13.781Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -1981,10 +2499,10 @@
                   }
                 },
                 {
-                  "workerIndex": 17,
+                  "workerIndex": 25,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 1144,
+                  "duration": 561,
                   "error": {
                     "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
                     "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:427:22",
@@ -2002,13 +2520,13 @@
                         "column": 22,
                         "line": 427
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  425 |     apiCall(\"/api/food/list\"),\n  426 |   ]);\n> 427 |   expect(r1.success).toBe(true);\n      |                      ^\n  428 |   expect(r2.success).toBe(true);\n  429 |   expect(r3.success).toBe(true);\n  430 |   console.log(\"Concurrent requests: all 3 succeeded\");\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:427:22"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 425 |\u001b[39m     apiCall(\u001b[32m\"/api/food/list\"\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 426 |\u001b[39m   ])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 427 |\u001b[39m   expect(r1\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 428 |\u001b[39m   expect(r2\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 429 |\u001b[39m   expect(r3\u001b[33m.\u001b[39msuccess)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 430 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m\"Concurrent requests: all 3 succeeded\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\production.spec.js:427:22\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 1,
-                  "startTime": "2026-07-13T07:00:17.326Z",
+                  "startTime": "2026-07-13T08:03:16.166Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -2045,10 +2563,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 18,
+                  "workerIndex": 26,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 6578,
+                  "duration": 5732,
                   "errors": [],
                   "stdout": [
                     {
@@ -2057,7 +2575,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T07:00:19.741Z",
+                  "startTime": "2026-07-13T08:03:18.229Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -2083,10 +2601,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 18,
+                  "workerIndex": 26,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3863,
+                  "duration": 3583,
                   "errors": [],
                   "stdout": [
                     {
@@ -2095,7 +2613,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-13T07:00:26.577Z",
+                  "startTime": "2026-07-13T08:03:24.193Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -2109,15 +2627,149 @@
           "column": 1
         }
       ]
+    },
+    {
+      "title": "shopping-flow.spec.js",
+      "file": "shopping-flow.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Shopping and Checkout Flow",
+          "file": "shopping-flow.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should browse, add items to cart, and proceed to checkout",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 26,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 325,
+                      "error": {
+                        "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\shopping-flow.spec.js:9:16",
+                        "location": {
+                          "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\shopping-flow.spec.js",
+                          "column": 16,
+                          "line": 9
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  8 |\u001b[39m     \u001b[90m// Register and login a fresh user for shopping\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=Click here'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[name=\"name\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Shopper'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\shopping-flow.spec.js",
+                            "column": 16,
+                            "line": 9
+                          },
+                          "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  7 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  8 |\u001b[39m     \u001b[90m// Register and login a fresh user for shopping\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=Click here'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[name=\"name\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Shopper'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\shopping-flow.spec.js:9:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-13T08:03:27.846Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\shopping-flow-Shopping-and-e8710-art-and-proceed-to-checkout-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\shopping-flow-Shopping-and-e8710-art-and-proceed-to-checkout-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\shopping-flow.spec.js",
+                        "column": 16,
+                        "line": 9
+                      }
+                    },
+                    {
+                      "workerIndex": 27,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 298,
+                      "error": {
+                        "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\shopping-flow.spec.js:9:16",
+                        "location": {
+                          "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\shopping-flow.spec.js",
+                          "column": 16,
+                          "line": 9
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  8 |\u001b[39m     \u001b[90m// Register and login a fresh user for shopping\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=Click here'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[name=\"name\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Shopper'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\shopping-flow.spec.js",
+                            "column": 16,
+                            "line": 9
+                          },
+                          "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  7 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  8 |\u001b[39m     \u001b[90m// Register and login a fresh user for shopping\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"sign in\")'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=Click here'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[name=\"name\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Shopper'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\shopping-flow.spec.js:9:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-07-13T08:03:29.510Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\shopping-flow-Shopping-and-e8710-art-and-proceed-to-checkout-chromium-retry1\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\test-results\\shopping-flow-Shopping-and-e8710-art-and-proceed-to-checkout-chromium-retry1\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\kunal patil\\OneDrive\\Desktop\\foood-delivery\\M_Project\\e2e-tests\\tests\\shopping-flow.spec.js",
+                        "column": 16,
+                        "line": 9
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "26abcded1aad8dd57abc-35d9067402e1b157f3ab",
+              "file": "shopping-flow.spec.js",
+              "line": 20,
+              "column": 3
+            }
+          ]
+        }
+      ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-07-13T06:54:51.021Z",
-    "duration": 339704.488,
+    "startTime": "2026-07-13T07:57:28.353Z",
+    "duration": 361921.544,
     "expected": 28,
     "skipped": 0,
-    "unexpected": 9,
+    "unexpected": 14,
     "flaky": 0
   }
 }

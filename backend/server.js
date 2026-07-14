@@ -33,6 +33,41 @@ connectDB();
 // MIDDLEWARE
 // =======================
 
+// Allowed Origins — hardcoded production URLs are fallbacks in case env vars are not set
+const allowedOrigins = [
+  // Production URLs (hardcoded fallbacks)
+  "https://food-delivery-frontend-9pel.onrender.com",
+  "https://food-delivery-admin-gssu.onrender.com",
+  // From environment variables (overrides / additions)
+  process.env.FRONTEND_URL,
+  process.env.ADMIN_URL,
+  // Local development
+  "http://localhost:5173",
+  "http://localhost:5174",
+].filter(Boolean); // removes undefined/null if env vars are not set
+
+// CORS Configuration — must be registered BEFORE other middleware so that
+// preflight OPTIONS requests receive the correct headers immediately.
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests without origin (Postman, server-to-server, etc.)
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      console.log("Blocked by CORS:", origin);
+
+      return callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
+  })
+);
+
 // Security Headers
 app.use(helmet({
   crossOriginResourcePolicy: false, // allow images to load cross-origin
@@ -55,41 +90,6 @@ app.use(express.json({ limit: "10kb" }));
 app.use(mongoSanitize({
   replaceWith: '_',
 }));
-
-
-// Allowed Origins — hardcoded production URLs are fallbacks in case env vars are not set
-const allowedOrigins = [
-  // Production URLs (hardcoded fallbacks)
-  "https://food-delivery-frontend-9pel.onrender.com",
-  "https://food-delivery-admin-gssu.onrender.com",
-  // From environment variables (overrides / additions)
-  process.env.FRONTEND_URL,
-  process.env.ADMIN_URL,
-  // Local development
-  "http://localhost:5173",
-  "http://localhost:5174",
-].filter(Boolean); // removes undefined/null if env vars are not set
-
-// CORS Configuration
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      // Allow requests without origin (Postman, server-to-server, etc.)
-      if (!origin) {
-        return callback(null, true);
-      }
-
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-
-      console.log("Blocked by CORS:", origin);
-
-      return callback(new Error("Not allowed by CORS"));
-    },
-    credentials: true,
-  })
-);
 
 // =======================
 // STATIC FOLDER
