@@ -1,10 +1,33 @@
 import couponModel from "../models/couponModel.js";
+import mongoose from "mongoose";
 
 // ──────────────────────────────────────────────
 // CREATE COUPON  (admin use via Thunder Client / admin panel)
 // ──────────────────────────────────────────────
 const createCoupon = async (req, res) => {
   try {
+    const {
+      couponCode,
+      discountType,
+      discountValue,
+      minimumOrder,
+      expiryDate,
+    } = req.body;
+
+    // Required field checks
+    if (!couponCode || !couponCode.trim()) {
+      return res.json({ success: false, message: "Coupon code is required" });
+    }
+    if (!discountValue || Number(discountValue) <= 0) {
+      return res.json({ success: false, message: "Discount value must be greater than 0" });
+    }
+    if (discountType === "PERCENTAGE" && Number(discountValue) > 100) {
+      return res.json({ success: false, message: "Percentage discount cannot exceed 100%" });
+    }
+    if (!expiryDate || new Date(expiryDate) <= new Date()) {
+      return res.json({ success: false, message: "Expiry date must be in the future" });
+    }
+
     const coupon = new couponModel(req.body);
     await coupon.save();
 
@@ -14,6 +37,10 @@ const createCoupon = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
+    // Friendly duplicate key error instead of raw Mongoose message
+    if (error.code === 11000) {
+      return res.json({ success: false, message: "Coupon code already exists" });
+    }
     res.json({
       success: false,
       message: error.message,
@@ -135,7 +162,18 @@ const getCoupons = async (req, res) => {
 // ──────────────────────────────────────────────
 const deleteCoupon = async (req, res) => {
   try {
-    await couponModel.findByIdAndDelete(req.params.id);
+    // Validate ObjectId before hitting the database
+    if (!req.params.id || !mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({ success: false, message: "Invalid coupon ID" });
+    }
+
+    const deleted = await couponModel.findByIdAndDelete(req.params.id);
+
+    // Return 404 if the coupon didn't exist rather than a false success
+    if (!deleted) {
+      return res.status(404).json({ success: false, message: "Coupon not found" });
+    }
+
     res.json({ success: true, message: "Coupon Deleted" });
   } catch (error) {
     console.log(error);

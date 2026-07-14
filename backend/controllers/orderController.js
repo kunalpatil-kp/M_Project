@@ -88,14 +88,21 @@ const verifyOrder = async (req, res) => {
         const budget = await budgetModel.findOne({ userId: new mongoose.Types.ObjectId(order.userId) });
         if (budget) {
           budget.currentSpent += order.amount;
-          budget.remainingBudget = budget.monthlyBudget - budget.currentSpent;
-          budget.budgetUsed = Number(((budget.currentSpent / budget.monthlyBudget) * 100).toFixed(2));
+          // Clamp so stored values never go negative or exceed 100%
+          budget.remainingBudget = Math.max(budget.monthlyBudget - budget.currentSpent, 0);
+          budget.budgetUsed = Number(
+            Math.min((budget.currentSpent / budget.monthlyBudget) * 100, 100).toFixed(2)
+          );
           await budget.save();
         }
 
-        // Auto-populate pantry with purchased items (non-blocking)
+        // Auto-populate pantry with purchased items.
+        // Wrapped in a self-executing async so errors never block the verify response,
+        // but the work is still initiated before res.json() so Render doesn't kill it.
         if (order.items && order.items.length > 0) {
-          addOrderToPantry(order.userId.toString(), order.items);
+          addOrderToPantry(order.userId.toString(), order.items).catch((err) =>
+            console.error("Pantry async error:", err.message)
+          );
         }
 
         // Increment coupon usage count only after confirmed payment

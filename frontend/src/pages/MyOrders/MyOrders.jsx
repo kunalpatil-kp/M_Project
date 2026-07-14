@@ -34,33 +34,39 @@ const MyOrders = () => {
     <div className="my-orders">
       <h2>My Orders</h2>
       <div className="container">
-        {data.map((order, index) => (
-          <div key={order._id || index} className="my-orders-order">
-            <img src={assets.parcel_icon} alt="" />
-            <p>
-              {order.items.map((item, itemIndex) => (
-                <span key={itemIndex}>
-                  {item.name} x {item.quantity}
-                  {itemIndex < order.items.length - 1 ? ", " : ""}
-                </span>
-              ))}
-            </p>
-            <p>₹{order.amount}.00</p>
-            <p>Items: {order.items.length}</p>
-            <p>
-              <span>&#x25cf;</span> <b>{order.status}</b>
-            </p>
-            <div className="order-buttons">
-              <button onClick={fetchOrders}>Track Order</button>
-              <button
-                className="invoice-btn"
-                onClick={() => generateInvoice(order)}
-              >
-                Download Invoice
-              </button>
+        {!token ? (
+          <p>Please login to view your orders.</p>
+        ) : data.length === 0 ? (
+          <p>You have no orders yet.</p>
+        ) : (
+          data.map((order, index) => (
+            <div key={order._id || index} className="my-orders-order">
+              <img src={assets.parcel_icon} alt="parcel" />
+              <p>
+                {order.items.map((item, itemIndex) => (
+                  <span key={itemIndex}>
+                    {item.name} x {item.quantity}
+                    {itemIndex < order.items.length - 1 ? ", " : ""}
+                  </span>
+                ))}
+              </p>
+              <p>₹{order.amount}.00</p>
+              <p>Items: {order.items.length}</p>
+              <p>
+                <span>&#x25cf;</span> <b>{order.status}</b>
+              </p>
+              <div className="order-buttons">
+                <button onClick={fetchOrders}>Track Order</button>
+                <button
+                  className="invoice-btn"
+                  onClick={() => generateInvoice(order)}
+                >
+                  Download Invoice
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );

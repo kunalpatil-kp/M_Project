@@ -8,7 +8,10 @@ export const StoreContextProvider = (props) => {
 
   const [food_list, setFoodList] = useState([]);
   const [cartItems, setCartItems] = useState({});
-  const [token, setToken] = useState("");
+  // Initialise synchronously from localStorage so protected pages that read
+  // token on first render (SmartPantry, PlaceOrder) don't see "" and redirect
+  // away before the async useEffect has a chance to restore it.
+  const [token, setToken] = useState(localStorage.getItem("token") || "");
 
   // ── COUPON STATE ──────────────────────────────
   const [couponCode, setCouponCode] = useState("");       // what the user typed
@@ -120,7 +123,10 @@ export const StoreContextProvider = (props) => {
       if (response.data.success) {
         setCartItems(response.data.cartData || {});
       } else {
+        // Token is expired or invalid — clear it so the user is shown the login prompt
         setCartItems({});
+        setToken("");
+        localStorage.removeItem("token");
       }
     } catch (error) {
       console.log(error);
@@ -137,6 +143,8 @@ export const StoreContextProvider = (props) => {
       const savedToken = localStorage.getItem("token");
 
       if (savedToken) {
+        // token is already set synchronously in useState above;
+        // only call setToken here in case it was cleared elsewhere mid-session.
         setToken(savedToken);
         await loadCartData(savedToken);
       }

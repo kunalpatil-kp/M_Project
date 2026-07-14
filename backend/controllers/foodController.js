@@ -3,19 +3,30 @@ import fs from "fs";
 
 // add food item
 const addFood = async (req, res) => {
-  let image_filename = `${req.file.filename}`;
-  const food = new foodModel({
-    name: req.body.name,
-    description: req.body.description,
-    price: req.body.price,
-    category: req.body.category,
-    image: image_filename,
-  });
+  // Guard: multer fileFilter may reject the file or no file was sent
+  if (!req.file) {
+    return res.json({ success: false, message: "Image file is required. Only JPG, PNG, and WebP are allowed (max 5MB)." });
+  }
+
+  const image_filename = req.file.filename;
+
   try {
+    const food = new foodModel({
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      category: req.body.category,
+      image: image_filename,
+    });
     await food.save();
     res.json({ success: true, message: "Food Added" });
   } catch (error) {
-    res.json({ success: false, message: "Error" });
+    // DB save failed — delete the already-uploaded file to avoid orphans
+    fs.unlink(`uploads/${image_filename}`, (err) => {
+      if (err) console.warn(`Failed to clean up orphaned image: ${err.message}`);
+    });
+    console.error(error);
+    res.json({ success: false, message: "Error saving food item" });
   }
 };
 

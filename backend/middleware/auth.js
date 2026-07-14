@@ -4,7 +4,7 @@ const authMiddleware = async (req, res, next) => {
   const { token } = req.headers;
 
   if (!token) {
-    return res.json({ success: false, message: "Not Authorized Login Again" });
+    return res.status(401).json({ success: false, message: "Not Authorized Login Again" });
   }
 
   try {
@@ -18,7 +18,7 @@ const authMiddleware = async (req, res, next) => {
     req.body.userId = token_decode.id;
     next();
   } catch (error) {
-    res.json({ success: false, message: "Invalid Token. Please login again." });
+    return res.status(401).json({ success: false, message: "Invalid Token. Please login again." });
   }
 };
 

@@ -97,12 +97,30 @@ const getPantry = async (req, res) => {
       const msPerDay = 1000 * 60 * 60 * 24;
       const remainingDays = Math.ceil((expiryDate - now) / msPerDay);
 
-      // Status logic
+      // ── Proportional status logic ──────────────────────────────────────────
+      // Thresholds are purely relative to estimatedDays so every item —
+      // including very short-shelf ones (Sandwich = 2 days) — passes through
+      // all four statuses during its lifetime:
+      //
+      //   > 50%  remaining  →  Fresh      (green)
+      //   > 25%  remaining  →  Use Soon   (yellow)
+      //   >  0%  remaining  →  Low Stock  (orange)
+      //   ≤  0   remaining  →  Reorder Now (red)
+      //
+      // For a 2-day item: Fresh on day 2 (100%), Use Soon on day 1 (50%),
+      // Low Stock never applies (jumps from Use Soon to Reorder), which is
+      // acceptable — the important thing is Use Soon IS reachable.
+      // We use strict inequalities and keep the bands as distinct percentages.
+
+      const pct = item.estimatedDays > 0
+        ? remainingDays / item.estimatedDays
+        : 0;
+
       let status, statusColor;
-      if (remainingDays > item.estimatedDays * 0.5) {
+      if (pct > 0.5) {
         status = "Fresh";
         statusColor = "green";
-      } else if (remainingDays > 2) {
+      } else if (pct > 0.25) {
         status = "Use Soon";
         statusColor = "yellow";
       } else if (remainingDays > 0) {
@@ -159,11 +177,22 @@ const removeFromPantry = async (req, res) => {
     const userId = new mongoose.Types.ObjectId(req.body.userId);
     const { itemId } = req.body;
 
-    await pantryModel.updateOne(
+    // 400 — missing or malformed itemId
+    if (!itemId || !mongoose.Types.ObjectId.isValid(itemId)) {
+      return res.status(400).json({ success: false, message: "Invalid item ID" });
+    }
+
+    const result = await pantryModel.updateOne(
       { userId },
       { $pull: { items: { _id: new mongoose.Types.ObjectId(itemId) } } }
     );
 
+    // 404 — pantry exists but itemId was not found inside it
+    if (result.modifiedCount === 0) {
+      return res.status(404).json({ success: false, message: "Pantry item not found" });
+    }
+
+    // 200 — removed successfully
     res.json({ success: true, message: "Item removed from pantry" });
   } catch (error) {
     console.error("removeFromPantry error:", error);

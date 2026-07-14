@@ -82,7 +82,7 @@ const generateInvoice = (order) => {
 
   doc.setFontSize(11);
   doc.setTextColor(0, 128, 0);
-  doc.text("Payment Status : Paid", 15, finalY + 10);
+  doc.text(`Payment Status : ${order.payment ? "Paid" : "Pending"}`, 15, finalY + 10);
 
   doc.setTextColor(100, 100, 100);
   doc.text("Thank you for shopping with Fresh Grocery!", 15, finalY + 22);

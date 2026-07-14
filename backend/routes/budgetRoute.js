@@ -5,6 +5,7 @@ import {
   createBudget,
   getBudget,
   updateBudget,
+  resetBudget,
   deleteBudget,
   getBudgetAnalytics
 } from "../controllers/budgetController.js";
@@ -16,6 +17,8 @@ budgetRouter.post("/create", authMiddleware, createBudget);
 budgetRouter.get("/get", authMiddleware, getBudget);
 
 budgetRouter.put("/update", authMiddleware, updateBudget);
+
+budgetRouter.post("/reset", authMiddleware, resetBudget);
 
 budgetRouter.delete("/delete", authMiddleware, deleteBudget);
 

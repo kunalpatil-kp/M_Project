@@ -2,6 +2,7 @@ import userModel from "../models/userModel.js";
 import orderModel from "../models/ordermodel.js";
 import budgetModel from "../models/budgetModel.js";
 import foodModel from "../models/foodModel.js";
+import pantryModel from "../models/pantryModel.js";
 
 // AI Smart Grocery Recommendation Engine
 const getRecommendations = async (req, res) => {
@@ -54,6 +55,34 @@ const getRecommendations = async (req, res) => {
     }
 
     const remainingBudget = budget ? budget.remainingBudget : null;
+
+    // ── Pantry boost: items running Low Stock (orange) or Reorder Now (red)
+    // are the highest-priority recommendations — the user literally needs them.
+    // We compute status inline using the same proportional logic as getPantry.
+    const pantry = await pantryModel.findOne({ userId });
+    if (pantry && pantry.items.length > 0) {
+      const now = new Date();
+      const msPerDay = 1000 * 60 * 60 * 24;
+      const depletedCategories = new Set();
+
+      pantry.items.forEach((pantryItem) => {
+        const remainingDays = Math.ceil((new Date(pantryItem.expiryDate) - now) / msPerDay);
+        const pct = pantryItem.estimatedDays > 0
+          ? remainingDays / pantryItem.estimatedDays
+          : 0;
+
+        // orange = pct ≤ 0.25 but > 0  |  red = remainingDays ≤ 0
+        if (pct <= 0.25) {
+          depletedCategories.add(pantryItem.category);
+        }
+      });
+
+      if (depletedCategories.size > 0) {
+        availableFoods
+          .filter((f) => depletedCategories.has(f.category))
+          .forEach((f) => addRecommendation(f, "Running low in your pantry — time to reorder"));
+      }
+    }
 
     // Rule 4: Affordable
     if (remainingBudget !== null && remainingBudget < 1000) {

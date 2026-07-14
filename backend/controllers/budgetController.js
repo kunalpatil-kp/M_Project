@@ -122,10 +122,10 @@ const updateBudget = async (req, res) => {
 
     budget.monthlyBudget = Number(monthlyBudget);
     budget.familySize = Number(familySize);
-    budget.remainingBudget = budget.monthlyBudget - budget.currentSpent;
-
+    // Clamp so stored values never go negative or exceed 100% when overspent
+    budget.remainingBudget = Math.max(budget.monthlyBudget - budget.currentSpent, 0);
     budget.budgetUsed = Number(
-      ((budget.currentSpent / budget.monthlyBudget) * 100).toFixed(2),
+      Math.min((budget.currentSpent / budget.monthlyBudget) * 100, 100).toFixed(2),
     );
 
     await budget.save();
@@ -140,6 +140,65 @@ const updateBudget = async (req, res) => {
       success: false,
       message: error.message || "Failed to update budget",
     });
+  }
+};
+
+const resetBudget = async (req, res) => {
+  try {
+    const userId = req.body.userId;
+
+    if (!userId) {
+      return res.json({ success: false, message: "User not authenticated" });
+    }
+
+    const budget = await budgetModel.findOne({
+      userId: new mongoose.Types.ObjectId(userId),
+    });
+
+    if (!budget) {
+      return res.json({ success: false, message: "Budget Planner not found" });
+    }
+
+    // Re-aggregate this month's paid orders to compute the accurate reset baseline.
+    // This handles the edge case where verifyOrder incremented currentSpent across
+    // a month boundary — we always reset to what was actually spent this month.
+    const start = new Date();
+    start.setDate(1);
+    start.setHours(0, 0, 0, 0);
+
+    const end = new Date();
+    end.setMonth(end.getMonth() + 1);
+    end.setDate(0);
+    end.setHours(23, 59, 59, 999);
+
+    const orders = await orderModel.aggregate([
+      {
+        $match: {
+          userId: userId,   // orderModel.userId is type:String
+          payment: true,
+          date: { $gte: start, $lte: end },
+        },
+      },
+      { $group: { _id: null, totalSpent: { $sum: "$amount" } } },
+    ]);
+
+    const currentMonthSpent = orders.length > 0 ? orders[0].totalSpent : 0;
+
+    budget.currentSpent   = currentMonthSpent;
+    budget.remainingBudget = Math.max(budget.monthlyBudget - currentMonthSpent, 0);
+    budget.budgetUsed     = Number(
+      Math.min((currentMonthSpent / budget.monthlyBudget) * 100, 100).toFixed(2)
+    );
+
+    await budget.save();
+
+    res.json({
+      success: true,
+      message: "Budget reset to current month",
+      data: budget,
+    });
+  } catch (error) {
+    res.json({ success: false, message: error.message || "Failed to reset budget" });
   }
 };
 
@@ -235,11 +294,12 @@ const getBudgetAnalytics = async (req, res) => {
       totalOrders = orders[0].totalOrders;
     }
 
-    const remaining = budget.monthlyBudget - spent;
+    const remaining = Math.max(budget.monthlyBudget - spent, 0);
 
-    const budgetUsed = (spent / budget.monthlyBudget) * 100;
+    // Cap at 100 so ProgressBar label and width are always consistent
+    const budgetUsed = Math.min((spent / budget.monthlyBudget) * 100, 100);
 
-    let status = "Excellent";
+    let status;
 
     if (budgetUsed > 90) status = "Budget Almost Finished";
     else if (budgetUsed > 70) status = "Be Careful";
@@ -270,6 +330,7 @@ export {
   createBudget,
   getBudget,
   updateBudget,
+  resetBudget,
   deleteBudget,
   getBudgetAnalytics,
 };
