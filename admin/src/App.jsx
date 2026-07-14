@@ -11,14 +11,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const url = "https://food-delivery-fquq.onrender.com";
-  const [token, setToken] = useState("");
-
-  useEffect(() => {
-    const saved = localStorage.getItem("admin_token");
-    if (saved) {
-      setToken(saved);
-    }
-  }, []);
+  // Initialise directly from localStorage so the second useEffect never
+  // sees token="" on mount and wipes the saved admin_token.
+  const [token, setToken] = useState(localStorage.getItem("admin_token") || "");
 
   useEffect(() => {
     if (token) {
