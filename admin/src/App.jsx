@@ -10,7 +10,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
-  const url = "https://food-delivery-fquq.onrender.com";
+  const url = import.meta.env.VITE_BACKEND_URL || "https://food-delivery-fquq.onrender.com";
   // Initialise directly from localStorage so the second useEffect never
   // sees token="" on mount and wipes the saved admin_token.
   const [token, setToken] = useState(localStorage.getItem("admin_token") || "");
@@ -45,6 +45,8 @@ const App = () => {
           <Route path="/add" element={<Add url={url} token={token} />} />
           <Route path="/list" element={<List url={url} token={token} />} />
           <Route path="/orders" element={<Orders url={url} token={token} />} />
+          {/* 404 fallback */}
+          <Route path="*" element={<Navigate to="/add" replace />} />
         </Routes>
       </div>
     </div>

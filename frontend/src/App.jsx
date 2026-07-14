@@ -27,6 +27,8 @@ const App = () => {
           <Route path="/verify" element={<Verify />} />
           <Route path="/myorders" element={<MyOrders />} />
           <Route path="/pantry" element={<SmartPantry />} />
+          {/* 404 fallback — redirect unknown paths to home */}
+          <Route path="*" element={<Home />} />
         </Routes>
       </div>
       <Footer />

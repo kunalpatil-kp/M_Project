@@ -76,14 +76,17 @@ const PlaceOrder = () => {
     }
   };
 
-  // Redirect if not logged in or cart is empty
+  // Redirect if not logged in or cart is empty.
+  // Guard: only check empty cart once food_list is loaded; if food_list is
+  // still empty on first render getTotalCartAmount() returns 0 even when
+  // the user has items — causing a premature redirect to /cart.
   useEffect(() => {
     if (!token) {
       navigate("/cart");
-    } else if (getTotalCartAmount() === 0) {
+    } else if (food_list.length > 0 && getTotalCartAmount() === 0) {
       navigate("/cart");
     }
-  }, [token, getTotalCartAmount, navigate]);
+  }, [token, getTotalCartAmount, navigate, food_list]);
 
   return (
     <form onSubmit={placeOrder} className="place-order">

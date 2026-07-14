@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../context/StoreContext";
 import { useNavigate } from "react-router-dom";
@@ -24,9 +24,18 @@ const Cart = () => {
 
   const navigate = useNavigate();
 
+  // Only reset coupon on cart changes AFTER the initial mount / data load.
+  // Without this guard the coupon is wiped immediately when cartItems is
+  // populated from the backend on first render.
+  const isMounted = useRef(false);
+
   // ── Reset coupon whenever cart contents change ──────────────
   // Prevents a stale discount from persisting after items are added/removed.
   useEffect(() => {
+    if (!isMounted.current) {
+      isMounted.current = true;
+      return; // skip the very first cartItems population
+    }
     resetCoupon();
   }, [cartItems]); // eslint-disable-line react-hooks/exhaustive-deps
 

@@ -4,7 +4,7 @@ import axios from "axios";
 export const StoreContext = createContext(null);
 
 export const StoreContextProvider = (props) => {
-  const url = "https://food-delivery-fquq.onrender.com";
+  const url = import.meta.env.VITE_BACKEND_URL || "https://food-delivery-fquq.onrender.com";
 
   const [food_list, setFoodList] = useState([]);
   const [cartItems, setCartItems] = useState({});
@@ -122,15 +122,24 @@ export const StoreContextProvider = (props) => {
 
       if (response.data.success) {
         setCartItems(response.data.cartData || {});
-      } else {
+      } else if (response.status === 401) {
         // Token is expired or invalid — clear it so the user is shown the login prompt
         setCartItems({});
         setToken("");
         localStorage.removeItem("token");
       }
+      // For other non-success (5xx, 429, etc.) we keep the token and just
+      // leave the cart empty — better than silently logging the user out.
     } catch (error) {
       console.log(error);
-      setCartItems({});
+      // Only clear token on explicit 401 Unauthorized
+      if (error.response?.status === 401) {
+        setCartItems({});
+        setToken("");
+        localStorage.removeItem("token");
+      } else {
+        setCartItems({});
+      }
     }
   };
 

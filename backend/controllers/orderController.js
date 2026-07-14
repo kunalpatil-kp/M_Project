@@ -24,27 +24,21 @@ const placeOrder = async (req, res) => {
     });
     await newOrder.save();
 
-    const line_items = req.body.items.map((item) => ({
-      price_data: {
-        currency: "inr",
-        product_data: {
-          name: item.name,
+    // Use req.body.amount (the discounted total already including delivery)
+    // as the single Stripe line item so Stripe charges exactly what the
+    // customer sees in the UI — no more/less than the discounted total.
+    const line_items = [
+      {
+        price_data: {
+          currency: "inr",
+          product_data: {
+            name: "Fresh Grocery Order",
+          },
+          unit_amount: Math.round(req.body.amount * 100), // convert ₹ → paise
         },
-        unit_amount: item.price * 100,
+        quantity: 1,
       },
-      quantity: item.quantity,
-    }));
-
-    line_items.push({
-      price_data: {
-        currency: "inr",
-        product_data: {
-          name: "Delivery Charges",
-        },
-        unit_amount: 2 * 100,
-      },
-      quantity: 1,
-    });
+    ];
 
     const session = await stripe.checkout.sessions.create({
       line_items: line_items,
