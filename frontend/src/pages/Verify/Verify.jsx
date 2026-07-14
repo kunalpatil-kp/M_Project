@@ -7,7 +7,7 @@ const Verify = () => {
   const [searchParams] = useSearchParams();
   const success = searchParams.get("success");
   const orderId = searchParams.get("orderId");
-  const { url, setCartItems, resetCoupon } = useContext(StoreContext);
+  const { url, setCartItems, resetCoupon, setToken } = useContext(StoreContext);
   const navigate = useNavigate();
   const verifyPayment = useCallback(async () => {
     try {
@@ -18,6 +18,13 @@ const Verify = () => {
       if (response.data.success) {
         setCartItems({});
         resetCoupon(); // coupon feature: clear discount state after successful payment
+        // On a fresh page load (Stripe redirect), StoreContext's async useEffect may
+        // not have restored the token yet. Restore it from localStorage now so that
+        // /myorders (which guards on token) doesn't bounce the user away.
+        const savedToken = localStorage.getItem("token");
+        if (savedToken) {
+          setToken(savedToken);
+        }
         navigate("/myorders");
       } else {
         navigate("/");
@@ -26,7 +33,7 @@ const Verify = () => {
       console.error("Payment verification error:", error);
       navigate("/");
     }
-  }, [url, success, orderId, setCartItems, resetCoupon, navigate]);
+  }, [url, success, orderId, setCartItems, resetCoupon, setToken, navigate]);
 
   useEffect(() => {
     verifyPayment();
