@@ -10,12 +10,14 @@ const MyOrders = () => {
   const [data, setData] = useState([]);
 
   const fetchOrders = useCallback(async () => {
+    console.log("[MyOrders] fetchOrders called — token:", token ? "EXISTS" : "EMPTY");
     try {
       const response = await axios.post(
         url + "/api/order/userorders",
         {},
         { headers: { token } },
       );
+      console.log("[MyOrders] userorders response:", response.data);
       if (response.data.success && response.data.data) {
         setData(response.data.data);
       }
@@ -25,6 +27,7 @@ const MyOrders = () => {
   }, [url, token]);
 
   useEffect(() => {
+    console.log("[MyOrders] useEffect fired — token:", token ? "EXISTS" : "EMPTY");
     if (token) {
       fetchOrders();
     }
