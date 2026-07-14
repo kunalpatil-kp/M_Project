@@ -3,7 +3,6 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
-import mongoSanitize from "express-mongo-sanitize";
 
 import { connectDB } from "./config/db.js";
 
@@ -85,11 +84,39 @@ app.use("/api", limiter);
 
 app.use(express.json({ limit: "10kb" }));
 
-// Data Sanitization against NoSQL query injection
-// Note: Placed AFTER express.json() so req.body exists.
-app.use(mongoSanitize({
-  replaceWith: '_',
-}));
+// Data Sanitization against NoSQL query injection (Express-5-compatible).
+// express-mongo-sanitize 2.x tries to reassign req.query which is a
+// read-only getter in Express 5 — crashes with "Cannot set property query".
+// This replacement mutates the objects in-place instead of replacing them.
+const sanitizeValue = (val) => {
+  if (val && typeof val === "object" && !Array.isArray(val)) {
+    for (const key of Object.keys(val)) {
+      if (key.startsWith("$") || key.includes(".")) {
+        delete val[key];
+      } else {
+        sanitizeValue(val[key]);
+      }
+    }
+  } else if (Array.isArray(val)) {
+    val.forEach(sanitizeValue);
+  }
+};
+
+app.use((req, _res, next) => {
+  if (req.body)   sanitizeValue(req.body);
+  if (req.params) sanitizeValue(req.params);
+  // req.query is read-only in Express 5 — sanitize its properties in-place
+  if (req.query) {
+    for (const key of Object.keys(req.query)) {
+      if (key.startsWith("$") || key.includes(".")) {
+        delete req.query[key];
+      } else if (typeof req.query[key] === "object") {
+        sanitizeValue(req.query[key]);
+      }
+    }
+  }
+  next();
+});
 
 // =======================
 // STATIC FOLDER
