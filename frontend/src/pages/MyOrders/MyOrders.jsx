@@ -8,26 +8,28 @@ import generateInvoice from "../../utils/invoiceGenerator";
 const MyOrders = () => {
   const { url, token } = useContext(StoreContext);
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const fetchOrders = useCallback(async () => {
-    console.log("[MyOrders] fetchOrders called — token:", token ? "EXISTS" : "EMPTY");
+    if (!token) return;
+    setLoading(true);
     try {
       const response = await axios.post(
         url + "/api/order/userorders",
         {},
         { headers: { token } },
       );
-      console.log("[MyOrders] userorders response:", response.data);
       if (response.data.success && response.data.data) {
         setData(response.data.data);
       }
     } catch (error) {
       console.error("Error fetching orders:", error);
+    } finally {
+      setLoading(false);
     }
   }, [url, token]);
 
   useEffect(() => {
-    console.log("[MyOrders] useEffect fired — token:", token ? "EXISTS" : "EMPTY");
     if (token) {
       fetchOrders();
     }
@@ -39,6 +41,8 @@ const MyOrders = () => {
       <div className="container">
         {!token ? (
           <p>Please login to view your orders.</p>
+        ) : loading ? (
+          <p>Loading your orders...</p>
         ) : data.length === 0 ? (
           <p>You have no orders yet.</p>
         ) : (

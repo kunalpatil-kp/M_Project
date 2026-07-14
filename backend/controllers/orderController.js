@@ -62,7 +62,6 @@ const placeOrder = async (req, res) => {
 
 const verifyOrder = async (req, res) => {
   const { orderId, success } = req.body;
-  console.log("[verifyOrder] called with orderId:", orderId, "success:", success);
 
   if (!orderId || !mongoose.Types.ObjectId.isValid(orderId)) {
     return res.status(400).json({ success: false, message: "Invalid order ID" });
@@ -71,7 +70,6 @@ const verifyOrder = async (req, res) => {
   try {
     if (success == "true") {
       const order = await orderModel.findByIdAndUpdate(orderId, { payment: true }, { new: true });
-      console.log("[verifyOrder] order after update:", order ? { id: order._id, payment: order.payment, userId: order.userId } : "NOT FOUND");
 
       if (!order) {
         return res.status(404).json({ success: false, message: "Order not found" });
@@ -121,9 +119,7 @@ const verifyOrder = async (req, res) => {
 //user orders for frontend
 const userOrders = async (req, res) => {
   try {
-    console.log("[userOrders] userId from token:", req.body.userId);
     const orders = await orderModel.find({ userId: req.body.userId });
-    console.log("[userOrders] orders found:", orders.length, orders.map(o => ({ id: o._id, payment: o.payment, userId: o.userId })));
     res.json({ success: true, data: orders });
   } catch (error) {
     console.log(error);
