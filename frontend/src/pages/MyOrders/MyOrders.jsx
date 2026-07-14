@@ -9,6 +9,7 @@ const MyOrders = () => {
   const { url, token } = useContext(StoreContext);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [fetchError, setFetchError] = useState("");
 
   const fetchOrders = useCallback(async () => {
     if (!token) {
@@ -17,6 +18,7 @@ const MyOrders = () => {
     }
     console.log("[MyOrders] fetchOrders — token:", token.slice(0, 20) + "...");
     setLoading(true);
+    setFetchError("");
     try {
       const response = await axios.post(
         url + "/api/order/userorders",
@@ -29,10 +31,14 @@ const MyOrders = () => {
         console.log("[MyOrders] setting", response.data.data.length, "orders");
         setData(response.data.data);
       } else {
-        console.log("[MyOrders] success=false or no data:", response.data);
+        console.log("[MyOrders] non-success response:", response.data);
+        setFetchError(response.data.message || "Failed to load orders.");
       }
     } catch (error) {
-      console.error("[MyOrders] fetch error:", error.response?.status, error.message);
+      const status = error.response?.status;
+      const msg = error.response?.data?.message || error.message;
+      console.error("[MyOrders] fetch error — status:", status, "| message:", msg);
+      setFetchError(`Error ${status || ""}: ${msg}`);
     } finally {
       setLoading(false);
     }
@@ -53,6 +59,8 @@ const MyOrders = () => {
           <p>Please login to view your orders.</p>
         ) : loading ? (
           <p>Loading your orders...</p>
+        ) : fetchError ? (
+          <p style={{ color: "red" }}>{fetchError}</p>
         ) : data.length === 0 ? (
           <p>You have no orders yet.</p>
         ) : (

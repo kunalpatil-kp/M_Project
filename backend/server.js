@@ -72,10 +72,15 @@ app.use(helmet({
   crossOriginResourcePolicy: false, // allow images to load cross-origin
 }));
 
-// Rate Limiting (100 requests per 15 minutes per IP)
+// Rate Limiting — raised to 500 req/15 min per IP.
+// On Render (and most PaaS), all traffic arrives through a reverse proxy, so
+// req.ip would be the same internal IP for every user unless we tell Express
+// to trust the X-Forwarded-For header.  We set app.set("trust proxy", 1) so
+// express-rate-limit sees the real client IP and buckets users individually.
+app.set("trust proxy", 1);
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 100,
+  max: 500,
   standardHeaders: true,
   legacyHeaders: false,
   message: { success: false, message: "Too many requests, please try again later." },
