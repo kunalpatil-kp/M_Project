@@ -14,6 +14,7 @@ import orderRouter from "./routes/orderRoute.js";
 import recommendedRouter from "./routes/recommendedRoute.js";
 import pantryRouter from "./routes/pantryRoute.js";
 import couponRouter from "./routes/couponRoute.js";
+import eventRouter from "./routes/eventRoute.js";
 
 // =======================
 // APP CONFIG
@@ -142,6 +143,7 @@ app.use("/api/budget", budgetRouter);
 app.use("/api/recommendation", recommendedRouter);
 app.use("/api/pantry", pantryRouter);
 app.use("/api/coupon", couponRouter);
+app.use("/api/event", eventRouter);
 
 // =======================
 // ROOT

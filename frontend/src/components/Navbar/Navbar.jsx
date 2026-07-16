@@ -61,6 +61,13 @@ const Navbar = ({ setShowLogin }) => {
         >
           contact us
         </a>
+        <Link
+          to="/event"
+          onClick={() => setMenu("event")}
+          className={menu === "event" ? "active" : ""}
+        >
+          AI Event Planner
+        </Link>
       </ul>
       <div className="navbar-right">
         <div className="navbar-search-icon">

@@ -9,6 +9,7 @@ import LoginPopup from "./components/LoginPopup/LoginPopup";
 import Verify from "./pages/Verify/Verify";
 import MyOrders from "./pages/MyOrders/MyOrders";
 import SmartPantry from "./pages/SmartPantry/SmartPantry";
+import EventOrdering from "./pages/EventOrdering/EventOrdering";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/verify" element={<Verify />} />
           <Route path="/myorders" element={<MyOrders />} />
           <Route path="/pantry" element={<SmartPantry />} />
+          <Route path="/event" element={<EventOrdering />} />
           {/* 404 fallback — redirect unknown paths to home */}
           <Route path="*" element={<Home />} />
         </Routes>

@@ -1,0 +1,54 @@
+/* components/Event/RecommendedMenu/RecommendedMenu.css */
+/* AI Event Ordering — boilerplate styles only. */
+
+.recommended-menu {
+  margin-top: 8px;
+}
+
+.recommended-menu-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.recommended-menu-loading,
+.recommended-menu-empty {
+  font-size: 0.95rem;
+  color: #64748b;
+  padding: 20px 0;
+}
+
+.recommended-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.recommended-menu-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.recommended-menu-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.recommended-menu-category {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.recommended-menu-price {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #22c55e;
+  margin: 0;
+}

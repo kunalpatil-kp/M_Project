@@ -1,0 +1,337 @@
+/* ─────────────────────────────────────────────────────────
+   EventOrdering.css  —  AI Event Planner page
+   ───────────────────────────────────────────────────────── */
+
+/* ── Page wrapper ───────────────────────────────────────── */
+.eo-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 60%, #fef9ee 100%);
+  padding: 48px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.eo-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.eo-header-icon {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.eo-header-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 8px;
+  letter-spacing: -0.5px;
+}
+
+.eo-header-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ── Card ───────────────────────────────────────────────── */
+.eo-card {
+  width: 100%;
+  max-width: 680px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.07),
+    0 10px 40px -4px rgba(0, 0, 0, 0.10);
+  padding: 40px 44px;
+}
+
+/* ── Form layout ────────────────────────────────────────── */
+.eo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Two-column row */
+.eo-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ── Field ──────────────────────────────────────────────── */
+.eo-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Label ──────────────────────────────────────────────── */
+.eo-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.eo-label-optional {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+/* ── Text / Number inputs ───────────────────────────────── */
+.eo-input {
+  height: 46px;
+  padding: 0 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #0f172a;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.eo-input:hover {
+  border-color: #94a3b8;
+}
+
+.eo-input:focus {
+  border-color: #22c55e;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+/* ── Select wrapper (for custom arrow) ─────────────────── */
+.eo-select-wrap {
+  position: relative;
+}
+
+.eo-select-wrap::after {
+  content: "▾";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  color: #64748b;
+  pointer-events: none;
+}
+
+.eo-select {
+  height: 46px;
+  padding: 0 38px 0 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #0f172a;
+  background: #f8fafc;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  box-sizing: border-box;
+}
+
+.eo-select:hover {
+  border-color: #94a3b8;
+}
+
+.eo-select:focus {
+  border-color: #22c55e;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+/* ── Textarea ───────────────────────────────────────────── */
+.eo-textarea {
+  padding: 12px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #0f172a;
+  background: #f8fafc;
+  outline: none;
+  resize: vertical;
+  min-height: 88px;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.eo-textarea:hover {
+  border-color: #94a3b8;
+}
+
+.eo-textarea:focus {
+  border-color: #22c55e;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+.eo-textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* ── Radio group ────────────────────────────────────────── */
+.eo-radio-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.eo-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  background: #f8fafc;
+  transition: border-color 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+  user-select: none;
+}
+
+.eo-radio-label:hover {
+  border-color: #86efac;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.eo-radio-active {
+  border-color: #22c55e;
+  background: #f0fdf4;
+  color: #15803d;
+  font-weight: 600;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+/* Hide native radio but keep it accessible */
+.eo-radio-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.eo-radio-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  transition: border-color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.eo-radio-active .eo-radio-dot {
+  border-color: #22c55e;
+  background: #22c55e;
+}
+
+/* ── Submit button ──────────────────────────────────────── */
+.eo-btn {
+  margin-top: 8px;
+  height: 52px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
+}
+
+.eo-btn:hover {
+  filter: brightness(1.06);
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.45);
+  transform: translateY(-1px);
+}
+
+.eo-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.30);
+}
+
+.eo-btn-icon {
+  font-size: 1.1rem;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Responsive — Tablet  (≤ 720px)
+   ───────────────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .eo-card {
+    padding: 32px 28px;
+  }
+
+  .eo-header-title {
+    font-size: 1.85rem;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
+   Responsive — Mobile  (≤ 480px)
+   ───────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .eo-page {
+    padding: 32px 12px 60px;
+  }
+
+  .eo-card {
+    padding: 24px 18px;
+    border-radius: 14px;
+  }
+
+  .eo-header-title {
+    font-size: 1.55rem;
+  }
+
+  .eo-header-icon {
+    font-size: 2.4rem;
+  }
+
+  /* Stack two-column rows on mobile */
+  .eo-row-2 {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .eo-radio-group {
+    gap: 8px;
+  }
+
+  .eo-radio-label {
+    padding: 9px 16px;
+    font-size: 0.875rem;
+  }
+
+  .eo-btn {
+    height: 50px;
+    font-size: 0.95rem;
+  }
+}
